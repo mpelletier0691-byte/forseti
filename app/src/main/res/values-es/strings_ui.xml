@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_save">Guardar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_add">Añadir</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_open">Abrir</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_grant_permission">Conceder permiso</string>
+
+    <string name="guides_loading">Cargando…</string>
+    <string name="guides_min_read_fmt">%1$d min de lectura</string>
+    <string name="guides_back_cd">Volver a guías</string>
+
+    <string name="drafts_building_pdf">Generando PDF…</string>
+    <string name="drafts_print">Imprimir / Guardar PDF</string>
+    <string name="drafts_capture_fill">Capturar y rellenar</string>
+
+    <string name="deadlines_add_case">Añadir caso</string>
+    <string name="deadlines_add_deadline">Añadir plazo</string>
+    <string name="deadlines_add_case_cd">Añadir caso</string>
+    <string name="deadlines_folder">Carpeta</string>
+    <string name="deadlines_export_ics">Exportar ICS</string>
+    <string name="deadlines_quick_frcp">Añadir rápido desde reglas de plazos FRCP</string>
+    <string name="deadlines_rule_days_fmt">%1$s (%2$dd)</string>
+    <string name="deadlines_empty_cases_title">Aún no hay casos</string>
+    <string name="deadlines_empty_cases_body">Añada un caso para hacer seguimiento de los plazos de ese asunto.</string>
+    <string name="deadlines_empty_deadlines_title">Sin plazos</string>
+    <string name="deadlines_empty_deadlines_body">Toque Añadir plazo o use una regla FRCP rápida abajo.</string>
+    <string name="deadlines_status_due_today">Vence hoy</string>
+    <string name="deadlines_status_overdue_fmt">Vencido hace %1$d días</string>
+    <string name="deadlines_status_due_in_fmt">Vence en %1$d días</string>
+    <string name="deadlines_dialog_case_title">Caso</string>
+    <string name="deadlines_dialog_deadline_title">Plazo</string>
+    <string name="deadlines_field_title">Título</string>
+    <string name="deadlines_field_date">Fecha (AAAA-MM-DD)</string>
+    <string name="deadlines_field_case_name">Nombre del caso</string>
+    <string name="deadlines_field_court">Tribunal</string>
+    <string name="deadlines_field_case_number">Número de caso</string>
+
+    <string name="glossary_search_hint">Buscar términos…</string>
+    <string name="glossary_tts_hint">Toque un término y luego Leer para escuchar la definición.</string>
+
+    <string name="notes_tab_bookmarks">Marcadores</string>
+    <string name="notes_tab_notes">Notas</string>
+    <string name="notes_new">Nueva nota</string>
+    <string name="notes_field_anchor">Ancla de regla (p. ej. rule.12.b.6)</string>
+    <string name="notes_field_body">Nota</string>
+    <string name="notes_empty_bookmarks">Aún no hay marcadores. Marque una página FRCP desde Acceso rápido.</string>
+    <string name="notes_empty_notes">Aún no hay notas.</string>
+
+    <string name="scanner_capture">Capturar página</string>
+    <string name="scanner_filename_hint">Etiqueta de archivo (opcional)</string>
+    <string name="scanner_save_pdf">Guardar PDF en el caso</string>
+    <string name="scanner_clear_all">Borrar todo</string>
+    <string name="scanner_pick_case_first">Seleccione primero un caso en Perfil del caso.</string>
+
+    <string name="backup_creating">Creando copia de seguridad…</string>
+    <string name="backup_save_zip">Guardar ZIP de copia de seguridad</string>
+    <string name="backup_empty">Aún no hay copias de seguridad.</string>
+    <string name="backup_first_hint">Pulse «Guardar copia ZIP» para crear su primera instantánea.</string>
+    <string name="backup_workspace_fmt">Espacio de trabajo: %1$s</string>
+
+    <string name="states_filter_hint">Filtrar por estado, abreviatura o nombre de regla</string>
+    <string name="states_section_states">Estados</string>
+    <string name="states_section_circuits">Circuitos federales</string>
+
+    <string name="cases_new_case">Nuevo caso</string>
+    <string name="cases_empty_title">Sin casos</string>
+    <string name="cases_empty_body">Cree un caso para organizar presentaciones y plazos.</string>
+
+    <string name="refs_section_bundled">Incluido en la aplicación</string>
+    <string name="refs_section_federal">Reglas federales</string>
+    <string name="refs_section_states">Reglas estatales — enlaces directos</string>
+    <string name="refs_section_circuits">Tribunales federales y circuitos</string>
+    <string name="refs_section_research">Investigación de casos</string>
+    <string name="refs_section_opensource">Componentes de código abierto</string>
+    <string name="refs_copyright_heading">Copyright y atribución</string>
+    <string name="refs_copyright_body1">Todos los sitios web y documentos enlazados siguen siendo propiedad de sus respectivos titulares. Forseti hace referencia —pero no posee, aloja, modifica ni vuelve a publicar— contenido de terceros, salvo que dicho contenido sea de dominio público (p. ej., obras del Gobierno de EE. UU. según 17 U.S.C. § 105). Cuando la aplicación almacena en caché un PDF descargado en el dispositivo, se guarda de forma privada para su uso personal y nunca se vuelve a subir.</string>
+    <string name="refs_copyright_body2">Según la política de Google Play: los enlaces dentro de Forseti son referencias y pueden cambiar de ubicación, modificarse, pasar a ser de pago o dejar de estar disponibles. Forseti no controla la disponibilidad, exactitud ni actualidad de los enlaces. Verifique siempre con la fuente oficial antes de confiar en el texto de las normas.</string>
+    <string name="refs_not_legal_advice">Forseti es solo información — no asesoramiento legal. El uso de la aplicación no crea una relación abogado-cliente.</string>
+    <string name="refs_footer">Forseti es solo información y no vuelve a publicar ni modifica el texto subyacente de las normas. Los recursos incluidos permanecen en su forma original. Contacte al mantenedor si una fuente necesita una actualización o un ajuste de atribución.</string>
+    <string name="refs_license_fmt">Licencia: %1$s</string>
+</resources>

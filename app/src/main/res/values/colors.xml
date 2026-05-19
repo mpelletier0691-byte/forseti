@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="forseti_background">#FF0E0F12</color>
+    <color name="forseti_surface">#FF16181D</color>
+    <color name="forseti_sidebar">#FF2A2D33</color>
+    <color name="forseti_splash_bg">#FF0A0A0A</color>
+    <color name="rune_gold">#FFC8A24B</color>
+    <color name="raven_blue">#FF6FA8C7</color>
+    <color name="deadline_red">#FFB0513A</color>
+    <color name="ash_white">#FFE6E1D6</color>
+    <color name="ash_grey">#FF9A958A</color>
+</resources>

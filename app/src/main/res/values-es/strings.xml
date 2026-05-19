@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Forseti</string>
+    <string name="app_tagline">Compañero de procedimiento civil pro se</string>
+
+    <string name="splash_subtitle">Legislador de los Æsir</string>
+    <string name="splash_version_fmt">Versión %1$s</string>
+    <string name="splash_motto">La IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
+
+    <string name="disclaimer_title">Lea antes de presentar</string>
+    <string name="disclaimer_body">Forseti le ayuda a organizar el procedimiento y redactar escritos, pero puede cometer errores. Revise siempre cada documento según las reglas locales y órdenes del tribunal antes de presentar. Usted es responsable de sus decisiones y presentaciones legales.\n\nForseti es solo información. No es asesoramiento legal y su uso no crea relación abogado-cliente. Cuando lo importante esté en juego, consulte a un abogado con licencia en su jurisdicción.\n\nLos enlaces en la app son referencias a sitios externos mantenidos por sus dueños. Pueden cambiar o dejar de estar en línea; Forseti no controla su exactitud. Use la pestaña Referencias y Reglas subidas para guardar PDFs en el dispositivo.\n\nLa IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
+    <string name="disclaimer_accept">Entiendo</string>
+    <string name="footer_disclaimer">Solo información — no es asesoramiento legal. Usted es responsable de sus presentaciones.</string>
+
+    <string name="nav_quick_jump">Acceso rápido</string>
+    <string name="nav_drafts">Borradores de mociones</string>
+    <string name="nav_guides">Guías</string>
+    <string name="nav_states">Reglas estatales</string>
+    <string name="nav_deadlines">Plazos</string>
+    <string name="nav_cases">Perfil del caso</string>
+    <string name="nav_scanner">Escáner de documentos</string>
+    <string name="scanner_ingest_menu_cd">Importar archivos al caso seleccionado</string>
+    <string name="nav_backup">Copia de seguridad</string>
+    <string name="nav_glossary">Glosario</string>
+    <string name="nav_notes">Notas y marcadores</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="nav_imports">Reglas subidas</string>
+    <string name="nav_case_studies">Jurisprudencia</string>
+    <string name="nav_references">Referencias</string>
+
+    <string name="sidebar_trial_heading">Periodo de prueba</string>
+    <string name="sidebar_trial_cta">Toque aquí para comprar en Google Play</string>
+    <string name="sidebar_trial_remaining">Tiempo restante: %1$s</string>
+
+    <string name="cd_open_drawer">Abrir menú de navegación</string>
+    <string name="cd_close_drawer">Cerrar menú de navegación</string>
+    <string name="cd_back_to_dashboard">Volver al panel</string>
+    <string name="case_delete_title">¿Eliminar este caso?</string>
+    <string name="case_delete_body">Esto elimina permanentemente el perfil del caso, todos los plazos, recordatorios y la carpeta en el dispositivo. No se puede deshacer.</string>
+    <string name="case_delete_confirm">Eliminar</string>
+    <string name="case_delete_cancel">Conservar</string>
+    <string name="case_delete_cd">Eliminar caso</string>
+    <string name="dashboard_welcome_heading">Bienvenido a Forseti</string>
+    <string name="dashboard_welcome_subheading">Elija un destino en la barra lateral para comenzar.</string>
+    <string name="cd_app_logo">Logotipo de Forseti, cuervo en balanza de la justicia</string>
+    <string name="cd_copy_page_text">Copiar texto de la página con OCR</string>
+    <string name="toast_copied_to_clipboard">Copiado al portapapeles</string>
+    <string name="quick_jump_copy_no_text">No se reconoció texto en esta página. Pruebe otra o amplíe la vista.</string>
+    <string name="quick_jump_copy_try_ocr_sheet">Abriendo texto de la página — si sigue vacío, cambie el zoom o desplácese y use Copiar todo.</string>
+    <string name="quick_jump_copy_no_renderer">El PDF aún no está cargado. Espere un momento e intente de nuevo.</string>
+
+    <string name="pdf_page_text_title">Página %1$d — texto (OCR)</string>
+    <string name="pdf_page_text_loading">Reconociendo texto en esta página\u2026</string>
+    <string name="pdf_page_text_hint">Arrastre los controles para seleccionar texto y toque Leer selección. Mantenga pulsado el PDF para abrir este diálogo.</string>
+    <string name="pdf_read_all_page">Leer página</string>
+    <string name="pdf_read_selection">Leer selección</string>
+    <string name="pdf_copy_all">Copiar todo</string>
+    <string name="pdf_page_text_close">Cerrar</string>
+    <string name="cd_pdf_page_text">Mostrar texto seleccionable (OCR)</string>
+
+    <string name="settings_disclaimer_title">Aviso legal</string>
+    <string name="settings_disclaimer_body">Forseti le ayuda a organizar el procedimiento y redactar escritos, pero puede cometer errores. Revise siempre cada documento según las reglas del tribunal. Usted es responsable de sus decisiones y presentaciones.\n\nLos enlaces son referencias a sitios externos; pueden cambiar o dejar de estar en línea. La lista completa está en Referencias; puede guardar PDFs de reglas en Reglas subidas.\n\nLa IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
+
+    <string name="receive_share_pick">Guardar archivo compartido en\u2026</string>
+
+    <string name="trial_welcome_title">Bienvenido a Forseti</string>
+    <string name="trial_welcome_body">Tiene una prueba gratuita de 3 días. Todas las funciones están desbloqueadas. Toque Entiendo para comenzar.\n\nAl terminar la prueba puede desbloquear Forseti por $4.99 — pago único, sin suscripción ni anuncios.</string>
+    <string name="trial_remaining_fmt">Prueba: %1$s restantes</string>
+    <string name="trial_remaining_hours_fmt">Prueba: %1$d horas restantes</string>
+    <string name="trial_ending_soon_title">Su prueba termina pronto</string>
+    <string name="trial_ending_soon_body">Queda menos de un día de prueba gratuita. Desbloquee Forseti por $4.99 para seguir usando todas las funciones.</string>
+    <string name="trial_expired_title">Su prueba ha terminado</string>
+    <string name="trial_expired_body">Forseti requiere un desbloqueo único de $4.99. Restaure la compra si ya la hizo con esta cuenta de Google.</string>
+    <string name="trial_buy">Comprar Forseti ($4.99)</string>
+    <string name="trial_restore">Restaurar compra</string>
+    <string name="trial_open_play">Abrir en Play Store</string>
+    <string name="trial_purchased_title">Gracias por apoyar Forseti</string>
+    <string name="trial_purchased_body">Todas las funciones están desbloqueadas permanentemente en cada dispositivo con esta cuenta de Google.</string>
+    <string name="billing_unavailable">Facturación de Google Play no disponible. La app permanecerá en modo de prueba.</string>
+
+    <string name="about_brand_title">Forseti está hecho para quienes luchan.</string>
+    <string name="about_brand_body">Los asistentes de IA pueden ayudar, pero nada supera el espíritu y la determinación humanos. Esta herramienta le ayuda a organizarse y mantenerse fuerte cuando el sistema abruma.\n\nLos lobos no deben caer como ovejas — y usted tampoco.\n\nForseti le da estructura y claridad, pero usted es responsable de sus actos, escritos y decisiones.</string>
+    <string name="about_brand_signoff">Asvaettir Labs — Herramientas para los determinados.</string>
+
+    <string name="case_ingest_section_title">Importación masiva (este caso)</string>
+    <string name="case_ingest_folder">Proceso Brokkr Forge</string>
+    <string name="case_ingest_images">Ingesta de imágenes</string>
+    <string name="case_ingest_tip">Brokkr Forge importa una carpeta completa y clasifica los archivos. Ingesta de imágenes permite elegir fotos, PDF, audio o video. Renombre los archivos primero para clasificación automática; lo no clasificado va a 99_Inbox/.</string>
+
+    <string name="language_picker_title">Elija su idioma</string>
+    <string name="language_picker_subtitle">Los menús, las guías y la ayuda aparecen en este idioma. Los PDF oficiales del tribunal y los formularios federales incluidos permanecen en inglés.</string>
+    <string name="language_picker_continue">Continuar</string>
+    <string name="language_picker_cancel">Cancelar</string>
+    <string name="settings_language_title">Idioma de la app</string>
+    <string name="settings_language_subtitle">Menús, guías y ayuda de la aplicación. Los PDF oficiales del tribunal y los formularios permanecen en inglés.</string>
+    <string name="settings_section_language">Idioma</string>
+    <string name="settings_section_trial">Prueba y compra</string>
+    <string name="settings_unlocked_title">Forseti desbloqueado</string>
+    <string name="settings_unlocked_body">Gracias por apoyar el desarrollo. Todas las funciones están disponibles permanentemente en cada dispositivo con esta cuenta de Google.</string>
+    <string name="settings_section_appearance">Apariencia</string>
+    <string name="settings_force_dark_title">Forzar tema oscuro</string>
+    <string name="settings_force_dark_subtitle_on">Fijado ahora. Desactívelo para seguir el tema del sistema.</string>
+    <string name="settings_force_dark_subtitle_off">Sigue el tema del sistema.</string>
+    <string name="settings_section_content">Contenido</string>
+    <string name="settings_bundled_rules_title">Reglas incluidas</string>
+    <string name="settings_bundled_rules_subtitle">FRCP 2024 (reformulada). Los enlaces estatales abren la fuente oficial.</string>
+    <string name="settings_bookmarks_title">Marcadores y notas</string>
+    <string name="settings_bookmarks_subtitle">Almacenados localmente. Borre con borrar datos de la app.</string>
+    <string name="settings_section_about">Acerca de</string>
+    <string name="settings_version_fmt">Forseti %1$s</string>
+    <string name="settings_build_fmt">Compilación %1$d</string>
+
+    <string name="tutorial_skip">Omitir recorrido</string>
+    <string name="tutorial_next">Siguiente</string>
+    <string name="tutorial_done">Empezar</string>
+    <string name="tutorial_step_fmt">Paso %1$d de %2$d</string>
+    <string name="tutorial_step1_title">Bienvenido a Forseti</string>
+    <string name="tutorial_step1_body">Esta app le ayuda a organizarse en casos civiles federales en EE. UU. — procedimiento, plazos y documentos, todo en su dispositivo.</string>
+    <string name="tutorial_step2_title">Empiece en Guías</string>
+    <string name="tutorial_step2_body">Su primera lección: abra Guías en la barra lateral y lea cómo funciona el proceso. Los PDF de reglas federales permanecen en inglés; las guías siguen el idioma de la aplicación.</string>
+    <string name="tutorial_step3_title">Acceso rápido</string>
+    <string name="tutorial_step3_body">Explore las Reglas Federales de Procedimiento Civil (FRCP) y salte a la regla que necesite.</string>
+    <string name="tutorial_step4_title">Perfil del caso</string>
+    <string name="tutorial_step4_body">Cree un caso para guardar escritos, escaneos y notas en una carpeta de trabajo en el teléfono.</string>
+    <string name="tutorial_step5_title">Plazos</string>
+    <string name="tutorial_step5_body">Registre las fechas importantes. Perder un plazo es uno de los errores más comunes.</string>
+    <string name="tutorial_step6_title">Está listo</string>
+    <string name="tutorial_step6_body">Abra Guías en la barra lateral cuando quiera. Cambie el idioma en Ajustes en cualquier momento.</string>
+</resources>

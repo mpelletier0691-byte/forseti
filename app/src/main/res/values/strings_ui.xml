@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add">Add</string>
+    <string name="action_share">Share</string>
+    <string name="action_open">Open</string>
+    <string name="action_close">Close</string>
+    <string name="action_grant_permission">Grant permission</string>
+
+    <string name="guides_loading">Loading…</string>
+    <string name="guides_min_read_fmt">%1$d min read</string>
+    <string name="guides_back_cd">Back to guides</string>
+
+    <string name="drafts_building_pdf">Building PDF…</string>
+    <string name="drafts_print">Print / Save PDF</string>
+    <string name="drafts_capture_fill">Capture &amp; Fill</string>
+
+    <string name="deadlines_add_case">Add case</string>
+    <string name="deadlines_add_deadline">Add deadline</string>
+    <string name="deadlines_add_case_cd">Add case</string>
+    <string name="deadlines_folder">Folder</string>
+    <string name="deadlines_export_ics">Export ICS</string>
+    <string name="deadlines_quick_frcp">Quick add from FRCP timing rules</string>
+    <string name="deadlines_rule_days_fmt">%1$s (%2$dd)</string>
+    <string name="deadlines_empty_cases_title">No cases yet</string>
+    <string name="deadlines_empty_cases_body">Add a case to track deadlines for that matter.</string>
+    <string name="deadlines_empty_deadlines_title">No deadlines</string>
+    <string name="deadlines_empty_deadlines_body">Tap Add deadline or use a quick FRCP rule below.</string>
+    <string name="deadlines_status_due_today">Due today</string>
+    <string name="deadlines_status_overdue_fmt">Overdue by %1$d days</string>
+    <string name="deadlines_status_due_in_fmt">Due in %1$d days</string>
+    <string name="deadlines_dialog_case_title">Case</string>
+    <string name="deadlines_dialog_deadline_title">Deadline</string>
+    <string name="deadlines_field_title">Title</string>
+    <string name="deadlines_field_date">Date (YYYY-MM-DD)</string>
+    <string name="deadlines_field_case_name">Case name</string>
+    <string name="deadlines_field_court">Court</string>
+    <string name="deadlines_field_case_number">Case number</string>
+
+    <string name="glossary_search_hint">Search terms…</string>
+    <string name="glossary_tts_hint">Tap a term, then Read to hear the definition.</string>
+
+    <string name="notes_tab_bookmarks">Bookmarks</string>
+    <string name="notes_tab_notes">Notes</string>
+    <string name="notes_new">New note</string>
+    <string name="notes_field_anchor">Rule anchor (e.g. rule.12.b.6)</string>
+    <string name="notes_field_body">Note</string>
+    <string name="notes_empty_bookmarks">No bookmarks yet. Bookmark a FRCP page from Quick Jump.</string>
+    <string name="notes_empty_notes">No notes yet.</string>
+
+    <string name="scanner_capture">Capture page</string>
+    <string name="scanner_filename_hint">Filename label (optional)</string>
+    <string name="scanner_save_pdf">Save PDF to case</string>
+    <string name="scanner_clear_all">Clear all</string>
+    <string name="scanner_pick_case_first">Select a case in Case Profile first.</string>
+
+    <string name="backup_creating">Creating backup…</string>
+    <string name="backup_save_zip">Save backup ZIP</string>
+    <string name="backup_empty">No backups yet.</string>
+    <string name="backup_first_hint">Tap “Save backup ZIP” to create your first snapshot.</string>
+    <string name="backup_workspace_fmt">Workspace: %1$s</string>
+
+    <string name="states_filter_hint">Filter by state, abbreviation, or rule name</string>
+    <string name="states_section_states">States</string>
+    <string name="states_section_circuits">Federal circuits</string>
+
+    <string name="cases_new_case">New case</string>
+    <string name="cases_empty_title">No cases</string>
+    <string name="cases_empty_body">Create a case to organize filings and deadlines.</string>
+
+    <string name="refs_section_bundled">Bundled inside the app</string>
+    <string name="refs_section_federal">Federal rules</string>
+    <string name="refs_section_states">State rules — direct links</string>
+    <string name="refs_section_circuits">Federal courts &amp; circuits</string>
+    <string name="refs_section_research">Case research</string>
+    <string name="refs_section_opensource">Open-source components</string>
+    <string name="refs_copyright_heading">Copyright &amp; attribution</string>
+    <string name="refs_copyright_body1">All linked websites and documents remain the property of their respective owners. Forseti references — but does not own, host, modify, or republish — third-party content unless that content is in the public domain (e.g. U.S. Government works under 17 U.S.C. § 105). Where the app caches a downloaded PDF on the device, it is stored privately for your personal use and never re-uploaded.</string>
+    <string name="refs_copyright_body2">Per Google Play policy: links inside Forseti are references and may move, change, become paywalled, or go offline. Forseti does not control link availability, accuracy, or freshness. Always verify against the official source before relying on rule text.</string>
+    <string name="refs_not_legal_advice">Forseti is information only — not legal advice. Use of the app does not create an attorney-client relationship.</string>
+    <string name="refs_footer">Forseti is information only and does not republish or modify the underlying rules text. Bundled assets stay in their original form. Reach the maintainer if a source needs an update or attribution adjustment.</string>
+    <string name="refs_license_fmt">License: %1$s</string>
+</resources>

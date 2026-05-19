@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Forseti — Android Emulator (Pixel 9)
+GenericName=Android Emulator
+Comment=Start Pixel_9_API_35 for Forseti development
+Exec=/home/user/Desktop/Projects/Forseti/scripts/launch_emulator_desktop.sh Pixel_9_API_35
+TryExec=/home/user/Android/Sdk/emulator/emulator
+Path=/home/user/Desktop/Projects/Forseti
+Icon=phone
+Terminal=false
+Categories=Development;
+StartupNotify=true
+Keywords=android;emulator;forseti;pixel;
+MimeType=

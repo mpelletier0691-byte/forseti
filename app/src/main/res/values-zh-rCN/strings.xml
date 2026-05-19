@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Forseti</string>
+    <string name="app_tagline">自诉民事程序助手</string>
+
+    <string name="splash_subtitle">阿萨神族之立法者</string>
+    <string name="splash_version_fmt">版本 %1$s</string>
+    <string name="splash_motto">人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
+
+    <string name="disclaimer_title">提交前请阅读</string>
+    <string name="disclaimer_body">Forseti 帮助您整理程序并起草文书，但可能出现错误。提交前请务必对照法院当地规则与命令审阅每一份文件。您对法律决定与提交材料自行负责。\n\nForseti 仅提供信息，不构成法律建议，使用本应用不形成律师—客户关系。事关重大时，请咨询您所在司法辖区的执业律师。\n\n应用中的链接为外部网站参考，可能变更或失效；Forseti 不保证其准确性。请参阅“参考”选项卡，并可通过“已上传规则”在设备上保存规则 PDF。\n\n人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
+    <string name="disclaimer_accept">我理解</string>
+    <string name="footer_disclaimer">仅供参考——非法律建议。您对提交材料自行负责。</string>
+
+    <string name="nav_quick_jump">快速跳转</string>
+    <string name="nav_drafts">动议草稿</string>
+    <string name="nav_guides">指南</string>
+    <string name="nav_states">州规则</string>
+    <string name="nav_deadlines">期限</string>
+    <string name="nav_cases">案件档案</string>
+    <string name="nav_scanner">文档扫描</string>
+    <string name="scanner_ingest_menu_cd">将文件导入所选案件</string>
+    <string name="nav_backup">备份</string>
+    <string name="nav_glossary">术语表</string>
+    <string name="nav_notes">笔记与书签</string>
+    <string name="nav_settings">设置</string>
+    <string name="nav_imports">已上传规则</string>
+    <string name="nav_case_studies">判例检索</string>
+    <string name="nav_references">参考</string>
+
+    <string name="sidebar_trial_heading">试用期</string>
+    <string name="sidebar_trial_cta">点击在 Google Play 购买</string>
+    <string name="sidebar_trial_remaining">剩余时间：%1$s</string>
+
+    <string name="cd_open_drawer">打开导航抽屉</string>
+    <string name="cd_close_drawer">关闭导航抽屉</string>
+    <string name="cd_back_to_dashboard">返回主面板</string>
+    <string name="case_delete_title">删除此案件？</string>
+    <string name="case_delete_body">将永久删除案件档案、所有相关期限、提醒及设备上的工作区文件夹，无法撤销。</string>
+    <string name="case_delete_confirm">删除</string>
+    <string name="case_delete_cancel">保留</string>
+    <string name="case_delete_cd">删除案件</string>
+    <string name="dashboard_welcome_heading">欢迎使用 Forseti</string>
+    <string name="dashboard_welcome_subheading">从侧边栏选择功能开始使用。</string>
+    <string name="cd_app_logo">Forseti 标志，正义天平上的渡鸦</string>
+    <string name="cd_copy_page_text">使用 OCR 复制页面文字</string>
+    <string name="toast_copied_to_clipboard">已复制到剪贴板</string>
+    <string name="quick_jump_copy_no_text">本页未识别到文字。请换页或放大后再试。</string>
+    <string name="quick_jump_copy_try_ocr_sheet">正在打开页面文字——若仍为空，请调整缩放或滚动后使用“全部复制”。</string>
+    <string name="quick_jump_copy_no_renderer">PDF 尚未加载。请稍候再试。</string>
+
+    <string name="pdf_page_text_title">第 %1$d 页 — 文字 (OCR)</string>
+    <string name="pdf_page_text_loading">正在识别本页文字\u2026</string>
+    <string name="pdf_page_text_hint">拖动手柄选择文字，然后点“朗读所选”。长按 PDF 页面可打开此对话框。</string>
+    <string name="pdf_read_all_page">朗读本页</string>
+    <string name="pdf_read_selection">朗读所选</string>
+    <string name="pdf_copy_all">全部复制</string>
+    <string name="pdf_page_text_close">关闭</string>
+    <string name="cd_pdf_page_text">显示可选文字 (OCR)</string>
+
+    <string name="settings_disclaimer_title">免责声明</string>
+    <string name="settings_disclaimer_body">Forseti 帮助您整理程序并起草文书，但可能出现错误。提交前请务必对照法院规则审阅每一份文件。您对法律决定与提交材料自行负责。\n\n链接为外部网站参考，可能变更或失效。完整列表见“参考”选项卡；可通过“已上传规则”在设备上保存法院规则 PDF。\n\n人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
+
+    <string name="receive_share_pick">将共享文件保存到\u2026</string>
+
+    <string name="trial_welcome_title">欢迎使用 Forseti</string>
+    <string name="trial_welcome_body">您有 3 天免费试用，全部功能已解锁。点“我理解”开始。\n\n试用结束后可一次性支付 $4.99 永久解锁 Forseti，无订阅、无广告。</string>
+    <string name="trial_remaining_fmt">试用：剩余 %1$s</string>
+    <string name="trial_remaining_hours_fmt">试用：剩余 %1$d 小时</string>
+    <string name="trial_ending_soon_title">试用即将结束</string>
+    <string name="trial_ending_soon_body">免费试用不足一天。支付 $4.99 永久解锁以继续使用全部功能。</string>
+    <string name="trial_expired_title">试用已结束</string>
+    <string name="trial_expired_body">Forseti 需一次性支付 $4.99 解锁。若已购买，请在此 Google 账户下恢复购买。</string>
+    <string name="trial_buy">购买 Forseti ($4.99)</string>
+    <string name="trial_restore">恢复购买</string>
+    <string name="trial_open_play">打开 Play 商店</string>
+    <string name="trial_purchased_title">感谢支持 Forseti</string>
+    <string name="trial_purchased_body">在此 Google 账户登录的所有设备上已永久解锁全部功能。</string>
+    <string name="billing_unavailable">此设备无法使用 Google Play 结算，应用将保持试用模式。</string>
+
+    <string name="about_brand_title">Forseti 为奋斗者而建。</string>
+    <string name="about_brand_body">AI 助手可以帮忙，但人的精神与决心更为强大。本工具帮助您在制度压力下保持条理、专注与力量。\n\n狼不应如羊般倒下——您也不应如此。\n\nForseti 提供结构与工具，但您对自己的行为、文书与决定负责。</string>
+    <string name="about_brand_signoff">Asvaettir Labs — 为坚定者打造的工具。</string>
+
+    <string name="case_ingest_section_title">批量导入（本案件）</string>
+    <string name="case_ingest_folder">Brokkr Forge 流程</string>
+    <string name="case_ingest_images">图像导入</string>
+    <string name="case_ingest_tip">Brokkr Forge 导入整个文件夹并自动分类。图像导入可选择照片、PDF、音频或视频。请先重命名文件以便自动分类；未分类文件进入 99_Inbox/。</string>
+
+    <string name="language_picker_title">选择语言</string>
+    <string name="language_picker_subtitle">菜单、指南和帮助将以所选语言显示。官方法院 PDF 及内置联邦表格仍为英文。</string>
+    <string name="language_picker_continue">继续</string>
+    <string name="language_picker_cancel">取消</string>
+    <string name="settings_language_title">应用语言</string>
+    <string name="settings_language_subtitle">菜单、指南与应用帮助。官方法院 PDF 及表格仍为英文。</string>
+    <string name="settings_section_language">语言</string>
+    <string name="settings_section_trial">试用与购买</string>
+    <string name="settings_unlocked_title">Forseti 已解锁</string>
+    <string name="settings_unlocked_body">感谢支持开发。在此 Google 账户登录的所有设备上永久可用全部功能。</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_force_dark_title">强制深色主题</string>
+    <string name="settings_force_dark_subtitle_on">已固定开启。关闭后将跟随系统主题。</string>
+    <string name="settings_force_dark_subtitle_off">跟随系统主题。</string>
+    <string name="settings_section_content">内容</string>
+    <string name="settings_bundled_rules_title">内置规则</string>
+    <string name="settings_bundled_rules_subtitle">FRCP 2024（重排版）。州目录链接打开官方来源。</string>
+    <string name="settings_bookmarks_title">书签与笔记</string>
+    <string name="settings_bookmarks_subtitle">本地存储。清除应用数据可删除。</string>
+    <string name="settings_section_about">关于</string>
+    <string name="settings_version_fmt">Forseti %1$s</string>
+    <string name="settings_build_fmt">构建 %1$d</string>
+
+    <string name="tutorial_skip">跳过导览</string>
+    <string name="tutorial_next">下一步</string>
+    <string name="tutorial_done">开始使用</string>
+    <string name="tutorial_step_fmt">第 %1$d 步，共 %2$d 步</string>
+    <string name="tutorial_step1_title">欢迎使用 Forseti</string>
+    <string name="tutorial_step1_body">本应用帮助您在美国联邦民事案件中保持条理——程序、期限与文档，全部在您的设备上。</string>
+    <string name="tutorial_step2_title">从指南开始</string>
+    <string name="tutorial_step2_body">第一课：在侧边栏打开“指南”，了解诉讼流程。联邦规则 PDF 仍为英文；指南随应用语言显示。</string>
+    <string name="tutorial_step3_title">快速跳转</string>
+    <string name="tutorial_step3_body">浏览《联邦民事诉讼规则》(FRCP)，跳转到您需要的条文。</string>
+    <string name="tutorial_step4_title">案件档案</string>
+    <string name="tutorial_step4_body">创建案件，在手机上用一个工作区文件夹保存文书、扫描件与笔记。</string>
+    <string name="tutorial_step5_title">期限</string>
+    <string name="tutorial_step5_body">记录重要日期。错过期限是诉讼中最常见的问题之一。</string>
+    <string name="tutorial_step6_title">准备就绪</string>
+    <string name="tutorial_step6_body">随时从侧边栏打开“指南”。可在“设置”中随时更改语言。</string>
+</resources>

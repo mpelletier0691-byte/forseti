@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_save">保存</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">删除</string>
+    <string name="action_add">添加</string>
+    <string name="action_share">分享</string>
+    <string name="action_open">打开</string>
+    <string name="action_close">关闭</string>
+    <string name="action_grant_permission">授予权限</string>
+
+    <string name="guides_loading">正在加载…</string>
+    <string name="guides_min_read_fmt">阅读约 %1$d 分钟</string>
+    <string name="guides_back_cd">返回指南</string>
+
+    <string name="drafts_building_pdf">正在生成 PDF…</string>
+    <string name="drafts_print">打印 / 保存 PDF</string>
+    <string name="drafts_capture_fill">拍摄并填写</string>
+
+    <string name="deadlines_add_case">添加案件</string>
+    <string name="deadlines_add_deadline">添加期限</string>
+    <string name="deadlines_add_case_cd">添加案件</string>
+    <string name="deadlines_folder">文件夹</string>
+    <string name="deadlines_export_ics">导出 ICS</string>
+    <string name="deadlines_quick_frcp">根据 FRCP 期限规则快速添加</string>
+    <string name="deadlines_rule_days_fmt">%1$s（%2$d 天）</string>
+    <string name="deadlines_empty_cases_title">尚无案件</string>
+    <string name="deadlines_empty_cases_body">添加案件以跟踪该事项的期限。</string>
+    <string name="deadlines_empty_deadlines_title">暂无期限</string>
+    <string name="deadlines_empty_deadlines_body">点按“添加期限”或使用下方的 FRCP 快速规则。</string>
+    <string name="deadlines_status_due_today">今日到期</string>
+    <string name="deadlines_status_overdue_fmt">已逾期 %1$d 天</string>
+    <string name="deadlines_status_due_in_fmt">%1$d 天后到期</string>
+    <string name="deadlines_dialog_case_title">案件</string>
+    <string name="deadlines_dialog_deadline_title">期限</string>
+    <string name="deadlines_field_title">标题</string>
+    <string name="deadlines_field_date">日期（YYYY-MM-DD）</string>
+    <string name="deadlines_field_case_name">案件名称</string>
+    <string name="deadlines_field_court">法院</string>
+    <string name="deadlines_field_case_number">案号</string>
+
+    <string name="glossary_search_hint">搜索术语…</string>
+    <string name="glossary_tts_hint">点按术语，再点“朗读”即可收听释义。</string>
+
+    <string name="notes_tab_bookmarks">书签</string>
+    <string name="notes_tab_notes">笔记</string>
+    <string name="notes_new">新建笔记</string>
+    <string name="notes_field_anchor">规则锚点（如 rule.12.b.6）</string>
+    <string name="notes_field_body">笔记</string>
+    <string name="notes_empty_bookmarks">尚无书签。在“快速跳转”中为 FRCP 页面添加书签。</string>
+    <string name="notes_empty_notes">尚无笔记。</string>
+
+    <string name="scanner_capture">拍摄页面</string>
+    <string name="scanner_filename_hint">文件名标签（可选）</string>
+    <string name="scanner_save_pdf">将 PDF 保存到案件</string>
+    <string name="scanner_clear_all">全部清除</string>
+    <string name="scanner_pick_case_first">请先在“案件档案”中选择一个案件。</string>
+
+    <string name="backup_creating">正在创建备份…</string>
+    <string name="backup_save_zip">保存备份 ZIP</string>
+    <string name="backup_empty">尚无备份。</string>
+    <string name="backup_first_hint">点击“保存备份 ZIP”创建第一个快照。</string>
+    <string name="backup_workspace_fmt">工作区：%1$s</string>
+
+    <string name="states_filter_hint">按州、缩写或规则名称筛选</string>
+    <string name="states_section_states">各州</string>
+    <string name="states_section_circuits">联邦巡回区</string>
+
+    <string name="cases_new_case">新建案件</string>
+    <string name="cases_empty_title">暂无案件</string>
+    <string name="cases_empty_body">创建案件以整理提交文件与期限。</string>
+
+    <string name="refs_section_bundled">应用内置</string>
+    <string name="refs_section_federal">联邦规则</string>
+    <string name="refs_section_states">州规则 — 直接链接</string>
+    <string name="refs_section_circuits">联邦法院与巡回区</string>
+    <string name="refs_section_research">案例检索</string>
+    <string name="refs_section_opensource">开源组件</string>
+    <string name="refs_copyright_heading">版权与归属</string>
+    <string name="refs_copyright_body1">所有链接的网站与文档仍归各自所有者所有。Forseti 仅作引用——不拥有、托管、修改或再发布第三方内容，除非该内容属于公有领域（例如根据 17 U.S.C. § 105 的美国政府作品）。当应用在设备上缓存已下载的 PDF 时，仅供您个人私下使用，且不会重新上传。</string>
+    <string name="refs_copyright_body2">根据 Google Play 政策：Forseti 内的链接仅为参考，可能变更位置、被修改、转为付费或下线。Forseti 不控制链接的可用性、准确性或时效性。在依赖规则文本前，请务必向官方来源核实。</string>
+    <string name="refs_not_legal_advice">Forseti 仅供参考——不构成法律意见。使用本应用不会建立律师-客户关系。</string>
+    <string name="refs_footer">Forseti 仅供参考，不会再发布或修改底层规则文本。内置资源保持原始形式。若某来源需要更新或调整归属说明，请联系维护者。</string>
+    <string name="refs_license_fmt">许可证：%1$s</string>
+</resources>

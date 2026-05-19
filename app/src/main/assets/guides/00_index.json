@@ -1,0 +1,22 @@
+{
+  "guides": [
+    { "id": "forseti_shortcuts", "title": "Forseti Shortcuts and Safe Workflow", "file": "forseti_shortcuts.md", "minutes": 6 },
+    { "id": "using_forseti_as_pro_se", "title": "Using Forseti as a Pro Se Litigant — and Knowing When to Call a Lawyer", "file": "using_forseti_as_pro_se.md", "minutes": 12 },
+    { "id": "drafts_federal_vs_local", "title": "Drafts Tab: Federal Rules vs. State and Local Rules", "file": "drafts_federal_vs_local.md", "minutes": 3 },
+    { "id": "case_ingestion", "title": "Ingesting an Existing Case Into Forseti", "file": "case_ingestion.md", "minutes": 7 },
+    { "id": "filing_complaint", "title": "Filing a Civil Complaint", "file": "filing_complaint.md", "minutes": 12 },
+    { "id": "responding_to_motion", "title": "Responding to a Motion", "file": "responding_to_motion.md", "minutes": 7 },
+    { "id": "discovery_basics", "title": "Discovery Basics", "file": "discovery_basics.md", "minutes": 10 },
+    { "id": "summary_judgment", "title": "Surviving (or Bringing) Summary Judgment", "file": "summary_judgment.md", "minutes": 9 },
+    { "id": "hearing_what_to_expect", "title": "Your First Hearing: What to Expect", "file": "hearing_what_to_expect.md", "minutes": 6 },
+    { "id": "service_of_process", "title": "Service of Process Without Mistakes", "file": "service_of_process.md", "minutes": 8 },
+    { "id": "computing_time", "title": "Computing Time Under Rule 6", "file": "computing_time.md", "minutes": 5 },
+    { "id": "digital_case_folder", "title": "Building a Digital Case Folder on Your PC", "file": "digital_case_folder.md", "minutes": 7 },
+    { "id": "common_mistakes", "title": "10 Mistakes That Get Pro Se Cases Dismissed", "file": "common_mistakes.md", "minutes": 6 },
+    { "id": "ocr_capture_workflow", "title": "Using the Camera Capture (OCR) Workflow", "file": "ocr_capture_workflow.md", "minutes": 4 },
+    { "id": "rule_12_motions", "title": "Rule 12 Motions, Briefly", "file": "rule_12_motions.md", "minutes": 6 },
+    { "id": "discovery_checklist", "title": "Discovery Requests Checklist", "file": "discovery_checklist.md", "minutes": 5 },
+    { "id": "exhibits_and_binders", "title": "Exhibits and Trial Binders", "file": "exhibits_and_binders.md", "minutes": 5 },
+    { "id": "service_hygiene", "title": "Service and Subpoena Hygiene", "file": "service_hygiene.md", "minutes": 6 }
+  ]
+}

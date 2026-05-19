@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Forseti — Install on Emulator
+Comment=Build and install Forseti debug APK (emulator must be running)
+Exec=/home/user/Desktop/Projects/Forseti/scripts/install_debug_desktop.sh
+Icon=applications-development
+Terminal=true
+Categories=Development;
+Keywords=forseti;android;debug;

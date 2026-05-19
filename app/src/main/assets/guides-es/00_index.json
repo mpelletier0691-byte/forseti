@@ -1,0 +1,22 @@
+{
+  "guides": [
+    { "id": "forseti_shortcuts", "title": "Atajos de Forseti y flujo de trabajo seguro", "file": "forseti_shortcuts.md", "minutes": 6 },
+    { "id": "using_forseti_as_pro_se", "title": "Usar Forseti como litigante pro se — y saber cuándo consultar a un abogado", "file": "using_forseti_as_pro_se.md", "minutes": 12 },
+    { "id": "drafts_federal_vs_local", "title": "Pestaña Borradores: Reglas Federales frente a reglas estatales y locales", "file": "drafts_federal_vs_local.md", "minutes": 3 },
+    { "id": "case_ingestion", "title": "Incorporar un caso existente a Forseti", "file": "case_ingestion.md", "minutes": 7 },
+    { "id": "filing_complaint", "title": "Presentar una demanda civil", "file": "filing_complaint.md", "minutes": 12 },
+    { "id": "responding_to_motion", "title": "Responder a una moción", "file": "responding_to_motion.md", "minutes": 7 },
+    { "id": "discovery_basics", "title": "Fundamentos del descubrimiento (discovery)", "file": "discovery_basics.md", "minutes": 10 },
+    { "id": "summary_judgment", "title": "Sobrevivir (o presentar) un juicio sumario", "file": "summary_judgment.md", "minutes": 9 },
+    { "id": "hearing_what_to_expect", "title": "Su primera audiencia: qué esperar", "file": "hearing_what_to_expect.md", "minutes": 6 },
+    { "id": "service_of_process", "title": "Notificación del proceso (service) sin errores", "file": "service_of_process.md", "minutes": 8 },
+    { "id": "computing_time", "title": "Cómputo de plazos conforme a la Regla 6", "file": "computing_time.md", "minutes": 5 },
+    { "id": "digital_case_folder", "title": "Crear una carpeta digital del caso en su PC", "file": "digital_case_folder.md", "minutes": 7 },
+    { "id": "common_mistakes", "title": "10 errores que hacen que se desestime un caso pro se", "file": "common_mistakes.md", "minutes": 6 },
+    { "id": "ocr_capture_workflow", "title": "Usar el flujo de captura con cámara (OCR)", "file": "ocr_capture_workflow.md", "minutes": 4 },
+    { "id": "rule_12_motions", "title": "Mociones de la Regla 12, en breve", "file": "rule_12_motions.md", "minutes": 6 },
+    { "id": "discovery_checklist", "title": "Lista de verificación de solicitudes de descubrimiento", "file": "discovery_checklist.md", "minutes": 5 },
+    { "id": "exhibits_and_binders", "title": "Exhibits y carpetas de juicio", "file": "exhibits_and_binders.md", "minutes": 5 },
+    { "id": "service_hygiene", "title": "Higiene en la notificación y las citaciones (subpoenas)", "file": "service_hygiene.md", "minutes": 6 }
+  ]
+}

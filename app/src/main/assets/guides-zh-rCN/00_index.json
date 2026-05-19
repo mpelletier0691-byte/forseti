@@ -1,0 +1,22 @@
+{
+  "guides": [
+    { "id": "forseti_shortcuts", "title": "Forseti 快捷方式与安全工作流程", "file": "forseti_shortcuts.md", "minutes": 6 },
+    { "id": "using_forseti_as_pro_se", "title": "作为自诉当事人使用 Forseti——以及何时应咨询律师", "file": "using_forseti_as_pro_se.md", "minutes": 12 },
+    { "id": "drafts_federal_vs_local", "title": "草稿标签页：联邦规则与州及地方法规", "file": "drafts_federal_vs_local.md", "minutes": 3 },
+    { "id": "case_ingestion", "title": "将既有案件导入 Forseti", "file": "case_ingestion.md", "minutes": 7 },
+    { "id": "filing_complaint", "title": "提交民事起诉状", "file": "filing_complaint.md", "minutes": 12 },
+    { "id": "responding_to_motion", "title": "回应动议", "file": "responding_to_motion.md", "minutes": 7 },
+    { "id": "discovery_basics", "title": "证据开示基础", "file": "discovery_basics.md", "minutes": 10 },
+    { "id": "summary_judgment", "title": "应对（或提出）即决判决", "file": "summary_judgment.md", "minutes": 9 },
+    { "id": "hearing_what_to_expect", "title": "首次庭审：您需要了解什么", "file": "hearing_what_to_expect.md", "minutes": 6 },
+    { "id": "service_of_process", "title": "无误完成送达（service of process）", "file": "service_of_process.md", "minutes": 8 },
+    { "id": "computing_time", "title": "依规则 6 计算期限", "file": "computing_time.md", "minutes": 5 },
+    { "id": "digital_case_folder", "title": "在电脑上建立数字案件文件夹", "file": "digital_case_folder.md", "minutes": 7 },
+    { "id": "common_mistakes", "title": "导致自诉案件被驳回的 10 个常见错误", "file": "common_mistakes.md", "minutes": 6 },
+    { "id": "ocr_capture_workflow", "title": "使用相机捕获（OCR）工作流程", "file": "ocr_capture_workflow.md", "minutes": 4 },
+    { "id": "rule_12_motions", "title": "规则 12 动议简介", "file": "rule_12_motions.md", "minutes": 6 },
+    { "id": "discovery_checklist", "title": "证据开示请求核对清单", "file": "discovery_checklist.md", "minutes": 5 },
+    { "id": "exhibits_and_binders", "title": "证物与庭审卷宗", "file": "exhibits_and_binders.md", "minutes": 5 },
+    { "id": "service_hygiene", "title": "送达与传票规范要点", "file": "service_hygiene.md", "minutes": 6 }
+  ]
+}

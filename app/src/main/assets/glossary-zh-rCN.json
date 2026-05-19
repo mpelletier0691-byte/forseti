@@ -1,0 +1,380 @@
+{
+  "terms": [
+    {
+      "term": "宣誓书 (Affidavit)",
+      "definition": "经宣誓的书面事实陈述，通常在伪证罪惩罚下签署并公证。"
+    },
+    {
+      "term": "主张 (Allegation)",
+      "definition": "诉状文书中一方意图证明的陈述。"
+    },
+    {
+      "term": "修正诉状 (Amended Pleading)",
+      "definition": "取代先前诉状的文书，依 FRCP 15 允许提出。"
+    },
+    {
+      "term": "答辩状 (Answer)",
+      "definition": "被告对起诉状的回应，承认或否认每项编号主张。"
+    },
+    {
+      "term": "出庭 (Appearance)",
+      "definition": "作为当事人或律师正式进入诉讼，通常通过提交通知。"
+    },
+    {
+      "term": "法官审理 (Bench Trial)",
+      "definition": "仅由法官裁判、无陪审团的审判。"
+    },
+    {
+      "term": "特别说明书 (Bill of Particulars)",
+      "definition": "某些辖区要求的更详细主张说明；联邦对应为规则 12(e) 动议。"
+    },
+    {
+      "term": "法律备忘录 (Brief)",
+      "definition": "支持或反对动议或上诉的书面论证。"
+    },
+    {
+      "term": "举证责任 (Burden of Proof)",
+      "definition": "证明争议事实的义务；民事案件通常为优势证据标准。"
+    },
+    {
+      "term": "诉因 (Cause of Action)",
+      "definition": "依法可提起诉讼的请求（如过失、违约）。"
+    },
+    {
+      "term": "案卷标题 (Caption)",
+      "definition": "法院文书顶部标明法院、当事人及案号的标题。"
+    },
+    {
+      "term": "送达证明 (Certificate of Service)",
+      "definition": "附于提交文件的签署声明，证明文书送达方式与时间。"
+    },
+    {
+      "term": "起诉状 (Complaint)",
+      "definition": "启动诉讼的诉状，陈述诉请与请求救济。"
+    },
+    {
+      "term": "反诉 (Counterclaim)",
+      "definition": "被告在同一诉讼中对原告提出的请求 (FRCP 13)。"
+    },
+    {
+      "term": "交叉诉 (Crossclaim)",
+      "definition": "一名被告对同案另一被告提出的请求。"
+    },
+    {
+      "term": "缺席 (Default)",
+      "definition": "未答辩或未应诉；依 FRCP 55(a) 由书记员记入。"
+    },
+    {
+      "term": "缺席判决 (Default Judgment)",
+      "definition": "针对未应诉方作出的判决 (FRCP 55(b))。"
+    },
+    {
+      "term": "诉状异议 (Demurrer)",
+      "definition": "旧称（部分州仍用），指诉状未能陈述请求的动议；联邦对应为规则 12(b)(6)。"
+    },
+    {
+      "term": "取证 (Deposition)",
+      "definition": "庭外经记录的宣誓口头证言，供日后使用 (FRCP 30)。"
+    },
+    {
+      "term": "证据开示 (Discovery)",
+      "definition": "庭前交换证据与证人信息的程序 (FRCP 26-37)。"
+    },
+    {
+      "term": "多样性管辖 (Diversity Jurisdiction)",
+      "definition": "联邦法院对争议金额逾 $75,000 的不同州公民间纠纷的管辖 (28 U.S.C. Sec. 1332)。"
+    },
+    {
+      "term": "卷宗 (Docket)",
+      "definition": "案件中提交文件与命令的官方 chronological 记录。"
+    },
+    {
+      "term": "ECF / CM/ECF",
+      "definition": "案件管理/电子卷宗：联邦法院电子提交系统。"
+    },
+    {
+      "term": "衡平救济 (Equitable Relief)",
+      "definition": "非金钱救济，如禁令或强制履行。"
+    },
+    {
+      "term": "禁反言 (Estoppel)",
+      "definition": "禁止当事人作出与其先前行为所隐含内容相反主张的原则。"
+    },
+    {
+      "term": "单方 (Ex Parte)",
+      "definition": "仅涉及一方、未通知对方的沟通或程序。"
+    },
+    {
+      "term": "证物 (Exhibit)",
+      "definition": "附于诉状文书或作为证据提交的文档、照片或物品。"
+    },
+    {
+      "term": "FRCP",
+      "definition": "Federal Rules of Civil Procedure：管辖美国地区法院民事案件的规则。"
+    },
+    {
+      "term": "FRE",
+      "definition": "Federal Rules of Evidence：规定联邦庭审中可采纳证据的规则。"
+    },
+    {
+      "term": "法院/论坛 (Forum)",
+      "definition": "审理案件的法院或管辖地。"
+    },
+    {
+      "term": "不便法院 (Forum Non Conveniens)",
+      "definition": "存在更合适法院时允许驳回案件的原则。"
+    },
+    {
+      "term": "人身保护令 (Habeas Corpus)",
+      "definition": "质疑羁押合法性的令状 (28 U.S.C. Sec. 2241, 2254, 2255)。"
+    },
+    {
+      "term": "传闻 (Hearsay)",
+      "definition": "庭外陈述用于证明所言之真实性；一般不可采纳 (FRE 802)。"
+    },
+    {
+      "term": "法官室审查 (In Camera)",
+      "definition": "法官私下审查，常用于机密或特权文件。"
+    },
+    {
+      "term": "贫困诉讼 (In Forma Pauperis, IFP)",
+      "definition": "因经济困难获准免交立案费 (28 U.S.C. Sec. 1915)。"
+    },
+    {
+      "term": "禁令 (Injunction)",
+      "definition": "要求当事人作为或不作为的法院命令 (FRCP 65)。"
+    },
+    {
+      "term": "争物诉讼 (Interpleader)",
+      "definition": "使持有人存入争议财产并由请求权人争讼的程序 (FRCP 22; 28 U.S.C. Sec. 1335)。"
+    },
+    {
+      "term": "书面质询 (Interrogatory)",
+      "definition": "须宣誓回答的书面问题 (FRCP 33)。"
+    },
+    {
+      "term": "合并 (Joinder)",
+      "definition": "将当事人或请求加入案件 (FRCP 18-21)。"
+    },
+    {
+      "term": "判决 (Judgment)",
+      "definition": "法院对案件的终局决定 (FRCP 54)。"
+    },
+    {
+      "term": "依法判决 (JMOL)",
+      "definition": "理性陪审团不可能支持一方时作出的判决 (FRCP 50)。"
+    },
+    {
+      "term": "管辖权 (Jurisdiction)",
+      "definition": "法院受理案件的权力；含事项管辖与人管辖。"
+    },
+    {
+      "term": "地方法规 (Local Rule)",
+      "definition": "地区法院为补充 FRCP 制定的规则 (FRCP 83)。"
+    },
+    {
+      "term": "治安法官 (Magistrate Judge)",
+      "definition": "处理大量庭前事项、经同意可主审案件的联邦司法官员 (FRCP 72-73)。"
+    },
+    {
+      "term": "动议 (Motion)",
+      "definition": "向法院请求命令或裁决 (FRCP 7(b))。"
+    },
+    {
+      "term": "庭前证据动议 (Motion in Limine)",
+      "definition": "庭前请求排除或采纳特定证据的动议。"
+    },
+    {
+      "term": "通知 (Notice)",
+      "definition": "告知当事人法院行为或提交文件的正式通讯。"
+    },
+    {
+      "term": "异议 (Objection)",
+      "definition": "对提问、证物或裁决的正式反对。"
+    },
+    {
+      "term": "命令 (Order)",
+      "definition": "法官发出的书面或口头指示。"
+    },
+    {
+      "term": "对人管辖权 (Personal Jurisdiction)",
+      "definition": "法院对当事人的权威；通常要求与论坛州有最低限度联系。"
+    },
+    {
+      "term": "原告 (Plaintiff)",
+      "definition": "提起诉讼的一方。"
+    },
+    {
+      "term": "诉状文书 (Pleading)",
+      "definition": "陈述诉请或抗辩的正式文件（起诉状、答辩状、反诉等）(FRCP 7(a))。"
+    },
+    {
+      "term": "优势证据 (Preponderance of the Evidence)",
+      "definition": "民事举证标准：更有可能成立。"
+    },
+    {
+      "term": "特权 (Privilege)",
+      "definition": "免于被迫披露特定通讯的法律保护（如律师-客户特权）。"
+    },
+    {
+      "term": "自诉 (Pro Se)",
+      "definition": "拉丁语「为自己」——无律师自行出庭。"
+    },
+    {
+      "term": "保护令 (Protective Order)",
+      "definition": "限制证据开示以保护当事人免于不当负担或披露的命令 (FRCP 26(c))。"
+    },
+    {
+      "term": "回复 (Reply)",
+      "definition": "对反诉答辩或反对书的回应。"
+    },
+    {
+      "term": "移案 (Removal)",
+      "definition": "将案件从州法院转至联邦法院 (28 U.S.C. Sec. 1441)。"
+    },
+    {
+      "term": "自认请求 (RFA)",
+      "definition": "要求对方承认或否认事实的证据开示工具 (FRCP 36)。"
+    },
+    {
+      "term": "文件出示请求 (RFP)",
+      "definition": "索取文件或物品的 evidence 开示请求 (FRCP 34)。"
+    },
+    {
+      "term": "制裁 (Sanction)",
+      "definition": "违反规则或命令的处罚（如 FRCP 11、37）。"
+    },
+    {
+      "term": "日程命令 (Scheduling Order)",
+      "definition": "依 FRCP 16(b) 设定案件期限的命令。"
+    },
+    {
+      "term": "送达 (Service of Process)",
+      "definition": "向法院当事人正式递交诉讼文书 (FRCP 4, 5)。"
+    },
+    {
+      "term": "诉讼资格 (Standing)",
+      "definition": "原告须遭受具体损害的宪法要求。"
+    },
+    {
+      "term": "诉讼时效 (Statute of Limitations)",
+      "definition": "提起诉讼的法定时间限制。"
+    },
+    {
+      "term": "传票 (Subpoena)",
+      "definition": "强制作证或出示文件的法院命令 (FRCP 45)。"
+    },
+    {
+      "term": "事项管辖权 (Subject-Matter Jurisdiction)",
+      "definition": "法院受理特定类型案件的权力。"
+    },
+    {
+      "term": "依职权 (Sua Sponte)",
+      "definition": "法院主动采取的行为。"
+    },
+    {
+      "term": "即决判决 (Summary Judgment)",
+      "definition": "重要事实无真正争议时不经庭审作出的判决 (FRCP 56)。"
+    },
+    {
+      "term": "传票 (Summons)",
+      "definition": "诉讼已提起、被告须回应的官方通知 (FRCP 4)。"
+    },
+    {
+      "term": "补充管辖 (Supplemental Jurisdiction)",
+      "definition": "联邦法院审理相关州法请求的权力 (28 U.S.C. Sec. 1367)。"
+    },
+    {
+      "term": "侵权 (Tort)",
+      "definition": "造成损害的民事不法行为（非违约）。"
+    },
+    {
+      "term": "庭审笔录 (Transcript)",
+      "definition": "法院程序的正式书面记录。"
+    },
+    {
+      "term": "审判地 (Venue)",
+      "definition": "诉讼的适当地理位置 (28 U.S.C. Sec. 1391)。"
+    },
+    {
+      "term": "裁决 (Verdict)",
+      "definition": "陪审团对提交问题的决定。"
+    },
+    {
+      "term": "陪审团遴选 (Voir Dire)",
+      "definition": "遴选陪审员时的询问以判断偏见或资格。"
+    },
+    {
+      "term": "放弃送达 (Waiver of Service)",
+      "definition": "被告同意非正式接受送达 (FRCP 4(d))。"
+    },
+    {
+      "term": "有既判力驳回 (With Prejudice)",
+      "definition": "禁止就同一请求再次起诉的驳回。"
+    },
+    {
+      "term": "无既判力驳回 (Without Prejudice)",
+      "definition": "允许再次起诉的驳回。"
+    },
+    {
+      "term": "令状 (Writ)",
+      "definition": "法院签发的正式书面命令。"
+    },
+    {
+      "term": "诉讼中止 (Abatement)",
+      "definition": "因程序理由暂停或驳回诉讼（对照 FRCP 41）。"
+    },
+    {
+      "term": "损害赔偿金额条款 (Ad Damnum)",
+      "definition": "起诉状中列明请求金钱数额的条款。"
+    },
+    {
+      "term": "费用清单 (Bill of Costs)",
+      "definition": "判决或终结后可征税法院费用的清单。"
+    },
+    {
+      "term": "保管链 (Chain of Custody)",
+      "definition": "证明证据从收集至庭审流转过程的记录。"
+    },
+    {
+      "term": "宣告判决 (Declaratory Judgment)",
+      "definition": "对权利作出有约束力认定而不命令强制救济 (28 U.S.C. Sec. 2201)。"
+    },
+    {
+      "term": "指示裁决 (Directed Verdict)",
+      "definition": "裁决前依法判决的旧称（见 FRCP 50）。"
+    },
+    {
+      "term": "无既判力驳回 (Dismissal Without Prejudice)",
+      "definition": "不阻止就同一请求再次起诉的驳回。"
+    },
+    {
+      "term": "传真提交 (Facsimile Filing)",
+      "definition": "地方法规允许时以传真提交；许多法院现偏好 ECF。"
+    },
+    {
+      "term": "诉讼监护人 (Guardian ad Litem)",
+      "definition": "法院为无行为能力当事人或未成年人指定的代表。"
+    },
+    {
+      "term": "全体法官意见 (Per Curiam)",
+      "definition": "法院整体发布的不署名意见。"
+    },
+    {
+      "term": "无因回避 (Peremptory Challenge)",
+      "definition": "无需说明理由排除待选陪审员（次数有限）。"
+    },
+    {
+      "term": "既判力 (Res Judicata)",
+      "definition": "请求排除，禁止就已终局裁决的请求再诉。"
+    },
+    {
+      "term": "特别主事官 (Special Master)",
+      "definition": "依 FRCP 53 听审证据或管理证据开示的指定人。"
+    },
+    {
+      "term": "第三人诉 (Third-Party Complaint)",
+      "definition": "被告将非当事人引入案件并对其提出的请求 (FRCP 14)。"
+    }
+  ]
+}

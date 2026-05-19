@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Forseti</string>
+    <string name="app_tagline">Pro-Se Civil Procedure Companion</string>
+
+    <string name="splash_subtitle">Lawgiver of the Aesir</string>
+    <string name="splash_version_fmt">Version %1$s</string>
+    <string name="splash_motto">AI might be powerful, but nothing is more powerful than the human spirit and drive — let this help guide you in your saga.</string>
+
+    <string name="disclaimer_title">Read Before You File</string>
+    <string name="disclaimer_body">Forseti helps you organize procedure and draft filings, but it can make mistakes. Always review every document against your court\u2019s local rules and standing orders before filing. You are responsible for your legal decisions and submissions.\n\nForseti is information only. It is not legal advice and using it does not create an attorney-client relationship. When the stakes are real, consult a licensed attorney in your jurisdiction.\n\nLinks shown in the app are references to outside websites maintained by their respective owners. They may move, change, or go offline; Forseti does not control or guarantee their accuracy. Use the References tab for the full list and the Uploaded Rules tab if you want to keep your own copy of any rule PDF on the device.\n\nAI might be powerful, but nothing is more powerful than the human spirit and drive — let this help guide you in your saga.</string>
+    <string name="disclaimer_accept">I understand</string>
+    <string name="footer_disclaimer">Information only — not legal advice. You are responsible for your filings.</string>
+
+    <string name="nav_quick_jump">Quick Jump</string>
+    <string name="nav_drafts">Motion Drafts</string>
+    <string name="nav_guides">Guides</string>
+    <string name="nav_states">State Rules</string>
+    <string name="nav_deadlines">Deadlines</string>
+    <string name="nav_cases">Case Profile</string>
+    <string name="nav_scanner">Document Scanner</string>
+    <string name="scanner_ingest_menu_cd">Ingest files into selected case</string>
+    <string name="nav_backup">Backup</string>
+    <string name="nav_glossary">Glossary</string>
+    <string name="nav_notes">Notes &amp; Bookmarks</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_imports">Uploaded Rules</string>
+    <string name="nav_case_studies">Case Studies</string>
+    <string name="nav_references">References</string>
+
+    <string name="sidebar_trial_heading">Trial period</string>
+    <string name="sidebar_trial_cta">Tap here to purchase on Google Play</string>
+    <string name="sidebar_trial_remaining">Time remaining: %1$s</string>
+
+    <string name="cd_open_drawer">Open navigation drawer</string>
+    <string name="cd_close_drawer">Close navigation drawer</string>
+    <string name="cd_back_to_dashboard">Back to dashboard</string>
+    <string name="case_delete_title">Delete this case?</string>
+    <string name="case_delete_body">This permanently removes the case profile, every deadline you tracked for it, scheduled reminders, and the on-device workspace folder. This cannot be undone.</string>
+    <string name="case_delete_confirm">Delete</string>
+    <string name="case_delete_cancel">Keep</string>
+    <string name="case_delete_cd">Delete case</string>
+    <string name="dashboard_welcome_heading">Welcome to Forseti</string>
+    <string name="dashboard_welcome_subheading">Choose a destination from the sidebar to get started.</string>
+    <string name="cd_app_logo">Forseti logo, raven on scales of justice</string>
+    <string name="cd_copy_page_text">Copy page text using OCR</string>
+    <string name="toast_copied_to_clipboard">Copied to clipboard</string>
+    <string name="quick_jump_copy_no_text">No text was recognized on this page. Try another page, or use Copy after zooming in.</string>
+    <string name="quick_jump_copy_try_ocr_sheet">Opening page text — if it stays empty, try a different zoom level or scroll to reload the page, then use Copy all in that dialog.</string>
+    <string name="quick_jump_copy_no_renderer">PDF is not loaded yet. Wait a moment and try again.</string>
+
+    <string name="pdf_page_text_title">Page %1$d — text (OCR)</string>
+    <string name="pdf_page_text_loading">Recognizing text on this page\u2026</string>
+    <string name="pdf_page_text_hint">Drag handles to highlight text, then tap Read selection. Long-press or double-tap the PDF page to open this dialog.</string>
+    <string name="pdf_read_all_page">Read page</string>
+    <string name="pdf_read_selection">Read selection</string>
+    <string name="pdf_copy_all">Copy all</string>
+    <string name="pdf_page_text_close">Close</string>
+    <string name="cd_pdf_page_text">Show selectable page text (OCR)</string>
+
+    <string name="settings_disclaimer_title">Disclaimer</string>
+    <string name="settings_disclaimer_body">Forseti helps you organize procedure and draft filings, but it can make mistakes. Always review every document against your court\u2019s rules before filing. You are responsible for your legal decisions and submissions.\n\nLinks shown in the app are references to outside websites maintained by their respective owners. They may move, change, or go offline. Forseti does not control or guarantee their accuracy. The full reference list lives in the References tab; you can keep your own court-rule PDFs on the device via the Uploaded Rules tab.\n\nAI might be powerful, but nothing is more powerful than the human spirit and drive — let this help guide you in your saga.</string>
+
+    <string name="receive_share_pick">Save shared file to\u2026</string>
+
+    <!-- Trial / billing -->
+    <string name="trial_welcome_title">Welcome to Forseti</string>
+    <string name="trial_welcome_body">You have a 3\u2011day free trial. All features are unlocked. Tap I understand to begin.\n\nWhen the trial ends you can unlock Forseti permanently for $4.99 \u2014 a one\u2011time payment, no subscription, no ads.</string>
+    <string name="trial_remaining_fmt">Trial: %1$s remaining</string>
+    <string name="trial_remaining_hours_fmt">Trial: %1$d hours left</string>
+    <string name="trial_ending_soon_title">Your trial ends soon</string>
+    <string name="trial_ending_soon_body">Less than a day left on your free trial. Unlock Forseti permanently for $4.99 to keep using every feature.</string>
+    <string name="trial_expired_title">Your trial has ended</string>
+    <string name="trial_expired_body">Forseti needs a one\u2011time $4.99 unlock to continue. Restore the purchase if you already bought it on this Google account.</string>
+    <string name="trial_buy">Buy Forseti ($4.99)</string>
+    <string name="trial_restore">Restore purchase</string>
+    <string name="trial_open_play">Open Play Store listing</string>
+    <string name="trial_purchased_title">Thanks for supporting Forseti</string>
+    <string name="trial_purchased_body">All features are now permanently unlocked on every device signed in to this Google account.</string>
+    <string name="billing_unavailable">Google Play Billing is not available on this device. The app will stay in trial mode.</string>
+
+    <!-- About / brand -->
+    <string name="about_brand_title">Forseti is built for fighters.</string>
+    <string name="about_brand_body">AI assistants can help, but nothing is more powerful than human spirit and determination. This toolkit exists to help you stay organized, stay focused, and stay strong when the system tries to overwhelm you.\n\nWolves shouldn\u2019t fall like sheep \u2014 and neither should you.\n\nForseti gives you structure, clarity, and tools, but you are responsible for your actions, your filings, and your decisions. This app is here to support your strength, not replace it.</string>
+    <string name="about_brand_signoff">Asvaettir Labs \u2014 Tools for the Determined.</string>
+
+    <!-- Case ingestion -->
+    <string name="case_ingest_section_title">Bulk file ingestion (this case)</string>
+    <string name="case_ingest_folder">Brokkr Forge Process</string>
+    <string name="case_ingest_images">Image Ingestion</string>
+    <string name="case_ingest_tip">Brokkr Forge Process imports a whole folder and auto-routes every file into the Brokkr-Forge layout for this case. Image Ingestion lets you pick photos, PDFs, audio, or video to drop straight in. Rename files first (e.g. \"2024\u201103\u201112_motion_to_dismiss.pdf\" or \"exhibit_A_invoice.jpg\") so Forseti can classify them automatically — anything unclassified lands in 99_Inbox/ for you to move from Case Profile \u2192 Open case.</string>
+
+    <!-- Language -->
+    <string name="language_picker_title">Choose your language</string>
+    <string name="language_picker_subtitle">Menus, guides, and help appear in this language. Official court PDFs and bundled federal forms stay in English.</string>
+    <string name="language_picker_continue">Continue</string>
+    <string name="language_picker_cancel">Cancel</string>
+    <string name="settings_language_title">App language</string>
+    <string name="settings_language_subtitle">Menus, guides, and app help. Official court PDFs and forms remain in English.</string>
+    <string name="settings_section_language">Language</string>
+    <string name="settings_section_trial">Trial &amp; purchase</string>
+    <string name="settings_unlocked_title">Forseti unlocked</string>
+    <string name="settings_unlocked_body">Thanks for supporting development. All features are permanently available on every device signed in to this Google account.</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_force_dark_title">Force dark theme</string>
+    <string name="settings_force_dark_subtitle_on">Currently pinned on. Toggle off to follow the system theme.</string>
+    <string name="settings_force_dark_subtitle_off">Following the system theme.</string>
+    <string name="settings_section_content">Content</string>
+    <string name="settings_bundled_rules_title">Bundled rules</string>
+    <string name="settings_bundled_rules_subtitle">FRCP 2024 (restyled). State directory links open the official source.</string>
+    <string name="settings_bookmarks_title">Bookmarks &amp; notes</string>
+    <string name="settings_bookmarks_subtitle">Stored locally. Wipe by clearing app data.</string>
+    <string name="settings_section_about">About</string>
+    <string name="settings_version_fmt">Forseti %1$s</string>
+    <string name="settings_build_fmt">Build %1$d</string>
+
+    <!-- First-run tutorial -->
+    <string name="tutorial_skip">Skip tour</string>
+    <string name="tutorial_next">Next</string>
+    <string name="tutorial_done">Get started</string>
+    <string name="tutorial_step_fmt">Step %1$d of %2$d</string>
+    <string name="tutorial_step1_title">Welcome to Forseti</string>
+    <string name="tutorial_step1_body">This app helps you stay organized in U.S. federal civil cases — procedure, deadlines, and your documents, all on your device.</string>
+    <string name="tutorial_step2_title">Start in Guides</string>
+    <string name="tutorial_step2_body">Your first lesson: open Guides in the sidebar and read how the process works. Federal rules PDFs stay in English; guides follow your app language.</string>
+    <string name="tutorial_step3_title">Quick Jump</string>
+    <string name="tutorial_step3_body">Browse the Federal Rules of Civil Procedure (FRCP) and jump to the rule you need.</string>
+    <string name="tutorial_step4_title">Case profile</string>
+    <string name="tutorial_step4_body">Create a case to store filings, scans, and notes in one workspace folder on your phone.</string>
+    <string name="tutorial_step5_title">Deadlines</string>
+    <string name="tutorial_step5_body">Track dates that matter. Missing a deadline is one of the most common problems in litigation.</string>
+    <string name="tutorial_step6_title">You\u2019re ready</string>
+    <string name="tutorial_step6_body">Open Guides from the sidebar when you\u2019re ready. Change language anytime in Settings.</string>
+</resources>

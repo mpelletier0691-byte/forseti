@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="cache" path="/" />
+    <files-path name="files" path="/" />
+    <!-- Case workspaces (and any other app-specific external storage we write to)
+         live under getExternalFilesDir(...). Without this entry FileProvider
+         rejects URIs from case_workspace/ with "Failed to find configured root",
+         breaking Open / Share of ingested case files. -->
+    <external-files-path name="external_files" path="/" />
+    <external-cache-path name="external_cache" path="/" />
+</paths>

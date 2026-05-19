@@ -1,0 +1,380 @@
+{
+  "terms": [
+    {
+      "term": "Affidavit",
+      "definition": "Declaración jurada escrita de hechos, firmada bajo pena de perjurio y por lo general notariada."
+    },
+    {
+      "term": "Allegation",
+      "definition": "Afirmación en un escrito procesal que una parte pretende probar."
+    },
+    {
+      "term": "Amended Pleading",
+      "definition": "Escrito procesal que sustituye uno anterior, permitido conforme a FRCP 15."
+    },
+    {
+      "term": "Answer",
+      "definition": "Respuesta del demandado a la demanda, admitiendo o negando cada alegación numerada."
+    },
+    {
+      "term": "Appearance",
+      "definition": "Comparecencia formal en un caso como parte o abogado, a menudo mediante aviso presentado."
+    },
+    {
+      "term": "Bench Trial",
+      "definition": "Juicio decidido solo por el juez, sin jurado."
+    },
+    {
+      "term": "Bill of Particulars",
+      "definition": "Exposición más detallada de reclamaciones solicitada en algunas jurisdicciones; el equivalente federal es una moción conforme a la Regla 12(e)."
+    },
+    {
+      "term": "Brief",
+      "definition": "Argumento escrito presentado para apoyar u oponerse a una moción o apelación."
+    },
+    {
+      "term": "Burden of Proof",
+      "definition": "Deber de probar una afirmación disputada; en lo civil, por lo general por preponderancia de la evidencia."
+    },
+    {
+      "term": "Cause of Action",
+      "definition": "Reclamación legalmente reconocida que da derecho a demandar (p. ej., negligencia, incumplimiento de contrato)."
+    },
+    {
+      "term": "Caption",
+      "definition": "Encabezado superior de un escrito judicial que identifica el tribunal, las partes y el número de caso."
+    },
+    {
+      "term": "Certificate of Service",
+      "definition": "Declaración firmada adjunta a una presentación que certifica cómo y cuándo se notificó el documento."
+    },
+    {
+      "term": "Complaint",
+      "definition": "Escrito que inicia una demanda, exponiendo las reclamaciones y el remedio solicitado."
+    },
+    {
+      "term": "Counterclaim",
+      "definition": "Reclamación del demandado contra el demandante en la misma acción (FRCP 13)."
+    },
+    {
+      "term": "Crossclaim",
+      "definition": "Reclamación de un demandado contra otro en la misma acción."
+    },
+    {
+      "term": "Default",
+      "definition": "Incumplimiento de comparecer o defender; registrado por el secretario conforme a FRCP 55(a)."
+    },
+    {
+      "term": "Default Judgment",
+      "definition": "Sentencia dictada contra quien no defendió (FRCP 55(b))."
+    },
+    {
+      "term": "Demurrer",
+      "definition": "Término antiguo (aún usado en algunos estados) para una moción que dice que la demanda no expone una reclamación; el equivalente federal es la Regla 12(b)(6)."
+    },
+    {
+      "term": "Deposition",
+      "definition": "Testimonio oral fuera del tribunal registrado para uso posterior, bajo juramento (FRCP 30)."
+    },
+    {
+      "term": "Discovery",
+      "definition": "Proceso previo al juicio para intercambiar información sobre evidencia y testigos (FRCP 26-37)."
+    },
+    {
+      "term": "Diversity Jurisdiction",
+      "definition": "Jurisdicción federal sobre disputas entre ciudadanos de distintos estados por más de $75,000 (28 U.S.C. Sec. 1332)."
+    },
+    {
+      "term": "Docket",
+      "definition": "Registro cronológico oficial de presentaciones y órdenes en un caso."
+    },
+    {
+      "term": "ECF / CM/ECF",
+      "definition": "Case Management / Electronic Case Files: sistema electrónico de presentación de los tribunales federales."
+    },
+    {
+      "term": "Equitable Relief",
+      "definition": "Remedio no monetario, como medida cautelar o cumplimiento específico."
+    },
+    {
+      "term": "Estoppel",
+      "definition": "Doctrina que impide a una parte afirmar algo contrario a lo que implican sus actos previos."
+    },
+    {
+      "term": "Ex Parte",
+      "definition": "Comunicación o procedimiento que involucra solo a una parte, sin aviso a la otra."
+    },
+    {
+      "term": "Exhibit",
+      "definition": "Documento, foto u objeto adjunto a un escrito o introducido como prueba."
+    },
+    {
+      "term": "FRCP",
+      "definition": "Federal Rules of Civil Procedure: reglas que rigen los casos civiles en los tribunales de distrito de EE. UU."
+    },
+    {
+      "term": "FRE",
+      "definition": "Federal Rules of Evidence: reglas sobre qué evidencia puede admitirse en juicios federales."
+    },
+    {
+      "term": "Forum",
+      "definition": "Tribunal o jurisdicción donde se ventila un caso."
+    },
+    {
+      "term": "Forum Non Conveniens",
+      "definition": "Doctrina que permite desestimar un caso si existe un foro más apropiado en otro lugar."
+    },
+    {
+      "term": "Habeas Corpus",
+      "definition": "Recurso que impugna la legalidad de una detención (28 U.S.C. Sec. 2241, 2254, 2255)."
+    },
+    {
+      "term": "Hearsay",
+      "definition": "Declaración fuera del tribunal ofrecida para probar la verdad de lo afirmado; por lo general inadmisible (FRE 802)."
+    },
+    {
+      "term": "In Camera",
+      "definition": "Revisión privada por el juez, a menudo de documentos confidenciales o privilegiados."
+    },
+    {
+      "term": "In Forma Pauperis (IFP)",
+      "definition": "Permiso para proceder sin pagar la tasa de presentación por dificultad económica (28 U.S.C. Sec. 1915)."
+    },
+    {
+      "term": "Injunction",
+      "definition": "Orden judicial que exige a una parte hacer o abstenerse de hacer algo (FRCP 65)."
+    },
+    {
+      "term": "Interpleader",
+      "definition": "Acción que permite a un depositario depositar bienes disputados y dejar que los reclamantes litiguen (FRCP 22; 28 U.S.C. Sec. 1335)."
+    },
+    {
+      "term": "Interrogatory",
+      "definition": "Pregunta escrita a otra parte que debe responderse bajo juramento (FRCP 33)."
+    },
+    {
+      "term": "Joinder",
+      "definition": "Adición de partes o reclamaciones a un caso (FRCP 18-21)."
+    },
+    {
+      "term": "Judgment",
+      "definition": "Decisión final del tribunal en un caso (FRCP 54)."
+    },
+    {
+      "term": "Judgment as a Matter of Law (JMOL)",
+      "definition": "Sentencia cuando ningún jurado razonable podría fallar a favor de una parte (FRCP 50)."
+    },
+    {
+      "term": "Jurisdiction",
+      "definition": "Poder del tribunal para conocer de un caso; sobre el asunto y personal."
+    },
+    {
+      "term": "Local Rule",
+      "definition": "Regla adoptada por un tribunal de distrito para complementar la FRCP (FRCP 83)."
+    },
+    {
+      "term": "Magistrate Judge",
+      "definition": "Funcionario judicial federal que tramita muchos asuntos pretriales y puede juzgar casos con consentimiento (FRCP 72-73)."
+    },
+    {
+      "term": "Motion",
+      "definition": "Solicitud al tribunal de una orden o resolución (FRCP 7(b))."
+    },
+    {
+      "term": "Motion in Limine",
+      "definition": "Moción pretrial para excluir o admitir evidencia específica en el juicio."
+    },
+    {
+      "term": "Notice",
+      "definition": "Comunicación formal que informa a las partes de una actuación o presentación judicial."
+    },
+    {
+      "term": "Objection",
+      "definition": "Manifestación formal de desacuerdo con una pregunta, exhibit o resolución."
+    },
+    {
+      "term": "Order",
+      "definition": "Dirección escrita u oral emitida por un juez."
+    },
+    {
+      "term": "Personal Jurisdiction",
+      "definition": "Autoridad del tribunal sobre las partes; por lo general requiere contactos mínimos con el estado foro."
+    },
+    {
+      "term": "Plaintiff",
+      "definition": "Parte que inicia una demanda."
+    },
+    {
+      "term": "Pleading",
+      "definition": "Documento formal que expone reclamaciones o defensas (demanda, contestación, reconvención, etc.) (FRCP 7(a))."
+    },
+    {
+      "term": "Preponderance of the Evidence",
+      "definition": "Carga de la prueba en lo civil: más probable que no."
+    },
+    {
+      "term": "Privilege",
+      "definition": "Protección legal contra ser obligado a revelar ciertas comunicaciones (p. ej., abogado-cliente)."
+    },
+    {
+      "term": "Pro Se",
+      "definition": "Latín: «por uno mismo» — representarse en el tribunal sin abogado."
+    },
+    {
+      "term": "Protective Order",
+      "definition": "Orden que limita el descubrimiento para proteger a una parte de carga indebida o divulgación (FRCP 26(c))."
+    },
+    {
+      "term": "Reply",
+      "definition": "Respuesta a la contestación de una reconvención, o a un escrito de oposición."
+    },
+    {
+      "term": "Removal",
+      "definition": "Traslado de un caso de tribunal estatal a federal (28 U.S.C. Sec. 1441)."
+    },
+    {
+      "term": "Request for Admission (RFA)",
+      "definition": "Herramienta de descubrimiento que pide admitir o negar un hecho (FRCP 36)."
+    },
+    {
+      "term": "Request for Production (RFP)",
+      "definition": "Solicitud de descubrimiento de documentos o cosas (FRCP 34)."
+    },
+    {
+      "term": "Sanction",
+      "definition": "Penalidad por violar una regla u orden (p. ej., FRCP 11, 37)."
+    },
+    {
+      "term": "Scheduling Order",
+      "definition": "Orden conforme a FRCP 16(b) que fija plazos del caso."
+    },
+    {
+      "term": "Service of Process",
+      "definition": "Entrega formal de documentos judiciales a una parte (FRCP 4, 5)."
+    },
+    {
+      "term": "Standing",
+      "definition": "Requisito constitucional de que el demandante haya sufrido un perjuicio concreto."
+    },
+    {
+      "term": "Statute of Limitations",
+      "definition": "Plazo dentro del cual debe presentarse una demanda."
+    },
+    {
+      "term": "Subpoena",
+      "definition": "Orden judicial que obliga a testimonio o producción de documentos (FRCP 45)."
+    },
+    {
+      "term": "Subject-Matter Jurisdiction",
+      "definition": "Autoridad del tribunal para conocer de un tipo particular de caso."
+    },
+    {
+      "term": "Sua Sponte",
+      "definition": "Actuación del tribunal por iniciativa propia."
+    },
+    {
+      "term": "Summary Judgment",
+      "definition": "Sentencia sin juicio porque no hay disputa genuina sobre hecho material (FRCP 56)."
+    },
+    {
+      "term": "Summons",
+      "definition": "Aviso oficial de que se presentó una demanda y que el demandado debe responder (FRCP 4)."
+    },
+    {
+      "term": "Supplemental Jurisdiction",
+      "definition": "Poder del tribunal federal para conocer reclamaciones estatales relacionadas (28 U.S.C. Sec. 1367)."
+    },
+    {
+      "term": "Tort",
+      "definition": "Agravio civil (distinto del incumplimiento contractual) que causa daño."
+    },
+    {
+      "term": "Transcript",
+      "definition": "Registro escrito oficial de actuaciones judiciales."
+    },
+    {
+      "term": "Venue",
+      "definition": "Ubicación geográfica apropiada para una demanda (28 U.S.C. Sec. 1391)."
+    },
+    {
+      "term": "Verdict",
+      "definition": "Decisión del jurado sobre las cuestiones sometidas."
+    },
+    {
+      "term": "Voir Dire",
+      "definition": "Interrogatorio en selección de jurado para determinar sesgo o aptitud."
+    },
+    {
+      "term": "Waiver of Service",
+      "definition": "Acuerdo del demandado de aceptar notificación informal (FRCP 4(d))."
+    },
+    {
+      "term": "With Prejudice",
+      "definition": "Desestimación que impide volver a presentar la misma reclamación."
+    },
+    {
+      "term": "Without Prejudice",
+      "definition": "Desestimación que permite volver a presentar."
+    },
+    {
+      "term": "Writ",
+      "definition": "Orden formal escrita emitida por un tribunal."
+    },
+    {
+      "term": "Abatement",
+      "definition": "Suspensión o desestimación de un procedimiento por razones procesales (compare FRCP 41)."
+    },
+    {
+      "term": "Ad Damnum",
+      "definition": "Cláusula de la demanda que indica el monto en dinero solicitado."
+    },
+    {
+      "term": "Bill of Costs",
+      "definition": "Relación de costas procesales gravables tras sentencia o disposición."
+    },
+    {
+      "term": "Chain of Custody",
+      "definition": "Documentación del recorrido de la evidencia desde su recolección hasta el juicio."
+    },
+    {
+      "term": "Declaratory Judgment",
+      "definition": "Determinación vinculante de derechos sin ordenar remedio coercitivo (28 U.S.C. Sec. 2201)."
+    },
+    {
+      "term": "Directed Verdict",
+      "definition": "Término antiguo para sentencia como cuestión de derecho antes del veredicto (véase FRCP 50)."
+    },
+    {
+      "term": "Dismissal Without Prejudice",
+      "definition": "Desestimación que no impide volver a presentar la misma reclamación."
+    },
+    {
+      "term": "Facsimile Filing",
+      "definition": "Presentación por fax donde las reglas locales lo permiten; muchos tribunales prefieren ECF."
+    },
+    {
+      "term": "Guardian ad Litem",
+      "definition": "Representante nombrado por el tribunal para parte incapacitada o menor."
+    },
+    {
+      "term": "Per Curiam",
+      "definition": "Opinión sin firma emitida por el tribunal en pleno."
+    },
+    {
+      "term": "Peremptory Challenge",
+      "definition": "Exclusión de un jurado potencial sin expresar causa (número limitado)."
+    },
+    {
+      "term": "Res Judicata",
+      "definition": "Preclusión de reclamación que impide relitigar una reclamación decidida en firme."
+    },
+    {
+      "term": "Special Master",
+      "definition": "Persona designada que recibe prueba o administra descubrimiento conforme a FRCP 53."
+    },
+    {
+      "term": "Third-Party Complaint",
+      "definition": "Reclamación del demandado contra un tercero incorporado al caso (FRCP 14)."
+    }
+  ]
+}
