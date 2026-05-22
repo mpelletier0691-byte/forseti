@@ -1,62 +1,54 @@
 # Forseti landing page (GitHub Pages)
 
-Static one-page site for **Forseti** by Asvaettir Labs. Copy matches the in-app voice (motto, brand copy, tagline). Contact: **asvaettirlabs.dev@gmail.com**.
+Static site for **Forseti** by Asvaettir Labs. Copy matches the in-app voice (motto, brand copy, tagline). Contact: **asvaettirlabs.dev@gmail.com**.
+
+## Files
+
+| File | Role |
+|------|------|
+| `index.html` | Home page (v0.1.2 features, Play CTA) |
+| `privacy-policy.html` | **Play Console privacy URL** (after Pages deploy) |
+| `privacy-policy.md` | Same policy — sync to gist or `asvaettir-privacy-policy` repo |
+| `styles.css` | Forseti-themed layout |
+| `README.md` | This deploy guide |
 
 ## Before you publish
 
-1. **Play Store button** — In `index.html`, the primary button points at  
+1. **Play Store button** — `index.html` uses  
    `https://play.google.com/store/apps/details?id=com.forseti`  
-   That works after the app is **public on Production**. Until then, replace `href` with your **closed-test** or **internal-test** opt-in URL from Play Console.
+   For **closed testing**, replace `href` with your opt-in link until production is public.
 
-2. **Privacy links** — Footer links use your public gist and GitHub repo. Update if those URLs change.
+2. **Privacy policy URL (Play Console)** — After GitHub Pages is live, set:
+   ```text
+   https://mpelletier0691-byte.github.io/<repo-name>/privacy-policy.html
+   ```
+   Update the gist / `asvaettir-privacy-policy` repo from `privacy-policy.md` so all links stay in sync.
 
-## Create the GitHub repo
-
-1. On GitHub (logged in as **mpelletier0691-byte**): **New repository**.
-2. Name suggestions:
-   - **`forseti`** → site URL: `https://mpelletier0691-byte.github.io/forseti/`
-   - or **`forseti-landing`** → `https://mpelletier0691-byte.github.io/forseti-landing/`
-3. Public, add a README (optional), **Create repository**.
-
-## Upload these files
-
-From your machine (adjust repo name if not `forseti`):
+## Deploy to GitHub Pages
 
 ```bash
-cd /path/to/Forseti/landing
-git init
-git add index.html styles.css README.md
-git commit -m "Add Forseti landing page"
+cd ~/Desktop/Projects/Forseti/landing
+git init   # only first time
+git add index.html privacy-policy.html privacy-policy.md styles.css README.md
+git commit -m "Landing v0.1.2 and updated privacy policy"
 git branch -M main
 git remote add origin https://github.com/mpelletier0691-byte/forseti.git
 git push -u origin main
 ```
 
-Or use the GitHub web UI: **Add file → Upload files** and drag `index.html` and `styles.css` into the repo root.
+Repo → **Settings → Pages** → branch **main**, folder **/ (root)**.
 
-## Turn on GitHub Pages
+Live URLs (example if repo is `forseti`):
 
-1. Repo → **Settings → Pages**.
-2. **Build and deployment**: Source = **Deploy from a branch**.
-3. Branch = **main**, folder = **/ (root)**.
-4. Save. After ~1–2 minutes the site is live at:
+- Home: `https://mpelletier0691-byte.github.io/forseti/`
+- Privacy: `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html`
 
-   `https://mpelletier0691-byte.github.io/<repo-name>/`
+Put the **privacy URL** in Play Console → App content → Privacy policy.
 
-5. Put that URL in Play Console (**Store settings** / **Main store listing** → Website), BetaList, email signature, etc.
+## Sync external gist (optional)
 
-## Optional: custom domain
+If Play or older links still point at the gist, paste `privacy-policy.md` into:
 
-Buy a domain (e.g. at Porkbun, Namecheap), then in **Pages** add the custom hostname and follow GitHub’s DNS instructions. You can keep the `github.io` URL as a redirect target later.
+`https://gist.githubusercontent.com/mpelletier0691-byte/12477f54633425983e1142f292230cba/raw/forseti-privacy.md`
 
-## Optional: form instead of mailto
-
-To collect emails without a backend, sign up at [Formspree](https://formspree.io) (free tier), create a form, and replace the “Email us” button with a small `<form action="https://formspree.io/f/xxxxx" method="POST">` block (see Formspree docs). Keep the mailto as fallback if you prefer zero setup.
-
-## Files
-
-| File        | Role                          |
-|------------|-------------------------------|
-| `index.html` | Single-page content + CTAs |
-| `styles.css` | Forseti-themed layout       |
-| `README.md`  | This deploy guide            |
+Or commit to `https://github.com/mpelletier0691-byte/asvaettir-privacy-policy`.

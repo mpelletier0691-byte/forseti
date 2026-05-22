@@ -43,6 +43,22 @@ body {
   margin: 0 0 0.75rem;
 }
 
+.hero-compact {
+  padding-bottom: 1.75rem;
+}
+
+.version-badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--bg);
+  background: var(--gold);
+}
+
 .hero h1 {
   margin: 0;
   font-size: clamp(2.5rem, 8vw, 3.5rem);
@@ -212,5 +228,46 @@ section h2 {
 
 .fine {
   font-size: 0.8rem;
+  color: var(--ash-grey);
+}
+
+.policy-meta {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--ash-grey);
+}
+
+.back-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.policy h2 {
+  margin: 1.75rem 0 0.65rem;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.policy ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.policy li {
+  margin-bottom: 0.35rem;
+}
+
+.disclaimer-inline {
+  margin-top: 2rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+  font-size: 0.95rem;
   color: var(--ash-grey);
 }
