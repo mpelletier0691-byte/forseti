@@ -3,7 +3,7 @@
 **Effective date:** May 22, 2026  
 **Last updated:** May 22, 2026  
 **Publisher:** Asvaettir Labs  
-**App version covered:** 0.1.2 and later
+**App version covered:** 0.1.3 and later
 
 Forseti is a pro se civil procedure companion for Android. This policy explains what Forseti does and does not do with your information.
 

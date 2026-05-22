@@ -1,54 +1,35 @@
 # Forseti landing page (GitHub Pages)
 
-Static site for **Forseti** by Asvaettir Labs. Copy matches the in-app voice (motto, brand copy, tagline). Contact: **asvaettirlabs.dev@gmail.com**.
+Static site for **Forseti** by Asvaettir Labs. Contact: **asvaettirlabs.dev@gmail.com**.
 
 ## Files
 
 | File | Role |
 |------|------|
-| `index.html` | Home page (v0.1.2 features, Play CTA) |
-| `privacy-policy.html` | **Play Console privacy URL** (after Pages deploy) |
-| `privacy-policy.md` | Same policy — sync to gist or `asvaettir-privacy-policy` repo |
+| `index.html` | Home page (v0.1.3) |
+| `terms-of-use.html` | **Terms of Use** — user agreement, translation & liability |
+| `privacy-policy.html` | **Privacy policy** — Play Console URL |
+| `terms-of-use.md` / `privacy-policy.md` | Markdown copies for gist sync |
 | `styles.css` | Forseti-themed layout |
-| `README.md` | This deploy guide |
 
-## Before you publish
+## GitHub Pages (this repo)
 
-1. **Play Store button** — `index.html` uses  
-   `https://play.google.com/store/apps/details?id=com.forseti`  
-   For **closed testing**, replace `href` with your opt-in link until production is public.
+The live site is deployed from the **`docs/`** folder at repo root (not `landing/`):
 
-2. **Privacy policy URL (Play Console)** — After GitHub Pages is live, set:
-   ```text
-   https://mpelletier0691-byte.github.io/<repo-name>/privacy-policy.html
-   ```
-   Update the gist / `asvaettir-privacy-policy` repo from `privacy-policy.md` so all links stay in sync.
+1. Copy updates: `cp landing/* docs/` (HTML, MD, CSS)
+2. Push `main`
+3. **Settings → Pages** → branch **main**, folder **`/docs`**
 
-## Deploy to GitHub Pages
+**Live URLs:**
 
-```bash
-cd ~/Desktop/Projects/Forseti/landing
-git init   # only first time
-git add index.html privacy-policy.html privacy-policy.md styles.css README.md
-git commit -m "Landing v0.1.2 and updated privacy policy"
-git branch -M main
-git remote add origin https://github.com/mpelletier0691-byte/forseti.git
-git push -u origin main
-```
+| Page | URL |
+|------|-----|
+| Home | `https://mpelletier0691-byte.github.io/forseti/` |
+| Privacy (Play Console) | `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html` |
+| Terms of Use | `https://mpelletier0691-byte.github.io/forseti/terms-of-use.html` |
 
-Repo → **Settings → Pages** → branch **main**, folder **/ (root)**.
+Paste the **privacy URL** in Play Console → **App content** → **Privacy policy**. Optionally link **Terms** in your store listing or support text.
 
-Live URLs (example if repo is `forseti`):
+## Closed testing
 
-- Home: `https://mpelletier0691-byte.github.io/forseti/`
-- Privacy: `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html`
-
-Put the **privacy URL** in Play Console → App content → Privacy policy.
-
-## Sync external gist (optional)
-
-If Play or older links still point at the gist, paste `privacy-policy.md` into:
-
-`https://gist.githubusercontent.com/mpelletier0691-byte/12477f54633425983e1142f292230cba/raw/forseti-privacy.md`
-
-Or commit to `https://github.com/mpelletier0691-byte/asvaettir-privacy-policy`.
+Replace the Play button `href` in `index.html` with your **closed-test opt-in link** until the app is public on Production.
