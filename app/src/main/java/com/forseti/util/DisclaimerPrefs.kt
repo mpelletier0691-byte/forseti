@@ -6,13 +6,27 @@ import android.content.Context
  * Tiny SharedPreferences wrapper for app gates that must be readable synchronously
  * from composition (where DataStore's suspending API is awkward).
  *
+ *  - [preInstallDisclaimer1Accepted] / [preInstallDisclaimer2Accepted]: mandatory
+ *    gates shown once before the first language pick (English copy).
  *  - [isAccepted]: first-launch legal disclaimer acknowledgment.
  *  - [forceDark]:  Settings-screen toggle that pins the dark color scheme.
- *  - [languageChosen] / [languageTag]: per-app UI locale (en, es, zh-CN).
+ *  - [languageChosen] / [languageTag]: per-app UI locale (en, es, zh-CN); final after first pick.
  *  - [tutorialCompleted]: one-time onboarding tour finished.
  */
 class DisclaimerPrefs(context: Context) {
     private val prefs = context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
+
+    var preInstallDisclaimer1Accepted: Boolean
+        get() = prefs.getBoolean(KEY_PRE_INSTALL_1, false)
+        set(value) {
+            prefs.edit().putBoolean(KEY_PRE_INSTALL_1, value).apply()
+        }
+
+    var preInstallDisclaimer2Accepted: Boolean
+        get() = prefs.getBoolean(KEY_PRE_INSTALL_2, false)
+        set(value) {
+            prefs.edit().putBoolean(KEY_PRE_INSTALL_2, value).apply()
+        }
 
     var isAccepted: Boolean
         get() = prefs.getBoolean(KEY_ACCEPTED, false)
@@ -51,6 +65,8 @@ class DisclaimerPrefs(context: Context) {
 
     companion object {
         private const val NAME = "forseti_prefs"
+        private const val KEY_PRE_INSTALL_1 = "pre_install_disclaimer_1_accepted"
+        private const val KEY_PRE_INSTALL_2 = "pre_install_disclaimer_2_accepted"
         private const val KEY_ACCEPTED = "disclaimer_accepted"
         private const val KEY_FORCE_DARK = "force_dark"
         private const val KEY_LANGUAGE_CHOSEN = "language_chosen"

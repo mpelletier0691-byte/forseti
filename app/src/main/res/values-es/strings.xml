@@ -8,7 +8,7 @@
     <string name="splash_motto">La IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
 
     <string name="disclaimer_title">Lea antes de presentar</string>
-    <string name="disclaimer_body">Forseti le ayuda a organizar el procedimiento y redactar escritos, pero puede cometer errores. Revise siempre cada documento según las reglas locales y órdenes del tribunal antes de presentar. Usted es responsable de sus decisiones y presentaciones legales.\n\nForseti es solo información. No es asesoramiento legal y su uso no crea relación abogado-cliente. Cuando lo importante esté en juego, consulte a un abogado con licencia en su jurisdicción.\n\nLos enlaces en la app son referencias a sitios externos mantenidos por sus dueños. Pueden cambiar o dejar de estar en línea; Forseti no controla su exactitud. Use la pestaña Referencias y Reglas subidas para guardar PDFs en el dispositivo.\n\nLa IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
+    <string name="disclaimer_body">Forseti le ayuda a organizar el procedimiento y redactar escritos, pero puede cometer errores. Revise siempre cada documento según las reglas locales y órdenes del tribunal.\n\nSolo información — no es asesoramiento legal. No se crea relación abogado-cliente. Consulte a un abogado con licencia cuando lo importante esté en juego.\n\nReglas oficiales: Las reglas judiciales, las FRCP y los formularios federales incluidos están en inglés y prevalecen. El texto en español o chino en menús, guías o glosario es traducción de conveniencia, sin certificar, y puede ser incorrecto o incompleto. Verifique siempre las fuentes oficiales en inglés antes de confiar en ellas.\n\nUsted asume la responsabilidad exclusiva de sus decisiones, plazos y presentaciones. Asvaettir Labs, su desarrollador y afiliados rechazan responsabilidad por errores, traducciones incorrectas o daños derivados del uso, en la máxima medida permitida por la ley. Rigen los Términos de uso en inglés en nuestro sitio web.\n\nLos enlaces externos son solo referencias. La IA puede ser poderosa, pero nada supera el espíritu humano — deja que esto te guíe en tu saga.</string>
     <string name="disclaimer_accept">Entiendo</string>
     <string name="footer_disclaimer">Solo información — no es asesoramiento legal. Usted es responsable de sus presentaciones.</string>
 
@@ -59,7 +59,7 @@
     <string name="cd_pdf_page_text">Mostrar texto seleccionable (OCR)</string>
 
     <string name="settings_disclaimer_title">Aviso legal</string>
-    <string name="settings_disclaimer_body">Forseti le ayuda a organizar el procedimiento y redactar escritos, pero puede cometer errores. Revise siempre cada documento según las reglas del tribunal. Usted es responsable de sus decisiones y presentaciones.\n\nLos enlaces son referencias a sitios externos; pueden cambiar o dejar de estar en línea. La lista completa está en Referencias; puede guardar PDFs de reglas en Reglas subidas.\n\nLa IA puede ser poderosa, pero nada supera el espíritu y la determinación humanos — deja que esto te guíe en tu saga.</string>
+    <string name="settings_disclaimer_body">Solo información — no es asesoramiento legal. Las reglas y formularios oficiales están en inglés y prevalecen. Las traducciones de la interfaz y guías no están certificadas y pueden ser inexactas; verifique las fuentes en inglés. Usted es el único responsable. Asvaettir Labs y el desarrollador rechazan responsabilidad por errores o traducciones, en la máxima medida legal. Vea los Términos de uso (inglés) en el sitio web.</string>
 
     <string name="receive_share_pick">Guardar archivo compartido en\u2026</string>
 
@@ -89,7 +89,7 @@
 
     <string name="language_picker_title">Elija su idioma</string>
     <string name="language_picker_subtitle">Los menús, las guías y la ayuda aparecen en este idioma. Los PDF oficiales del tribunal y los formularios federales incluidos permanecen en inglés.</string>
-    <string name="language_picker_first_run_subtitle">Este es su idioma permanente de la aplicación. Afecta la interfaz, las guías y la ayuda. Los PDF del tribunal y los formularios federales permanecen en inglés. Después de pulsar Continuar, esta elección es FINAL y no se puede cambiar en Ajustes.</string>
+    <string name="language_picker_first_run_subtitle">Idioma permanente de interfaz, guías y ayuda. Reglas y formularios del tribunal solo en inglés. Las traducciones no están certificadas — verifique el texto oficial en inglés. Usted asume toda la responsabilidad; Asvaettir Labs no responde por errores de traducción. Tras Continuar, es FINAL.</string>
     <string name="language_picker_continue">Continuar</string>
     <string name="language_picker_cancel">Cancelar</string>
     <string name="settings_language_title">Idioma de la app</string>

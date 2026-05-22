@@ -8,7 +8,7 @@
     <string name="splash_motto">人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
 
     <string name="disclaimer_title">提交前请阅读</string>
-    <string name="disclaimer_body">Forseti 帮助您整理程序并起草文书，但可能出现错误。提交前请务必对照法院当地规则与命令审阅每一份文件。您对法律决定与提交材料自行负责。\n\nForseti 仅提供信息，不构成法律建议，使用本应用不形成律师—客户关系。事关重大时，请咨询您所在司法辖区的执业律师。\n\n应用中的链接为外部网站参考，可能变更或失效；Forseti 不保证其准确性。请参阅“参考”选项卡，并可通过“已上传规则”在设备上保存规则 PDF。\n\n人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
+    <string name="disclaimer_body">Forseti 帮助您整理程序并起草文书，但可能出现错误。提交前请务必对照法院当地规则与命令审阅每一份文件。\n\n仅供参考——非法律建议，不构成律师—客户关系。事关重大请咨询执业律师。\n\n权威规则：法院规则、《联邦民事诉讼规则》及内置联邦表格均为英文并以英文为准。菜单、指南或术语表中的中文或西班牙文仅为便利翻译，未经专业认证，可能错误或不完整。依赖前务必对照官方英文文本核实。\n\n您对法律决定、期限与提交材料承担全部责任。Asvaettir Labs、开发者及其关联方在法律允许的最大范围内不对错误、翻译失误或使用造成的损害承担责任。以网站英文《使用条款》为准。\n\n外部链接仅供参考。人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
     <string name="disclaimer_accept">我理解</string>
     <string name="footer_disclaimer">仅供参考——非法律建议。您对提交材料自行负责。</string>
 
@@ -59,7 +59,7 @@
     <string name="cd_pdf_page_text">显示可选文字 (OCR)</string>
 
     <string name="settings_disclaimer_title">免责声明</string>
-    <string name="settings_disclaimer_body">Forseti 帮助您整理程序并起草文书，但可能出现错误。提交前请务必对照法院规则审阅每一份文件。您对法律决定与提交材料自行负责。\n\n链接为外部网站参考，可能变更或失效。完整列表见“参考”选项卡；可通过“已上传规则”在设备上保存法院规则 PDF。\n\n人工智能或许强大，但人的精神与毅力更为强大——愿它指引你的征程。</string>
+    <string name="settings_disclaimer_body">仅供参考——非法律建议。官方法则与表格以英文为准。界面与指南翻译未经认证，可能不准确；请对照英文原文核实。您须自行承担全部责任。Asvaettir Labs 与开发者在法律允许范围内不对错误或翻译失误负责。请参阅网站英文《使用条款》。</string>
 
     <string name="receive_share_pick">将共享文件保存到\u2026</string>
 
@@ -89,7 +89,7 @@
 
     <string name="language_picker_title">选择语言</string>
     <string name="language_picker_subtitle">菜单、指南和帮助将以所选语言显示。官方法院 PDF 及内置联邦表格仍为英文。</string>
-    <string name="language_picker_first_run_subtitle">这是您永久使用的应用语言，适用于界面、指南与帮助。法院 PDF 与联邦表格仍为英文。点“继续”后此选择为最终选择，无法在“设置”中更改。</string>
+    <string name="language_picker_first_run_subtitle">此为界面、指南与帮助的永久语言。法院规则与联邦表格仅英文。翻译未经认证——须对照官方英文核实。您承担全部责任；Asvaettir Labs 不对翻译错误负责。点“继续”后为最终选择。</string>
     <string name="language_picker_continue">继续</string>
     <string name="language_picker_cancel">取消</string>
     <string name="settings_language_title">应用语言</string>

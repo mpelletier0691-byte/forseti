@@ -1,7 +1,7 @@
 # Forseti — Privacy Policy
 
-**Effective date:** May 21, 2026  
-**Last updated:** May 21, 2026  
+**Effective date:** May 22, 2026  
+**Last updated:** May 22, 2026  
 **Publisher:** Asvaettir Labs  
 **App version covered:** 0.1.2 and later
 
@@ -51,6 +51,8 @@ Forseti may offer a time-limited free trial and an optional one-time unlock thro
 
 At first launch you choose a display language (for example English, Spanish, or Simplified Chinese) for menus, guides, and in-app help. That choice is stored on your device and is not transmitted to us. Official court PDFs and bundled federal forms remain in English regardless of UI language.
 
+**Translations are not certified** and may be inaccurate. English rules and forms control. You are solely responsible for verifying information before you file. See our [Terms of Use](terms-of-use.md) for limitation of liability and user responsibilities.
+
 ## 8. Backups
 
 If you use the in-app backup feature, Forseti writes an archive **to a location you choose** on your device or cloud storage you control (via the system file picker). We do not receive backup files.
@@ -59,11 +61,15 @@ If you use the in-app backup feature, Forseti writes an archive **to a location 
 
 Forseti is intended for adult self-represented litigants and is not directed to children under 13 (or the minimum age required in your country).
 
-## 10. Changes
+## 10. Terms of Use
+
+Use of Forseti is also governed by our [Terms of Use](terms-of-use.md), including disclaimers of legal advice, translation accuracy, and limitation of liability.
+
+## 11. Changes
 
 We may update this policy from time to time. We will change the effective date at the top when we do. Continued use of Forseti after an update means you accept the revised policy.
 
-## 11. Contact
+## 12. Contact
 
 Questions about this policy: **asvaettirlabs.dev@gmail.com**
 
