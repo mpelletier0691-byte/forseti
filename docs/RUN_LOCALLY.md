@@ -1,5 +1,9 @@
 # Drive Forseti on a Pixel 9 Emulator
 
+If you were editing in a **cloud agent** session, pull that work onto this
+machine first: `bash scripts/laptop_sync.sh --assets` (see
+[CLOUD_WORKSPACE.md](CLOUD_WORKSPACE.md)).
+
 You're on Ubuntu 24.04 with VT-x and 62GB of RAM, so the emulator will fly
 once the toolchain is in place. Two paths below; pick one.
 

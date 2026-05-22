@@ -56,8 +56,8 @@ app/src/main/java/com/forseti/
   util/
 
 assets/              rules/frcp_2024.pdf, forms/*.pdf, guides/*.md, glossary.json
-scripts/             fetch_assets.sh, fetch_fonts.sh
-docs/                QA_CHECKLIST, RUN_LOCALLY, this brief, implementation notes
+scripts/             fetch_assets.sh, fetch_fonts.sh, laptop_sync.sh, pack_for_laptop.sh
+docs/                QA_CHECKLIST, RUN_LOCALLY, CLOUD_WORKSPACE, this brief, implementation notes
 ```
 
 ### Sidebar tabs (current order)
