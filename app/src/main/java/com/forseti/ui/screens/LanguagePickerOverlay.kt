@@ -37,6 +37,7 @@ import com.forseti.util.AppLocale
 @Composable
 fun LanguagePickerOverlay(
     initialTag: String = AppLocale.TAG_ENGLISH,
+    firstRun: Boolean = false,
     onSelectionChanged: (String) -> Unit = {},
     onContinue: (tag: String) -> Unit,
     onDismiss: (() -> Unit)? = null
@@ -48,7 +49,10 @@ fun LanguagePickerOverlay(
     }
 
     val title = AppLocale.localizedString(selected, R.string.language_picker_title)
-    val subtitle = AppLocale.localizedString(selected, R.string.language_picker_subtitle)
+    val subtitleRes =
+        if (firstRun) R.string.language_picker_first_run_subtitle
+        else R.string.language_picker_subtitle
+    val subtitle = AppLocale.localizedString(selected, subtitleRes)
     val continueLabel = AppLocale.localizedString(selected, R.string.language_picker_continue)
     val cancelLabel = AppLocale.localizedString(selected, R.string.language_picker_cancel)
 

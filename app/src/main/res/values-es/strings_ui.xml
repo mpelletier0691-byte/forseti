@@ -72,6 +72,14 @@
 
     <string name="refs_section_bundled">Incluido en la aplicación</string>
     <string name="refs_section_federal">Reglas federales</string>
+    <string name="refs_section_fjc">Centro Judicial Federal (FJC)</string>
+    <string name="refs_fjc_rules_title">FJC — Reglas federales de práctica y procedimiento</string>
+    <string name="refs_fjc_rules_subtitle">Formación, manuales y materiales sobre las reglas federales (civil, penal, pruebas, apelaciones).</string>
+    <string name="refs_fjc_spanish_title">FJC — Materiales en español</string>
+    <string name="refs_fjc_spanish_subtitle">Educación y recursos de autoayuda de los tribunales federales en español.</string>
+    <string name="refs_fjc_chinese_title">FJC — Materiales en chino (汉语)</string>
+    <string name="refs_fjc_chinese_subtitle">Educación y recursos de autoayuda de los tribunales federales en chino.</string>
+    <string name="refs_fjc_licence">Centro Judicial Federal de EE. UU. — sitio educativo del gobierno federal.</string>
     <string name="refs_section_states">Reglas estatales — enlaces directos</string>
     <string name="refs_section_circuits">Tribunales federales y circuitos</string>
     <string name="refs_section_research">Investigación de casos</string>

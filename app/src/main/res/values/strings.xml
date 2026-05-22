@@ -12,6 +12,14 @@
     <string name="disclaimer_accept">I understand</string>
     <string name="footer_disclaimer">Information only — not legal advice. You are responsible for your filings.</string>
 
+    <!-- First install: two gates before language (English only until locale is chosen) -->
+    <string name="pre_install_1_title">Read Before You Continue</string>
+    <string name="pre_install_1_body">Welcome to Forseti. Please read this carefully before you continue.\n\nThis acknowledgment is saved on your device and is permanent for this installation. You will see one more notice, then you will choose your app language — that choice is also permanent.\n\nBy continuing, you confirm that you have read and understood this step.</string>
+    <string name="pre_install_1_accept">I have read this — continue</string>
+    <string name="pre_install_2_title">Language Choice Is Final</string>
+    <string name="pre_install_2_body">After this window, you will select your preferred language.\n\nThat language is a permanent part of your purchase and the first rule of using Forseti. It applies to the app menus, guides, glossary, and on-screen help. Official court PDFs and bundled federal forms stay in English.\n\nOn the next screen you will pick your language. Once you tap Continue there, you cannot go back or change it later. This process is FINAL.</string>
+    <string name="pre_install_2_accept">I understand — continue to language</string>
+
     <string name="nav_quick_jump">Quick Jump</string>
     <string name="nav_drafts">Motion Drafts</string>
     <string name="nav_guides">Guides</string>
@@ -93,10 +101,12 @@
     <!-- Language -->
     <string name="language_picker_title">Choose your language</string>
     <string name="language_picker_subtitle">Menus, guides, and help appear in this language. Official court PDFs and bundled federal forms stay in English.</string>
+    <string name="language_picker_first_run_subtitle">This is your permanent app language. It applies to the UI, guides, and help. Court PDFs and federal forms stay in English. After you tap Continue, this choice is FINAL and cannot be changed in Settings.</string>
     <string name="language_picker_continue">Continue</string>
     <string name="language_picker_cancel">Cancel</string>
     <string name="settings_language_title">App language</string>
     <string name="settings_language_subtitle">Menus, guides, and app help. Official court PDFs and forms remain in English.</string>
+    <string name="settings_language_locked_subtitle">Set during first launch. This choice is permanent and cannot be changed.</string>
     <string name="settings_section_language">Language</string>
     <string name="settings_section_trial">Trial &amp; purchase</string>
     <string name="settings_unlocked_title">Forseti unlocked</string>
@@ -130,5 +140,5 @@
     <string name="tutorial_step5_title">Deadlines</string>
     <string name="tutorial_step5_body">Track dates that matter. Missing a deadline is one of the most common problems in litigation.</string>
     <string name="tutorial_step6_title">You\u2019re ready</string>
-    <string name="tutorial_step6_body">Open Guides from the sidebar when you\u2019re ready. Change language anytime in Settings.</string>
+    <string name="tutorial_step6_body">Open Guides from the sidebar when you\u2019re ready. Your app language was set during first launch and stays fixed.</string>
 </resources>

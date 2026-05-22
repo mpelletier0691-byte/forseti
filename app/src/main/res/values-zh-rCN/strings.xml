@@ -89,10 +89,12 @@
 
     <string name="language_picker_title">选择语言</string>
     <string name="language_picker_subtitle">菜单、指南和帮助将以所选语言显示。官方法院 PDF 及内置联邦表格仍为英文。</string>
+    <string name="language_picker_first_run_subtitle">这是您永久使用的应用语言，适用于界面、指南与帮助。法院 PDF 与联邦表格仍为英文。点“继续”后此选择为最终选择，无法在“设置”中更改。</string>
     <string name="language_picker_continue">继续</string>
     <string name="language_picker_cancel">取消</string>
     <string name="settings_language_title">应用语言</string>
     <string name="settings_language_subtitle">菜单、指南与应用帮助。官方法院 PDF 及表格仍为英文。</string>
+    <string name="settings_language_locked_subtitle">在首次启动时设定，此选择永久有效且无法更改。</string>
     <string name="settings_section_language">语言</string>
     <string name="settings_section_trial">试用与购买</string>
     <string name="settings_unlocked_title">Forseti 已解锁</string>
@@ -125,5 +127,5 @@
     <string name="tutorial_step5_title">期限</string>
     <string name="tutorial_step5_body">记录重要日期。错过期限是诉讼中最常见的问题之一。</string>
     <string name="tutorial_step6_title">准备就绪</string>
-    <string name="tutorial_step6_body">随时从侧边栏打开“指南”。可在“设置”中随时更改语言。</string>
+    <string name="tutorial_step6_body">随时从侧边栏打开“指南”。应用语言已在首次启动时设定且不可更改。</string>
 </resources>

@@ -89,10 +89,12 @@
 
     <string name="language_picker_title">Elija su idioma</string>
     <string name="language_picker_subtitle">Los menús, las guías y la ayuda aparecen en este idioma. Los PDF oficiales del tribunal y los formularios federales incluidos permanecen en inglés.</string>
+    <string name="language_picker_first_run_subtitle">Este es su idioma permanente de la aplicación. Afecta la interfaz, las guías y la ayuda. Los PDF del tribunal y los formularios federales permanecen en inglés. Después de pulsar Continuar, esta elección es FINAL y no se puede cambiar en Ajustes.</string>
     <string name="language_picker_continue">Continuar</string>
     <string name="language_picker_cancel">Cancelar</string>
     <string name="settings_language_title">Idioma de la app</string>
     <string name="settings_language_subtitle">Menús, guías y ayuda de la aplicación. Los PDF oficiales del tribunal y los formularios permanecen en inglés.</string>
+    <string name="settings_language_locked_subtitle">Definido en el primer inicio. Esta elección es permanente y no se puede cambiar.</string>
     <string name="settings_section_language">Idioma</string>
     <string name="settings_section_trial">Prueba y compra</string>
     <string name="settings_unlocked_title">Forseti desbloqueado</string>
@@ -125,5 +127,5 @@
     <string name="tutorial_step5_title">Plazos</string>
     <string name="tutorial_step5_body">Registre las fechas importantes. Perder un plazo es uno de los errores más comunes.</string>
     <string name="tutorial_step6_title">Está listo</string>
-    <string name="tutorial_step6_body">Abra Guías en la barra lateral cuando quiera. Cambie el idioma en Ajustes en cualquier momento.</string>
+    <string name="tutorial_step6_body">Abra Guías en la barra lateral cuando quiera. El idioma de la app se fijó en el primer inicio y no cambia.</string>
 </resources>

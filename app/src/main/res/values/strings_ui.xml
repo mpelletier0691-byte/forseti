@@ -72,6 +72,14 @@
 
     <string name="refs_section_bundled">Bundled inside the app</string>
     <string name="refs_section_federal">Federal rules</string>
+    <string name="refs_section_fjc">Federal Judicial Center (FJC)</string>
+    <string name="refs_fjc_rules_title">FJC — Federal Rules of Practice and Procedure</string>
+    <string name="refs_fjc_rules_subtitle">Education, benchbooks, and materials on the federal rules (civil, criminal, evidence, appellate).</string>
+    <string name="refs_fjc_spanish_title">FJC — Spanish-language materials</string>
+    <string name="refs_fjc_spanish_subtitle">Federal court education and self-help resources in Spanish (Español).</string>
+    <string name="refs_fjc_chinese_title">FJC — Chinese-language materials (汉语)</string>
+    <string name="refs_fjc_chinese_subtitle">Federal court education and self-help resources in Chinese.</string>
+    <string name="refs_fjc_licence">U.S. Federal Judicial Center — public federal government education site.</string>
     <string name="refs_section_states">State rules — direct links</string>
     <string name="refs_section_circuits">Federal courts &amp; circuits</string>
     <string name="refs_section_research">Case research</string>

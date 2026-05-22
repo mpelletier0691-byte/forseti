@@ -23,7 +23,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.forseti.R
+import com.forseti.ui.components.ForsetiBrandTitle
 import com.forseti.ui.theme.ForsetiColors
 
 /**
@@ -44,7 +46,28 @@ fun DashboardWelcomePane(modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
         val shorter = if (maxWidth < maxHeight) maxWidth else maxHeight
-        val logoSize = (shorter * 0.55f).coerceIn(180.dp, 360.dp)
+        val logoSize = (shorter * 0.55f).coerceIn(120.dp, 360.dp)
+        val narrowPane = maxWidth < 220.dp
+        val titleStyle = when {
+            maxWidth < 140.dp -> MaterialTheme.typography.titleLarge
+            maxWidth < 200.dp -> MaterialTheme.typography.headlineMedium
+            else -> MaterialTheme.typography.displaySmall
+        }
+        val taglineStyle = if (narrowPane) {
+            MaterialTheme.typography.bodyMedium
+        } else {
+            MaterialTheme.typography.titleMedium
+        }
+        val bodyStyle = if (narrowPane) {
+            MaterialTheme.typography.bodySmall
+        } else {
+            MaterialTheme.typography.bodyMedium
+        }
+        val mottoStyle = if (narrowPane) {
+            MaterialTheme.typography.bodySmall
+        } else {
+            MaterialTheme.typography.bodyLarge
+        }
         val scroll = rememberScrollState()
 
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -62,17 +85,16 @@ fun DashboardWelcomePane(modifier: Modifier = Modifier) {
                     modifier = Modifier.size(logoSize)
                 )
                 Spacer(Modifier.height(20.dp))
-                Text(
-                    text = stringResource(R.string.app_name),
-                    style = MaterialTheme.typography.displaySmall,
+                ForsetiBrandTitle(
                     color = ForsetiColors.RuneGold,
-                    textAlign = TextAlign.Center,
+                    maxStyle = titleStyle,
+                    minFontSize = 16.sp,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(6.dp))
                 Text(
                     text = stringResource(R.string.app_tagline),
-                    style = MaterialTheme.typography.titleMedium,
+                    style = taglineStyle,
                     color = ForsetiColors.AshWhite,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth()
@@ -80,22 +102,22 @@ fun DashboardWelcomePane(modifier: Modifier = Modifier) {
                 Spacer(Modifier.height(20.dp))
                 Text(
                     text = stringResource(R.string.dashboard_welcome_subheading),
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = bodyStyle,
                     color = ForsetiColors.AshGrey,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
+                        .padding(horizontal = if (narrowPane) 4.dp else 16.dp)
                 )
                 Spacer(Modifier.height(20.dp))
                 Text(
                     text = stringResource(R.string.splash_motto),
-                    style = MaterialTheme.typography.bodyLarge,
+                    style = mottoStyle,
                     color = ForsetiColors.AshWhite,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 8.dp)
+                        .padding(horizontal = if (narrowPane) 4.dp else 8.dp)
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(

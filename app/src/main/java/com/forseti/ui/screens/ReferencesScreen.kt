@@ -21,6 +21,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.OpenInNew
 import androidx.compose.material.icons.outlined.Copyright
 import androidx.compose.material.icons.outlined.Gavel
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Public
 import androidx.compose.material.icons.outlined.Verified
@@ -55,6 +56,30 @@ fun ReferencesScreen(
     val context = LocalContext.current
     val sectionBundled = stringResource(R.string.refs_section_bundled)
     val sectionFederal = stringResource(R.string.refs_section_federal)
+    val sectionFjc = stringResource(R.string.refs_section_fjc)
+    val fjcSources = listOf(
+        Reference(
+            title = stringResource(R.string.refs_fjc_rules_title),
+            subtitle = stringResource(R.string.refs_fjc_rules_subtitle),
+            licence = stringResource(R.string.refs_fjc_licence),
+            icon = Icons.AutoMirrored.Outlined.MenuBook,
+            url = FJC_RULES_PRACTICE_URL
+        ),
+        Reference(
+            title = stringResource(R.string.refs_fjc_spanish_title),
+            subtitle = stringResource(R.string.refs_fjc_spanish_subtitle),
+            licence = stringResource(R.string.refs_fjc_licence),
+            icon = Icons.Outlined.Public,
+            url = FJC_SPANISH_URL
+        ),
+        Reference(
+            title = stringResource(R.string.refs_fjc_chinese_title),
+            subtitle = stringResource(R.string.refs_fjc_chinese_subtitle),
+            licence = stringResource(R.string.refs_fjc_licence),
+            icon = Icons.Outlined.Public,
+            url = FJC_CHINESE_URL
+        ),
+    )
     val sectionStates = stringResource(R.string.refs_section_states)
     val sectionCircuits = stringResource(R.string.refs_section_circuits)
     val sectionResearch = stringResource(R.string.refs_section_research)
@@ -79,6 +104,9 @@ fun ReferencesScreen(
 
             sectionHeader(sectionFederal)
             staticGroup(federalSources, ::open)
+
+            sectionHeader(sectionFjc)
+            staticGroup(fjcSources, ::open)
 
             sectionHeader(sectionStates)
             stateLinks(StateRulesCatalog.states.map { it.name to it.url }, ::open)
@@ -240,6 +268,11 @@ private fun CompactLinkRow(name: String, url: String, onOpen: (String) -> Unit) 
         }
     }
 }
+
+private const val FJC_RULES_PRACTICE_URL =
+    "https://www.fjc.gov/federal-rules-practice-and-procedure/federal-rules-practice-and-procedure"
+private const val FJC_SPANISH_URL = "https://www.fjc.gov/subject/spanish"
+private const val FJC_CHINESE_URL = "https://www.fjc.gov/content/chinese-%E2%80%94-%E6%B1%89%E8%AF%AD"
 
 private data class Reference(
     val title: String,

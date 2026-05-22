@@ -17,6 +17,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import com.forseti.R
 import com.forseti.ForceDarkController
 import com.forseti.util.LocalAppLanguage
 import com.forseti.ui.screens.BackupScreen
@@ -24,6 +26,7 @@ import com.forseti.ui.screens.CaseStudiesScreen
 import com.forseti.ui.screens.CasesScreen
 import com.forseti.ui.screens.DeadlinesScreen
 import com.forseti.ui.screens.DisclaimerOverlay
+import com.forseti.ui.screens.GateOverlay
 import com.forseti.ui.screens.DraftsScreen
 import com.forseti.ui.screens.GlossaryScreen
 import com.forseti.ui.screens.GuidesScreen
@@ -59,7 +62,7 @@ val LocalForceDark = compositionLocalOf<ForceDarkController> {
  *      and the chosen screen takes the full window. Every screen's top-bar
  *      back arrow returns to the dashboard by clearing [selectedRoute].
  *
- * First launch: language → disclaimer → one-time tutorial → main UI.
+ * First launch: pre-install gate 1 → gate 2 → language (final) → disclaimer → tutorial → main UI.
  */
 @Composable
 fun ForsetiShell() {
@@ -87,9 +90,37 @@ fun ForsetiShell() {
 
     // Locale change uses activity recreate(); read prefs directly (no rememberSaveable).
     if (!prefs.languageChosen) {
+        var preInstall1Done by remember { mutableStateOf(prefs.preInstallDisclaimer1Accepted) }
+        var preInstall2Done by remember { mutableStateOf(prefs.preInstallDisclaimer2Accepted) }
+
+        if (!preInstall1Done) {
+            GateOverlay(
+                title = stringResource(R.string.pre_install_1_title),
+                body = stringResource(R.string.pre_install_1_body),
+                acceptLabel = stringResource(R.string.pre_install_1_accept),
+                onAccept = {
+                    prefs.preInstallDisclaimer1Accepted = true
+                    preInstall1Done = true
+                }
+            )
+            return
+        }
+        if (!preInstall2Done) {
+            GateOverlay(
+                title = stringResource(R.string.pre_install_2_title),
+                body = stringResource(R.string.pre_install_2_body),
+                acceptLabel = stringResource(R.string.pre_install_2_accept),
+                onAccept = {
+                    prefs.preInstallDisclaimer2Accepted = true
+                    preInstall2Done = true
+                }
+            )
+            return
+        }
         var previewTag by remember { mutableStateOf(prefs.languageTag) }
         LanguagePickerOverlay(
             initialTag = previewTag,
+            firstRun = true,
             onSelectionChanged = { previewTag = it },
             onContinue = { tag -> appLanguage.setTag(tag) }
         )

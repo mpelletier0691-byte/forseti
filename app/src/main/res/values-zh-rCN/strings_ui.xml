@@ -72,6 +72,14 @@
 
     <string name="refs_section_bundled">应用内置</string>
     <string name="refs_section_federal">联邦规则</string>
+    <string name="refs_section_fjc">联邦司法中心 (FJC)</string>
+    <string name="refs_fjc_rules_title">FJC — 联邦实务与程序规则</string>
+    <string name="refs_fjc_rules_subtitle">联邦规则（民事、刑事、证据、上诉）的教育材料与手册。</string>
+    <string name="refs_fjc_spanish_title">FJC — 西班牙语资源</string>
+    <string name="refs_fjc_spanish_subtitle">联邦法院西班牙语教育与自助资源 (Español)。</string>
+    <string name="refs_fjc_chinese_title">FJC — 中文资源 (汉语)</string>
+    <string name="refs_fjc_chinese_subtitle">联邦法院中文教育与自助资源。</string>
+    <string name="refs_fjc_licence">美国联邦司法中心 — 联邦政府教育网站。</string>
     <string name="refs_section_states">州规则 — 直接链接</string>
     <string name="refs_section_circuits">联邦法院与巡回区</string>
     <string name="refs_section_research">案例检索</string>

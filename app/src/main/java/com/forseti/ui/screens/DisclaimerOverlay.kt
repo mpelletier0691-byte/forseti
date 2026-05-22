@@ -30,7 +30,12 @@ import com.forseti.R
 import com.forseti.ui.theme.ForsetiColors
 
 @Composable
-fun DisclaimerOverlay(onAccept: () -> Unit) {
+fun GateOverlay(
+    title: String,
+    body: String,
+    acceptLabel: String,
+    onAccept: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -55,14 +60,14 @@ fun DisclaimerOverlay(onAccept: () -> Unit) {
                 verticalArrangement = Arrangement.Top
             ) {
                 Text(
-                    text = stringResource(R.string.disclaimer_title),
+                    text = title,
                     style = MaterialTheme.typography.headlineMedium,
                     color = ForsetiColors.RuneGold,
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = stringResource(R.string.disclaimer_body),
+                    text = body,
                     style = MaterialTheme.typography.bodyMedium,
                     color = ForsetiColors.AshWhite
                 )
@@ -76,11 +81,21 @@ fun DisclaimerOverlay(onAccept: () -> Unit) {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = stringResource(R.string.disclaimer_accept),
+                        text = acceptLabel,
                         style = MaterialTheme.typography.titleMedium
                     )
                 }
             }
         }
     }
+}
+
+@Composable
+fun DisclaimerOverlay(onAccept: () -> Unit) {
+    GateOverlay(
+        title = stringResource(R.string.disclaimer_title),
+        body = stringResource(R.string.disclaimer_body),
+        acceptLabel = stringResource(R.string.disclaimer_accept),
+        onAccept = onAccept
+    )
 }

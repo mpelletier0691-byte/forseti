@@ -34,11 +34,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.forseti.LocalBilling
 import com.forseti.LocalEntitlement
 import com.forseti.R
 import com.forseti.billing.EntitlementManager
 import com.forseti.billing.findActivity
+import com.forseti.ui.components.FitSingleLineText
 import com.forseti.ui.shell.Destination
 import com.forseti.ui.theme.ForsetiColors
 

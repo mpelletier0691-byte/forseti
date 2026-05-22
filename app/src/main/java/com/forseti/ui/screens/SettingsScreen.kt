@@ -51,15 +51,12 @@ import com.forseti.ui.shell.LocalForceDark
 import com.forseti.ui.theme.ForsetiColors
 import com.forseti.util.AppLocale
 import com.forseti.util.DisclaimerPrefs
-import com.forseti.util.LocalAppLanguage
 
 @Composable
 fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
     val context = LocalContext.current
     val prefs = remember { DisclaimerPrefs(context.applicationContext) }
-    var showLanguagePicker by remember { mutableStateOf(false) }
 
-    val appLanguage = LocalAppLanguage.current
     val forceDark = LocalForceDark.current
     val entitlement = LocalEntitlement.current
     val billing = LocalBilling.current
@@ -78,7 +75,7 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
     val disclaimerBody = stringResource(R.string.settings_disclaimer_body)
     val languageSectionTitle = stringResource(R.string.settings_section_language)
     val settingsLanguageTitle = stringResource(R.string.settings_language_title)
-    val settingsLanguageSubtitle = stringResource(R.string.settings_language_subtitle)
+    val settingsLanguageLockedSubtitle = stringResource(R.string.settings_language_locked_subtitle)
     val trialSectionTitle = stringResource(R.string.settings_section_trial)
     val unlockedTitle = stringResource(R.string.settings_unlocked_title)
     val unlockedBody = stringResource(R.string.settings_unlocked_body)
@@ -165,8 +162,7 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
                 InfoRow(
                     icon = Icons.Outlined.Public,
                     title = settingsLanguageTitle,
-                    subtitle = "$currentLanguageLabel — $settingsLanguageSubtitle",
-                    onClick = { showLanguagePicker = true }
+                    subtitle = "$currentLanguageLabel — $settingsLanguageLockedSubtitle"
                 )
             }
 
@@ -203,18 +199,6 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
         }
     }
 
-    if (showLanguagePicker) {
-        var previewTag by remember { mutableStateOf(prefs.languageTag) }
-        LanguagePickerOverlay(
-            initialTag = previewTag,
-            onSelectionChanged = { previewTag = it },
-            onContinue = { tag ->
-                appLanguage.setTag(tag)
-                showLanguagePicker = false
-            },
-            onDismiss = { showLanguagePicker = false }
-        )
-    }
 }
 
 private fun androidx.compose.foundation.lazy.LazyListScope.sectionHeader(title: String) {
