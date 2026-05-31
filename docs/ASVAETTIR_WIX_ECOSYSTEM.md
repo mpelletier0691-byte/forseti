@@ -139,6 +139,159 @@ Use this vision for:
 - Long-form founder story
 - Product ecosystem pages
 
+## Marketing-focused brand summary
+
+Use this section as the source of truth for public-facing content, marketing
+language, product showcases, launch-ready descriptions, and Wix page structure.
+It should guide replacements for marketing placeholders such as Product
+Description, Marketing Copy, Launch Status, Brand Voice, Founder Bio, Mission
+Statement, and Value Proposition.
+
+### Brand identity - marketing version
+
+Asvaettir Labs is a mythic-tech studio creating tools for people who refuse to
+be overwhelmed by complex systems.
+
+The public brand blends:
+
+- Norse symbolism
+- Forensic clarity
+- Offline-first privacy
+- Modern analytical design
+
+**Tone:** Confident, structured, mythic, and human-centered.
+
+**Tagline:** Tools for the Determined.
+
+Use this tone for all marketing-level content.
+
+### Brand mission - marketing version
+
+Asvaettir Labs builds software that gives individuals the power normally
+reserved for institutions.
+
+**Marketing-ready mission statement:** We forge tools that restore clarity,
+autonomy, and fairness - empowering people to navigate legal, analytical, and
+personal challenges with confidence.
+
+Use this mission for hero sections, About pages, product introductions, launch
+copy, and promotional blocks.
+
+### Founder positioning - marketing version
+
+Michael Pelletier should be positioned as:
+
+- A builder forged by adversity, not academia.
+- A systems thinker who turns chaos into structure.
+- A designer of tools that solve real problems he personally faced: legal
+  battles, evidence management, billing disputes, and procedural confusion.
+- A creator who blends Norse craftsmanship with modern engineering.
+
+**Marketing bio:** Michael Pelletier is the founder of Asvaettir Labs, a studio
+dedicated to building offline-first tools that bring clarity to complex systems.
+His work blends Norse-inspired craftsmanship with forensic precision, creating
+software that empowers individuals to stand strong in the face of legal,
+analytical, and bureaucratic challenges.
+
+### Product showcase - marketing-ready descriptions
+
+Use these descriptions when generating Wix product sections, landing pages,
+project cards, launch copy, or promotional content.
+
+#### Forseti - publishing stage
+
+**Status:** In publishing stages on Google Play.
+
+**Category:** Legal-tech / Pro Se Companion.
+
+**Audience:** Self-represented litigants, students, legal navigators.
+
+**Marketing description:** Forseti is your offline civil-procedure companion -
+built for the millions navigating court systems without representation. It
+translates rules, deadlines, and filings into clear, actionable guidance. No
+cloud. No tracking. Just clarity.
+
+**Key marketing points:**
+
+- Offline-first
+- Plain-language explanations
+- Deadline tracking
+- Built for real people, not just lawyers
+- Designed for accessibility and independence
+
+#### Brokkr Forge - productivity tool
+
+**Status:** Active development.
+
+**Category:** Desktop organization / workflow automation.
+
+**Marketing description:** Brokkr Forge transforms chaos into order. Select a
+folder, choose a structure, and watch your workspace reorganize itself into a
+clean, professional case directory. Built for investigators, creators, and
+anyone who needs structure forged from raw materials.
+
+**Key marketing points:**
+
+- One-click folder structuring
+- Norse-inspired UI
+- Useful for casework, research, and digital organization
+- Offline, fast, and transparent
+
+#### MuninnShade - reasoning engine
+
+**Status:** Version 1.0.2.
+
+**Category:** Evidence analysis / reasoning workstation.
+
+**Marketing description:** MuninnShade is a forensic reasoning engine that
+interprets evidence, builds timelines, and reveals the story hidden inside your
+documents. Designed for analysts, investigators, and truth-seekers who need
+clarity without cloud dependence.
+
+**Key marketing points:**
+
+- Evidence ingestion
+- Timeline generation
+- Relationship mapping
+- Forensic summaries
+- Fully offline
+
+#### VoltHalla - energy forensics
+
+**Status:** In design phase.
+
+**Category:** Energy analytics / billing dispute tool.
+
+**Marketing description:** VoltHalla judges your watts. Import your energy
+CSVs, apply your utility's rate structure, and uncover anomalies, billing
+inconsistencies, and hidden patterns. Built for homeowners, analysts, and anyone
+who wants the truth behind their energy bill.
+
+**Key marketing points:**
+
+- CSV ingestion
+- Rate comparison
+- Anomaly detection
+- Billing discrepancy analysis
+- Norse storm-themed UI
+
+### Brand differentiators - marketing version
+
+Use these in Why Choose Us, What Makes Us Different, launch pages, product
+comparison cards, and promotional sections.
+
+- **Offline-first:** Your data stays yours.
+- **Forensic clarity:** Every tool is built for evidence-grade precision.
+- **Norse craftsmanship:** Symbolic, meaningful, mythic design.
+- **Human-centric reasoning:** Tools that think like people, not black boxes.
+- **Built from lived experience:** Not theory, but necessity.
+
+### Future outlook - marketing version
+
+Asvaettir Labs is building Odin's Tower - a unified suite of tools for
+structure, reasoning, and truth. Each product stands alone, but together they
+form a powerful ecosystem for navigating the complexities of modern life.
+
 ## Placeholder replacement map
 
 When a Wix template, app screen, project card, or generated content block
@@ -160,6 +313,12 @@ source.
 | `[Voice/Tone]` | Brand voice | Direct, analytical, mythic but grounded, confident without arrogance. |
 | `[Future Plans]` | Future vision | Describe Odin's Tower and the suite's direction without overpromising release dates. |
 | `[Roadmap]` | Future vision | Frame future work as continued integration of reasoning, evidence, structure, and truth. |
+| `[Product Status]` | Marketing-focused product showcase | Use each product's current launch status: Forseti publishing stage, Brokkr Forge active development, MuninnShade v1.0.2, VoltHalla design phase. |
+| `[Marketing Description]` | Marketing-ready descriptions | Use the public-facing product paragraph for the relevant product. |
+| `[Marketing Copy]` | Marketing-focused brand summary | Use confident, structured, mythic, human-centered language focused on user value. |
+| `[Value Proposition]` | Brand mission + marketing differentiators | State how the tool gives individuals clarity, autonomy, privacy, and structured analytical power. |
+| `[Why Choose Us]` | Brand differentiators - marketing version | Lead with offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience. |
+| `[Future Outlook]` | Future outlook - marketing version | Describe Odin's Tower as the unified ecosystem for structure, reasoning, and truth. |
 
 ## 1. Suite position
 
