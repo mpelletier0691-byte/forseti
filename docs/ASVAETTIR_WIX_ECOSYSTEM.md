@@ -64,6 +64,14 @@ and a media kit.
 
 Preserve the current Wix layout and theme while completing these roles.
 
+
+### Forseti launch finalization reference
+
+For Forseti-specific launch positioning, pricing, trust model, internal growth
+assumptions, and final pre-publication checklist, use
+`docs/FORSETI_LAUNCH_FINALIZATION.md` as the supporting source. Keep revenue
+and install projections internal unless explicitly labeled as scenario planning.
+
 ### 3. Product definitions
 
 #### Forseti - Publishing Stage

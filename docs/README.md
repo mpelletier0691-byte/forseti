@@ -11,6 +11,7 @@ Static site for **Forseti** by Asvaettir Labs. Copy matches the in-app voice (mo
 | `privacy-policy.md` | Same policy — sync to gist or `asvaettir-privacy-policy` repo |
 | `styles.css` | Forseti-themed layout |
 | `ASVAETTIR_WIX_ECOSYSTEM.md` | Wix-ready Asvaettir Labs suite copy, master instruction set, final completion directive, portfolio directive, canonical and marketing brand summaries, design system, and publishing checklist |
+| `FORSETI_LAUNCH_FINALIZATION.md` | Forseti launch positioning, trust model, internal growth assumptions, and finalization checklist |
 | `README.md` | This deploy guide |
 
 ## Before you publish
