@@ -292,6 +292,203 @@ Asvaettir Labs is building Odin's Tower - a unified suite of tools for
 structure, reasoning, and truth. Each product stands alone, but together they
 form a powerful ecosystem for navigating the complexities of modern life.
 
+## Wix portfolio and marketing directive
+
+Use this section as the master blueprint for the Wix site. The site should be a
+professional portfolio, a product showcase, a marketing platform, a brand
+identity hub, and a future-ready container for upcoming tools and placeholders.
+
+### Site purpose
+
+The Wix site must serve four roles at once:
+
+#### A. Portfolio
+
+Showcase Michael's skills, tools, UX work, system design, engineering
+philosophy, and product thinking.
+
+#### B. Product suite showcase
+
+Present Forseti, Brokkr Forge, MuninnShade, and VoltHalla as market-ready or
+market-facing offerings. Each product block should include:
+
+- Hero description
+- Feature list
+- Screenshots or visual placeholders
+- Status badge
+- Call to action
+
+#### C. Marketing platform
+
+Communicate the Asvaettir Labs mission, differentiators, founder story, brand
+voice, and future roadmap.
+
+#### D. Future-proof container
+
+Reserve clean, reusable placeholder areas for:
+
+- Upcoming tools
+- Future case studies
+- Future blog posts
+- Product expansions
+- Testimonials
+- Media kits
+
+Build these areas so new content can be added without redesigning the entire
+layout.
+
+### Required Wix sections
+
+#### 1. Hero section
+
+**Purpose:** Introduce the brand and set the tone.
+
+**Required copy:**
+
+- **Tagline:** Tools for the Determined.
+- **Sub-tagline:** Forging clarity from complexity through offline-first,
+  privacy-aligned tools.
+- **Buttons:** Explore the Suite, Portfolio, Contact.
+
+#### 2. Founder bio section
+
+Replace `[Founder Bio]` with the founder positioning from the branding
+interview. The section should include:
+
+- A strong founder introduction
+- A mythic-tech identity statement
+- A short narrative about lived experience and mission
+
+**Paste-ready direction:** Present Michael Pelletier as a systems-minded builder,
+father, fighter, and self-taught engineer who turns chaos into structured
+clarity through tools shaped by real legal, technical, and bureaucratic
+challenges.
+
+#### 3. Product suite showcase
+
+Create four product blocks using the marketing-ready product descriptions.
+
+##### Forseti
+
+- **Status:** Publishing Stage
+- **Category:** Legal-tech / Pro Se Companion
+- **CTA:** View Forseti
+- **Link placeholder:** Google Play link
+- **Visual placeholder:** Android screenshots
+- **Required framing:** Built for the millions navigating civil courts alone.
+
+##### Brokkr Forge
+
+- **Status:** Active Development
+- **Category:** Desktop Organization Tool
+- **CTA:** View Brokkr Forge
+- **Visual placeholder:** Screenshots and folder-template gallery
+- **Required framing:** The forge that shapes chaos into order.
+
+##### MuninnShade
+
+- **Status:** Version 1.0.2
+- **Category:** Reasoning Workstation
+- **CTA:** View MuninnShade
+- **Visual placeholder:** Subsystem diagram and reasoning dashboard
+- **Required framing:** A reasoning workstation for evidence and truth.
+
+##### VoltHalla
+
+- **Status:** Design Phase
+- **Category:** Energy Forensics Engine
+- **CTA:** View VoltHalla
+- **Visual placeholder:** CSV import and rate-comparison demo images
+- **Required framing:** Where your watts meet their judgment.
+
+#### 4. Portfolio section
+
+Build a true portfolio section, not only product descriptions. Portfolio cards
+should show the type of work, what was designed or built, and why it matters.
+
+**UX / UI work:**
+
+- Forseti UI
+- Brokkr Forge UI
+- MuninnShade subsystem diagrams
+- VoltHalla UI mockups
+
+**System design:**
+
+- Evidence reasoning flows
+- Folder structuring logic
+- Energy anomaly detection logic
+
+**Branding work:**
+
+- Norse-inspired design language
+- Iconography
+- Color palette
+- Typography system
+
+**Case study placeholders:**
+
+- Forseti Case Study - Coming Soon
+- MuninnShade Case Study - Coming Soon
+- VoltHalla Case Study - Coming Soon
+
+#### 5. Skills section
+
+Include these skill cards:
+
+- UX Research
+- Interface Design
+- AI-Enhanced Design
+- Design Systems
+- Legal Technology & Ethics
+- Forensic Analysis & Evidence Structuring
+
+#### 6. Brand philosophy section
+
+Include these brand pillars:
+
+- Offline-first privacy
+- Forensic clarity
+- Norse craftsmanship
+- Human-centric reasoning
+- Built from lived experience
+
+#### 7. Roadmap section
+
+Use this future-facing roadmap:
+
+| Product | Roadmap item |
+| --- | --- |
+| Forseti | Public release |
+| Brokkr Forge | Beta |
+| MuninnShade | v1.1 subsystem expansion |
+| VoltHalla | Prototype |
+| Odin's Tower | Unified suite vision |
+
+#### 8. Contact section
+
+Include:
+
+- Email
+- LinkedIn
+- GitHub
+- Contact form
+- Footer tagline: Asvaettir Labs - forging clarity from complexity.
+
+### Site behavior rules
+
+- Preserve the brand voice: mythic but grounded, analytical, structured,
+  confident, privacy-aligned, forensic, precise, and human-centered.
+- Avoid corporate jargon, generic filler, and overly casual language.
+- Keep product statuses visible so visitors understand what is live, in
+  publishing, in development, or planned.
+- Ensure every placeholder is either replaced with real copy or clearly labeled
+  Coming Soon.
+- Use reusable product cards and portfolio cards so future tools can be added
+  without a redesign.
+- Keep calls to action specific: Explore the Suite, View Product, Request Early
+  Access, Contact.
+
 ## Placeholder replacement map
 
 When a Wix template, app screen, project card, or generated content block
@@ -319,6 +516,10 @@ source.
 | `[Value Proposition]` | Brand mission + marketing differentiators | State how the tool gives individuals clarity, autonomy, privacy, and structured analytical power. |
 | `[Why Choose Us]` | Brand differentiators - marketing version | Lead with offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience. |
 | `[Future Outlook]` | Future outlook - marketing version | Describe Odin's Tower as the unified ecosystem for structure, reasoning, and truth. |
+| `[Case Study Placeholder]` | Wix portfolio and marketing directive | Create Coming Soon cards for Forseti, MuninnShade, and VoltHalla case studies. |
+| `[Portfolio Item]` | Portfolio section requirements | Use UX/UI work, system design, branding artifacts, subsystem diagrams, and logic-flow examples. |
+| `[CTA]` | Required Wix sections | Use Explore the Suite, View Product, Request Early Access, Portfolio, or Contact based on section intent. |
+| `[Required Site Section]` | Wix portfolio and marketing directive | Generate Hero, Founder Bio, Product Suite, Portfolio, Skills, Brand Philosophy, Roadmap, and Contact sections. |
 
 ## 1. Suite position
 
