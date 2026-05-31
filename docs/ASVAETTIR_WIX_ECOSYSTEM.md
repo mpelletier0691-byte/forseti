@@ -16,6 +16,15 @@ Cursor must treat this section as the single source of truth for final content
 generation, placeholder replacement, and site-finalization tasks. Supporting
 sections below provide expanded copy and implementation detail.
 
+
+### Validation and brand assets reference
+
+Before publishing the Wix site or promoting app claims, use
+`docs/ASVAETTIR_VALIDATION_AND_BRAND_ASSETS.md` to validate site sections,
+product claims, app readiness, screenshot safety, brand image consistency, and
+publication gates. Use that guide to keep public copy confident while avoiding
+unverified claims or confidential material.
+
 ### 1. Brand identity
 
 Asvaettir Labs is a mythic-tech studio blending:

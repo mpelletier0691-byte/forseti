@@ -12,6 +12,7 @@ Static site for **Forseti** by Asvaettir Labs. Copy matches the in-app voice (mo
 | `styles.css` | Forseti-themed layout |
 | `ASVAETTIR_WIX_ECOSYSTEM.md` | Wix-ready Asvaettir Labs suite copy, master instruction set, final completion directive, portfolio directive, canonical and marketing brand summaries, design system, and publishing checklist |
 | `FORSETI_LAUNCH_FINALIZATION.md` | Forseti launch positioning, trust model, internal growth assumptions, and finalization checklist |
+| `ASVAETTIR_VALIDATION_AND_BRAND_ASSETS.md` | Site, app, claim, and brand-image validation checklist for Wix and launch readiness |
 | `README.md` | This deploy guide |
 
 ## Before you publish
