@@ -5,6 +5,25 @@ content, app launch readiness, product screenshots, and brand imagery before
 publication. Use it with `ASVAETTIR_WIX_ECOSYSTEM.md` and
 `FORSETI_LAUNCH_FINALIZATION.md`.
 
+
+## Public product scope gate
+
+Only publish products that are built or explicitly approved for public preview.
+As of the current Wix finalization pass, do not publish VoltHalla because it has
+not been successfully built. Do not add a VoltHalla card, roadmap item, feature
+claim, screenshot, mockup, or CTA to the public Wix page.
+
+Current allowed public scope:
+
+- Forseti
+- Brokkr Forge
+- MuninnShade, clearly framed as still in development where appropriate
+- Bifrost, only with existing validated public copy or Copy Pending language
+- Odin's Tower, as a built workstation / infrastructure showcase using the validated public description
+
+If a product exists but its public claims are not yet validated, use Copy Pending
+or Coming Soon rather than inventing features.
+
 ## 1. Validation principle
 
 Every public statement should be either:
@@ -37,8 +56,9 @@ Before publishing the Wix site, verify:
   - Forseti
   - Brokkr Forge
   - MuninnShade
-  - VoltHalla
+  - Bifrost
   - Odin's Tower
+  - VoltHalla only if internal / hidden; do not publish
 - The tone remains mythic but grounded, analytical, precise, and human-centered.
 
 ## 3. Product claim validation matrix
@@ -116,17 +136,32 @@ Validate Forseti before final Wix / Play Store publication:
   - Forensic summaries
 - Do not publish confidential audit content.
 
+
+### Odin's Tower
+
+- Status: Built / Infrastructure Showcase
+- CTA: View Odin's Tower / Workstation Showcase
+- Required framing:
+  - Custom-built workstation behind Asvaettir Labs development
+  - Local AI module environment
+  - Hardware foundation for running and testing the suite
+  - AI modules and reasoning workflows documented through MuninnShade
+- Avoid unsupported hardware specifications unless they are verified.
+
+### Bifrost
+
+- Status: Built / Copy Pending Validation
+- CTA: View Bifrost, only if the card already exists
+- Required framing:
+  - Use existing validated copy only
+  - Do not invent feature claims
+  - If details are not validated, label the card Copy Pending or Coming Soon
+
 ### VoltHalla
 
-- Status: Design Phase
-- CTA: View VoltHalla / Coming soon
-- Required framing:
-  - Energy forensics
-  - CSV ingestion
-  - Rate comparison
-  - Anomaly detection
-  - Billing discrepancy analysis
-- Label UI as mockup or concept until a working prototype exists.
+Do not publish VoltHalla on the public Wix site until it has been successfully
+built or explicitly approved for public preview. Remove or hide any VoltHalla
+card, CTA, roadmap item, mockup, or feature list from public pages for now.
 
 ## 6. Brand image validation
 
@@ -157,8 +192,8 @@ Use a square or wide hero image with:
 - Subtle Norse runic borders.
 - Dark storm-gray background.
 - Gold highlights.
-- Small blue-white lightning accents for the VoltHalla / energy-forensics
-  thread.
+- Optional blue-white lightning accents only if they support an already built
+  and validated public product. Do not imply VoltHalla is available.
 - No text, no people, no watermark.
 
 Suggested alt text:
@@ -181,8 +216,9 @@ Before publication, scan the Wix site for:
   - Forseti - Public release
   - Brokkr Forge - Beta
   - MuninnShade - v1.1 subsystem expansion
-  - VoltHalla - Prototype
+  - Bifrost - Public copy validation
   - Odin's Tower - Unified suite vision
+  - VoltHalla - Internal only; do not publish
 
 ## 8. Evidence log template
 

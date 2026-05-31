@@ -16,7 +16,6 @@ Cursor must treat this section as the single source of truth for final content
 generation, placeholder replacement, and site-finalization tasks. Supporting
 sections below provide expanded copy and implementation detail.
 
-
 ### Validation and brand assets reference
 
 Before publishing the Wix site or promoting app claims, use
@@ -24,6 +23,28 @@ Before publishing the Wix site or promoting app claims, use
 product claims, app readiness, screenshot safety, brand image consistency, and
 publication gates. Use that guide to keep public copy confident while avoiding
 unverified claims or confidential material.
+
+
+### Public product scope correction
+
+Use only built or validated products on the public Wix page. Do not publish
+VoltHalla on the Wix site, in product cards, in roadmap items, or in portfolio
+showcases until it has been successfully built or explicitly approved for public
+preview. Any earlier VoltHalla copy in this guide is internal planning material
+only and must not be pasted into Wix.
+
+Current public/product-finalization scope:
+
+- Forseti - built / publishing stage
+- Brokkr Forge - built / active development
+- MuninnShade - in development / versioned showcase allowed
+- Bifrost - built, but requires validated public copy before expansion
+- Odin's Tower - built or ecosystem-level vision, but requires validated public
+  copy before expansion
+
+Do not invent feature claims for Bifrost or Odin's Tower. If a card already
+exists, preserve its current copy until validated. If no validated copy exists,
+label it Coming Soon or Copy Pending instead of describing unverified features.
 
 ### 1. Brand identity
 
@@ -59,7 +80,8 @@ Feature these products with status, feature lists, and calls to action:
 - Forseti - Publishing Stage
 - Brokkr Forge - Active Development
 - MuninnShade - Version 1.0.2
-- VoltHalla - Design Phase
+- Bifrost - Built / copy pending validation
+- Odin's Tower - Built or ecosystem-level vision / copy pending validation
 
 #### C. Marketing platform
 
@@ -72,7 +94,6 @@ Include placeholders for future tools, case studies, blog posts, testimonials,
 and a media kit.
 
 Preserve the current Wix layout and theme while completing these roles.
-
 
 ### Forseti launch finalization reference
 
@@ -130,21 +151,46 @@ evidence, builds timelines, and reveals the story hidden inside your documents.
 
 **CTA:** View MuninnShade
 
-#### VoltHalla - Design Phase
+#### Bifrost - Built / public copy pending validation
 
-**Description:** VoltHalla judges your watts. Import your energy CSVs, apply
-your utility's rate structure, and uncover anomalies and billing inconsistencies.
+**Description:** Bifrost is part of the built Asvaettir Labs ecosystem. Until its
+public feature claims are finalized, use the existing validated card copy or
+label the card Copy Pending rather than inventing functionality.
 
 **Features:**
 
-- CSV ingestion
-- Rate comparison
-- Anomaly detection
-- Billing discrepancy analysis
+- Use only verified existing Bifrost features
+- Preserve current public copy if already present
+- Label unverified details Coming Soon or Copy Pending
 
-**Status:** Design Phase
+**Status:** Built / Copy Pending Validation
 
-**CTA:** View VoltHalla
+**CTA:** View Bifrost
+
+#### Odin's Tower - Built workstation / infrastructure showcase
+
+**Description:** Odin's Tower is the custom-built workstation behind Asvaettir
+Labs development and local AI experimentation. It is the hardware foundation for
+running, testing, and refining the suite, including the AI modules and reasoning
+workflows documented through MuninnShade.
+
+**Features:**
+
+- Custom-built workstation
+- Local AI module environment
+- Development and testing base for the Asvaettir Labs suite
+- Private, offline-first infrastructure for sustained analytical work
+
+**Status:** Built / Infrastructure Showcase
+
+**CTA:** View Odin's Tower
+
+#### VoltHalla - internal only until built
+
+Do not publish VoltHalla on the Wix site, product showcase, roadmap, or
+portfolio until it has been successfully built or explicitly approved for public
+preview. Do not add a CTA, screenshot, mockup, status badge, or feature list for
+VoltHalla during this finalization pass.
 
 ### 4. Founder bio
 
@@ -180,13 +226,16 @@ product-support sections:
 
 Use this roadmap in future-facing sections:
 
-| Product | Roadmap item |
-| --- | --- |
-| Forseti | Public release |
-| Brokkr Forge | Beta |
-| MuninnShade | v1.1 subsystem expansion |
-| VoltHalla | Prototype |
-| Odin's Tower | Unified suite vision |
+
+| Product      | Roadmap item             |
+| ------------ | ------------------------ |
+| Forseti      | Public release           |
+| Brokkr Forge | Beta                     |
+| MuninnShade  | v1.1 subsystem expansion |
+| Bifrost      | Public copy validation   |
+| Odin's Tower | Workstation showcase / unified suite vision |
+| Odin's Tower | Unified suite vision     |
+
 
 ### 8. Portfolio requirements
 
@@ -197,7 +246,7 @@ Populate the portfolio section with these groups:
 - Forseti UI mockups, with placeholder images allowed
 - Brokkr Forge UI
 - MuninnShade subsystem diagram
-- VoltHalla UI concept
+- Bifrost or Odin's Tower UI/brand visual only after copy validation
 
 #### B. System design
 
@@ -217,24 +266,26 @@ Create cards labeled:
 
 - Forseti Case Study - Coming Soon
 - MuninnShade Case Study - Coming Soon
-- VoltHalla Case Study - Coming Soon
+- Bifrost Case Study - Coming Soon, only after copy validation
 
 ### 9. Placeholder rules
 
 Replace these placeholders exactly as follows:
 
-| Placeholder | Replace with |
-| --- | --- |
-| `[Founder Bio]` | Founder bio above |
-| `[Mission Statement]` | Mission statement above |
-| `[Brand Story]` | Brand identity section |
-| `[Product Description]` | Product definitions above |
-| `[Product Status]` | Publishing Stage / Active Development / Version 1.0.2 / Design Phase |
-| `[Value Proposition]` | Brand differentiators |
-| `[Future Outlook]` | Odin's Tower roadmap |
-| `[Case Study Placeholder]` | Coming Soon cards |
-| `[Portfolio Item]` | UX, UI, system design, and branding artifacts |
-| `[CTA]` | Explore the Suite, View Product, or Contact |
+
+| Placeholder                | Replace with                                                         |
+| -------------------------- | -------------------------------------------------------------------- |
+| `[Founder Bio]`            | Founder bio above                                                    |
+| `[Mission Statement]`      | Mission statement above                                              |
+| `[Brand Story]`            | Brand identity section                                               |
+| `[Product Description]`    | Product definitions above                                            |
+| `[Product Status]`         | Publishing Stage / Active Development / Version 1.0.2 / validated built-product status only |
+| `[Value Proposition]`      | Brand differentiators                                                |
+| `[Future Outlook]`         | Odin's Tower roadmap                                                 |
+| `[Case Study Placeholder]` | Coming Soon cards                                                    |
+| `[Portfolio Item]`         | UX, UI, system design, and branding artifacts                        |
+| `[CTA]`                    | Explore the Suite, View Product, or Contact                          |
+
 
 Do not alter the layout or theme while replacing placeholders.
 
@@ -306,14 +357,13 @@ differentiators are:
 
 - **Lived experience:** Products are shaped by real pressure, not theory.
 - **Norse-inspired craftsmanship:** Each tool has meaning, symbolism, and a
-  forged identity.
+forged identity.
 - **Ethical engineering:** Favor local control, reduced cloud dependence, and
-  no unnecessary data harvesting.
+no unnecessary data harvesting.
 - **Forensic precision:** Systems are structured to withstand scrutiny.
 - **Human-centered reasoning:** Workflows follow how people investigate,
-  compare, document, and decide.
-- **Unified ecosystem:** Forseti, Brokkr Forge, MuninnShade, and VoltHalla all
-  share one philosophy of clarity, privacy, and disciplined analysis.
+compare, document, and decide.
+- **Unified ecosystem:** Forseti, Brokkr Forge, MuninnShade, Bifrost, and Odin's Tower share one philosophy of clarity, privacy, and disciplined analysis. Do not include unbuilt products in public copy.
 
 Use these differentiators for:
 
@@ -360,12 +410,15 @@ Wix content blocks.
 
 ### Product positioning
 
-| Product | Position | Tone |
-| --- | --- | --- |
-| Forseti | The guide for the self-represented; built for the millions navigating civil courts alone. | Supportive, clear, procedural. |
-| Brokkr Forge | The organizer and structure-maker; turns chaos into order. | Strong, methodical, crafted. |
-| MuninnShade | The reasoning engine; interprets evidence, builds timelines, and reveals truth. | Forensic, wise, analytical. |
-| VoltHalla | The energy-forensics engine; judges watts and exposes billing inconsistencies. | Storm-seer, precise, authoritative. |
+
+| Product      | Position                                                                                  | Tone                                |
+| ------------ | ----------------------------------------------------------------------------------------- | ----------------------------------- |
+| Forseti      | The guide for the self-represented; built for the millions navigating civil courts alone. | Supportive, clear, procedural.      |
+| Brokkr Forge | The organizer and structure-maker; turns chaos into order.                                | Strong, methodical, crafted.        |
+| MuninnShade  | The reasoning engine; interprets evidence, builds timelines, and reveals truth.           | Forensic, wise, analytical.         |
+| Bifrost      | Built product; public positioning pending validation.                                      | Structured, precise, restrained. |
+| Odin's Tower | Built product or ecosystem-level suite vision; public positioning pending validation.       | Mythic, architectural, disciplined. |
+
 
 ### Future vision
 
@@ -433,7 +486,7 @@ Michael Pelletier should be positioned as:
 - A builder forged by adversity, not academia.
 - A systems thinker who turns chaos into structure.
 - A designer of tools that solve real problems he personally faced: legal
-  battles, evidence management, billing disputes, and procedural confusion.
+battles, evidence management, billing disputes, and procedural confusion.
 - A creator who blends Norse craftsmanship with modern engineering.
 
 **Marketing bio:** Michael Pelletier is the founder of Asvaettir Labs, a studio
@@ -505,24 +558,10 @@ clarity without cloud dependence.
 - Forensic summaries
 - Fully offline
 
-#### VoltHalla - energy forensics
+#### VoltHalla - internal only until built
 
-**Status:** In design phase.
-
-**Category:** Energy analytics / billing dispute tool.
-
-**Marketing description:** VoltHalla judges your watts. Import your energy
-CSVs, apply your utility's rate structure, and uncover anomalies, billing
-inconsistencies, and hidden patterns. Built for homeowners, analysts, and anyone
-who wants the truth behind their energy bill.
-
-**Key marketing points:**
-
-- CSV ingestion
-- Rate comparison
-- Anomaly detection
-- Billing discrepancy analysis
-- Norse storm-themed UI
+VoltHalla remains internal planning material until it is successfully built. Do
+not use prior VoltHalla marketing copy on public Wix pages.
 
 ### Brand differentiators - marketing version
 
@@ -558,8 +597,7 @@ philosophy, and product thinking.
 
 #### B. Product suite showcase
 
-Present Forseti, Brokkr Forge, MuninnShade, and VoltHalla as market-ready or
-market-facing offerings. Each product block should include:
+Present Forseti, Brokkr Forge, MuninnShade, and Odin's Tower as public showcases. Add Bifrost using existing validated copy or a Copy Pending label. Do not publish VoltHalla yet. Each product block should include:
 
 - Hero description
 - Feature list
@@ -596,7 +634,7 @@ layout.
 
 - **Tagline:** Tools for the Determined.
 - **Sub-tagline:** Forging clarity from complexity through offline-first,
-  privacy-aligned tools.
+privacy-aligned tools.
 - **Buttons:** Explore the Suite, Portfolio, Contact.
 
 #### 2. Founder bio section
@@ -644,11 +682,9 @@ Create four product blocks using the marketing-ready product descriptions.
 
 ##### VoltHalla
 
-- **Status:** Design Phase
-- **Category:** Energy Forensics Engine
-- **CTA:** View VoltHalla
-- **Visual placeholder:** CSV import and rate-comparison demo images
-- **Required framing:** Where your watts meet their judgment.
+Do not add a VoltHalla product block during this finalization pass. If a
+VoltHalla placeholder appears in the Wix editor, hide it or leave it unpublished
+until the product is built and public claims are validated.
 
 #### 4. Portfolio section
 
@@ -660,7 +696,7 @@ should show the type of work, what was designed or built, and why it matters.
 - Forseti UI
 - Brokkr Forge UI
 - MuninnShade subsystem diagrams
-- VoltHalla UI mockups
+- Bifrost or Odin's Tower UI/brand visual only after copy validation
 
 **System design:**
 
@@ -679,7 +715,7 @@ should show the type of work, what was designed or built, and why it matters.
 
 - Forseti Case Study - Coming Soon
 - MuninnShade Case Study - Coming Soon
-- VoltHalla Case Study - Coming Soon
+- Bifrost Case Study - Coming Soon, only after copy validation
 
 #### 5. Skills section
 
@@ -706,13 +742,16 @@ Include these brand pillars:
 
 Use this future-facing roadmap:
 
-| Product | Roadmap item |
-| --- | --- |
-| Forseti | Public release |
-| Brokkr Forge | Beta |
-| MuninnShade | v1.1 subsystem expansion |
-| VoltHalla | Prototype |
-| Odin's Tower | Unified suite vision |
+
+| Product      | Roadmap item             |
+| ------------ | ------------------------ |
+| Forseti      | Public release           |
+| Brokkr Forge | Beta                     |
+| MuninnShade  | v1.1 subsystem expansion |
+| Bifrost      | Public copy validation   |
+| Odin's Tower | Workstation showcase / unified suite vision |
+| Odin's Tower | Unified suite vision     |
+
 
 #### 8. Contact section
 
@@ -727,16 +766,16 @@ Include:
 ### Site behavior rules
 
 - Preserve the brand voice: mythic but grounded, analytical, structured,
-  confident, privacy-aligned, forensic, precise, and human-centered.
+confident, privacy-aligned, forensic, precise, and human-centered.
 - Avoid corporate jargon, generic filler, and overly casual language.
 - Keep product statuses visible so visitors understand what is live, in
-  publishing, in development, or planned.
+publishing, in development, or planned.
 - Ensure every placeholder is either replaced with real copy or clearly labeled
-  Coming Soon.
+Coming Soon.
 - Use reusable product cards and portfolio cards so future tools can be added
-  without a redesign.
+without a redesign.
 - Keep calls to action specific: Explore the Suite, View Product, Request Early
-  Access, Contact.
+Access, Contact.
 
 ## Final Wix completion directive
 
@@ -766,7 +805,7 @@ existing design language.
 
 #### A. Product sections
 
-Complete the Forseti, Brokkr Forge, MuninnShade, and VoltHalla sections with:
+Complete the Forseti, Brokkr Forge, MuninnShade, and Odin's Tower sections with validated public copy. Add Bifrost only with existing validated copy or a Copy Pending label. Do not add VoltHalla yet. Use:
 
 - Marketing-ready descriptions
 - Feature lists
@@ -782,7 +821,7 @@ Populate the portfolio grid with real entries or clearly labeled placeholders:
 - Forseti UI mockups
 - Brokkr Forge UI placeholder
 - MuninnShade subsystem diagram placeholder
-- VoltHalla UI concept placeholder
+- Bifrost or Odin's Tower UI/brand visual only after copy validation placeholder
 - Branding assets: runes, color palette, typography
 - System design diagrams placeholder
 
@@ -815,13 +854,16 @@ Include these differentiators:
 
 Use this roadmap:
 
-| Product | Next step |
-| --- | --- |
-| Forseti | Public release |
-| Brokkr Forge | Beta |
-| MuninnShade | v1.1 subsystem expansion |
-| VoltHalla | Prototype |
-| Odin's Tower | Unified suite vision |
+
+| Product      | Next step                |
+| ------------ | ------------------------ |
+| Forseti      | Public release           |
+| Brokkr Forge | Beta                     |
+| MuninnShade  | v1.1 subsystem expansion |
+| Bifrost      | Public copy validation   |
+| Odin's Tower | Workstation showcase / unified suite vision |
+| Odin's Tower | Unified suite vision     |
+
 
 #### F. Future-proof placeholders
 
@@ -891,24 +933,10 @@ evidence, builds timelines, and reveals the story hidden inside your documents.
 
 **CTA:** View MuninnShade
 
-#### VoltHalla - Energy Forensics
+#### VoltHalla - internal only until built
 
-**Tagline:** Where your watts meet their judgment.
-
-**Description:** VoltHalla judges your watts. Import your energy CSVs, apply
-your utility's rate structure, and uncover anomalies and billing
-inconsistencies.
-
-**Features:**
-
-- CSV ingestion
-- Rate comparison
-- Anomaly detection
-- Billing discrepancy analysis
-
-**Status badge:** Design Phase
-
-**CTA:** View VoltHalla
+Do not insert VoltHalla copy on the public Wix page. Keep VoltHalla out of the
+final product cards, portfolio grid, and roadmap until it is built.
 
 ### Final completion rules
 
@@ -933,36 +961,38 @@ When a Wix template, app screen, project card, or generated content block
 contains one of the placeholders below, replace it with the corresponding brand
 source.
 
-| Placeholder | Replacement source | Ready-to-use direction |
-| --- | --- | --- |
-| `[Founder Bio]` | Identity core | Present Michael as a father, fighter, self-taught engineer, and systems builder who turns chaos into clarity. |
-| `[About Me]` | Identity core + mission | Emphasize lived experience, structured thinking, and tools built from real adversity. |
-| `[Brand Story]` | Identity core + Asvaettir Labs identity | Tell the story of a mythic-tech studio forged from legal, technical, and bureaucratic complexity. |
-| `[Mission Statement]` | Personal mission | Restore clarity, autonomy, and fairness through offline-first tools for complex systems. |
-| `[Purpose]` | Personal mission | Build tools that empower individuals and support source-aware reasoning. |
-| `[Why I Build]` | Personal mission + lived experience | Explain that these are the tools Michael wishes he had during legal battles and evidence struggles. |
-| `[What Makes Me Different]` | Brand differentiators | Lead with lived experience, ethical engineering, forensic precision, and unified ecosystem thinking. |
-| `[Brand Values]` | Brand differentiators + core values | Use offline privacy, traceability, craftsmanship, human-centered judgment, and fairness. |
-| `[Project Description]` | Product positioning | Select the relevant product row and expand it into a concise product summary. |
-| `[Tagline]` | Brand voice + product positioning | Use the approved phrases or the product-specific tagline. |
-| `[Voice/Tone]` | Brand voice | Direct, analytical, mythic but grounded, confident without arrogance. |
-| `[Future Plans]` | Future vision | Describe Odin's Tower and the suite's direction without overpromising release dates. |
-| `[Roadmap]` | Future vision | Frame future work as continued integration of reasoning, evidence, structure, and truth. |
-| `[Product Status]` | Marketing-focused product showcase | Use each product's current launch status: Forseti publishing stage, Brokkr Forge active development, MuninnShade v1.0.2, VoltHalla design phase. |
-| `[Marketing Description]` | Marketing-ready descriptions | Use the public-facing product paragraph for the relevant product. |
-| `[Marketing Copy]` | Marketing-focused brand summary | Use confident, structured, mythic, human-centered language focused on user value. |
-| `[Value Proposition]` | Brand mission + marketing differentiators | State how the tool gives individuals clarity, autonomy, privacy, and structured analytical power. |
-| `[Why Choose Us]` | Brand differentiators - marketing version | Lead with offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience. |
-| `[Future Outlook]` | Future outlook - marketing version | Describe Odin's Tower as the unified ecosystem for structure, reasoning, and truth. |
-| `[Case Study Placeholder]` | Wix portfolio and marketing directive | Create Coming Soon cards for Forseti, MuninnShade, and VoltHalla case studies. |
-| `[Portfolio Item]` | Portfolio section requirements | Use UX/UI work, system design, branding artifacts, subsystem diagrams, and logic-flow examples. |
-| `[CTA]` | Required Wix sections | Use Explore the Suite, View Product, Request Early Access, Portfolio, or Contact based on section intent. |
-| `[Required Site Section]` | Wix portfolio and marketing directive | Generate Hero, Founder Bio, Product Suite, Portfolio, Skills, Brand Philosophy, Roadmap, and Contact sections. |
-| `[Final Completion Directive]` | Final Wix completion directive | Preserve the current design, fill missing content, add portfolio items, insert final copy, and leave future-proof placeholders. |
-| `[About Me]` | Final Wix completion directive + founder bio | Use the approved marketing bio without changing the surrounding layout. |
-| `[Mission / Philosophy]` | Final Wix completion directive | Insert the approved mission plus offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience. |
-| `[Roadmap / Future]` | Final Wix completion directive | Use Forseti public release, Brokkr Forge beta, MuninnShade v1.1, VoltHalla prototype, and Odin's Tower unified suite vision. |
-| `[Future-Proof Placeholder]` | Final Wix completion directive | Add Coming Soon cards for case studies, blog posts, testimonials, media kit, and future tools. |
+
+| Placeholder                    | Replacement source                           | Ready-to-use direction                                                                                                                           |
+| ------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `[Founder Bio]`                | Identity core                                | Present Michael as a father, fighter, self-taught engineer, and systems builder who turns chaos into clarity.                                    |
+| `[About Me]`                   | Identity core + mission                      | Emphasize lived experience, structured thinking, and tools built from real adversity.                                                            |
+| `[Brand Story]`                | Identity core + Asvaettir Labs identity      | Tell the story of a mythic-tech studio forged from legal, technical, and bureaucratic complexity.                                                |
+| `[Mission Statement]`          | Personal mission                             | Restore clarity, autonomy, and fairness through offline-first tools for complex systems.                                                         |
+| `[Purpose]`                    | Personal mission                             | Build tools that empower individuals and support source-aware reasoning.                                                                         |
+| `[Why I Build]`                | Personal mission + lived experience          | Explain that these are the tools Michael wishes he had during legal battles and evidence struggles.                                              |
+| `[What Makes Me Different]`    | Brand differentiators                        | Lead with lived experience, ethical engineering, forensic precision, and unified ecosystem thinking.                                             |
+| `[Brand Values]`               | Brand differentiators + core values          | Use offline privacy, traceability, craftsmanship, human-centered judgment, and fairness.                                                         |
+| `[Project Description]`        | Product positioning                          | Select the relevant product row and expand it into a concise product summary.                                                                    |
+| `[Tagline]`                    | Brand voice + product positioning            | Use the approved phrases or the product-specific tagline.                                                                                        |
+| `[Voice/Tone]`                 | Brand voice                                  | Direct, analytical, mythic but grounded, confident without arrogance.                                                                            |
+| `[Future Plans]`               | Future vision                                | Describe Odin's Tower and the suite's direction without overpromising release dates.                                                             |
+| `[Roadmap]`                    | Future vision                                | Frame future work as continued integration of reasoning, evidence, structure, and truth.                                                         |
+| `[Product Status]`             | Marketing-focused product showcase           | Use each product's current validated status: Forseti publishing stage, Brokkr Forge active development, MuninnShade v1.0.2 / in development, Bifrost copy pending, and Odin's Tower copy pending. Do not publish VoltHalla. |
+| `[Marketing Description]`      | Marketing-ready descriptions                 | Use the public-facing product paragraph for the relevant product.                                                                                |
+| `[Marketing Copy]`             | Marketing-focused brand summary              | Use confident, structured, mythic, human-centered language focused on user value.                                                                |
+| `[Value Proposition]`          | Brand mission + marketing differentiators    | State how the tool gives individuals clarity, autonomy, privacy, and structured analytical power.                                                |
+| `[Why Choose Us]`              | Brand differentiators - marketing version    | Lead with offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience.                           |
+| `[Future Outlook]`             | Future outlook - marketing version           | Describe Odin's Tower as the unified ecosystem for structure, reasoning, and truth.                                                              |
+| `[Case Study Placeholder]`     | Wix portfolio and marketing directive        | Create Coming Soon cards only for validated public products. Do not create a VoltHalla card yet.                                                                   |
+| `[Portfolio Item]`             | Portfolio section requirements               | Use UX/UI work, system design, branding artifacts, subsystem diagrams, and logic-flow examples.                                                  |
+| `[CTA]`                        | Required Wix sections                        | Use Explore the Suite, View Product, Request Early Access, Portfolio, or Contact based on section intent.                                        |
+| `[Required Site Section]`      | Wix portfolio and marketing directive        | Generate Hero, Founder Bio, Product Suite, Portfolio, Skills, Brand Philosophy, Roadmap, and Contact sections.                                   |
+| `[Final Completion Directive]` | Final Wix completion directive               | Preserve the current design, fill missing content, add portfolio items, insert final copy, and leave future-proof placeholders.                  |
+| `[About Me]`                   | Final Wix completion directive + founder bio | Use the approved marketing bio without changing the surrounding layout.                                                                          |
+| `[Mission / Philosophy]`       | Final Wix completion directive               | Insert the approved mission plus offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience.    |
+| `[Roadmap / Future]`           | Final Wix completion directive               | Use Forseti public release, Brokkr Forge beta, MuninnShade v1.1, Bifrost public copy validation, and Odin's Tower workstation / unified suite vision. Do not publish VoltHalla.        |
+| `[Future-Proof Placeholder]`   | Final Wix completion directive               | Add Coming Soon cards for case studies, blog posts, testimonials, media kit, and future tools.                                                   |
+
 
 ## 1. Suite position
 
@@ -998,14 +1028,14 @@ Norse craftsmanship, forensic discipline, and ethical AI principles.
 ### Core values
 
 - **Offline-first privacy:** Sensitive work should remain under the user's
-  control whenever possible.
+control whenever possible.
 - **Traceable reasoning:** Outputs should connect back to sources, documents,
-  timestamps, or user-selected evidence.
+timestamps, or user-selected evidence.
 - **Craftsmanship:** Interfaces should feel forged, disciplined, and precise,
-  not decorative or cartoonish.
+not decorative or cartoonish.
 - **Human-centered judgment:** Tools support investigation and organization.
-  They do not replace user responsibility, legal counsel, or professional
-  review.
+They do not replace user responsibility, legal counsel, or professional
+review.
 
 ### Voice
 
@@ -1031,25 +1061,27 @@ Avoid:
 
 ### Palette
 
-| Role | Color | Use |
-| --- | --- | --- |
-| Storm black | `#090A0D` | Page background |
-| Charcoal panel | `#14161B` | Cards and sections |
-| Iron gray | `#2A2E36` | Borders and inactive UI |
-| Rune gold | `#C8A24B` | Headings, key icons, primary accents |
-| Mead amber | `#E0B75A` | Hover accents and small highlights |
-| Lightning blue | `#8EDBFF` | Active analysis, energy, hover glow |
-| Ash white | `#ECE7DC` | Primary text |
-| Ash gray | `#AAA59B` | Secondary text |
-| Warning ember | `#D96B3B` | Caution states |
+
+| Role           | Color     | Use                                  |
+| -------------- | --------- | ------------------------------------ |
+| Storm black    | `#090A0D` | Page background                      |
+| Charcoal panel | `#14161B` | Cards and sections                   |
+| Iron gray      | `#2A2E36` | Borders and inactive UI              |
+| Rune gold      | `#C8A24B` | Headings, key icons, primary accents |
+| Mead amber     | `#E0B75A` | Hover accents and small highlights   |
+| Lightning blue | `#8EDBFF` | Active analysis, energy, hover glow  |
+| Ash white      | `#ECE7DC` | Primary text                         |
+| Ash gray       | `#AAA59B` | Secondary text                       |
+| Warning ember  | `#D96B3B` | Caution states                       |
+
 
 ### Typography
 
 - **Headings:** Cinzel, Trajan-style, or another restrained Norse-inspired
-  serif if available in Wix.
+serif if available in Wix.
 - **Body:** Inter, system sans, Segoe UI, or similar clean sans-serif.
 - **Data labels:** JetBrains Mono, IBM Plex Mono, or Wix's closest monospace
-  option.
+option.
 
 If Wix font choices are limited, use a clean sans-serif for body text and
 reserve the mythic look for logo imagery, icons, borders, and section labels.
@@ -1059,7 +1091,7 @@ reserve the mythic look for logo imagery, icons, borders, and section labels.
 - Forseti: raven, scales, rulebook, court columns.
 - Brokkr Forge: hammer, anvil, folder tree, sparks.
 - MuninnShade: raven, eye, evidence map, timeline nodes.
-- VoltHalla: lightning, meter, waveform, utility grid.
+- VoltHalla: internal only until built; do not publish public visual claims yet.
 
 Keep icons flat, high contrast, and simple enough to read on mobile.
 
@@ -1091,11 +1123,13 @@ Use one card format for all tools.
 
 For product detail pages or expanded sections:
 
-| Panel | Purpose | Wix content |
-| --- | --- | --- |
-| Left | Control actions | Import, configure, select, forge, analyze |
-| Center | Workspace | Screenshot, diagram, timeline, graph, folder tree |
-| Right | Output | Summary, warnings, report preview, recommendations |
+
+| Panel  | Purpose         | Wix content                                        |
+| ------ | --------------- | -------------------------------------------------- |
+| Left   | Control actions | Import, configure, select, forge, analyze          |
+| Center | Workspace       | Screenshot, diagram, timeline, graph, folder tree  |
+| Right  | Output          | Summary, warnings, report preview, recommendations |
+
 
 On mobile, stack the panels in this order:
 
@@ -1144,12 +1178,15 @@ under real conditions.
 work local, make reasoning traceable, and give users clear systems for moving
 through complex problems.
 
-| Product | Tagline | Public description |
-| --- | --- | --- |
-| Forseti | Built for the millions navigating civil courts alone. | Android companion for pro se civil procedure, rules, deadlines, filings, guides, and on-device organization. |
-| Brokkr Forge | The forge that shapes chaos into order. | Desktop folder organizer that turns raw files into structured case directories with chain-of-custody logs. |
-| MuninnShade | A reasoning workstation for evidence and truth. | Offline analytical workstation for evidence review, timelines, entity relationships, reasoning sessions, and forensic summaries. |
-| VoltHalla | Where your watts meet their judgment. | Energy forensics engine for CSV usage data, anomaly detection, rate comparison, and billing review. |
+
+| Product      | Tagline                                               | Public description                                                                                                               |
+| ------------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Forseti      | Built for the millions navigating civil courts alone. | Android companion for pro se civil procedure, rules, deadlines, filings, guides, and on-device organization.                     |
+| Brokkr Forge | The forge that shapes chaos into order.               | Desktop folder organizer that turns raw files into structured case directories with chain-of-custody logs.                       |
+| MuninnShade  | A reasoning workstation for evidence and truth.       | Offline analytical workstation for evidence review, timelines, entity relationships, reasoning sessions, and forensic summaries. |
+| Bifrost      | Copy pending validation.                            | Built product; keep existing public copy or label Coming Soon until final product claims are validated.                          |
+| Odin's Tower | Unified suite vision.                               | Ecosystem-level hub; use only validated public copy and avoid unverified feature claims.                                        |
+
 
 ## 6. Product sections
 
@@ -1231,13 +1268,15 @@ produce structured case narratives.
 
 **Subsystem diagram copy:**
 
-| Subsystem | Role |
-| --- | --- |
-| Evidence Workbench | Ingests, indexes, and organizes selected documents. |
-| Graph Engine | Maps entities, relationships, events, and claims. |
-| Timeline Engine | Places facts and events in chronological order. |
-| Reasoning Engine | Applies structured inference and identifies gaps or contradictions. |
-| Diagnostics Panel | Monitors integrity, status, and workflow health. |
+
+| Subsystem          | Role                                                                |
+| ------------------ | ------------------------------------------------------------------- |
+| Evidence Workbench | Ingests, indexes, and organizes selected documents.                 |
+| Graph Engine       | Maps entities, relationships, events, and claims.                   |
+| Timeline Engine    | Places facts and events in chronological order.                     |
+| Reasoning Engine   | Applies structured inference and identifies gaps or contradictions. |
+| Diagnostics Panel  | Monitors integrity, status, and workflow health.                    |
+
 
 **Output examples:**
 
@@ -1257,32 +1296,8 @@ evidence map, timeline, and analytical output panels.
 
 ### VoltHalla
 
-**Headline:** VoltHalla
-
-**Tagline:** Where your watts meet their judgment.
-
-**Description:** VoltHalla is an energy-forensics engine for analyzing utility
-usage data. It imports CSV records, normalizes timestamps and units, compares
-rate structures, detects anomalies, and generates plain-language billing
-summaries.
-
-**Workflow:**
-
-1. Import CSV - load interval, monthly, or utility-exported usage data.
-2. Configure Rates - model flat, tiered, time-of-use, or demand pricing.
-3. Analyze - compute usage patterns, baseload, spikes, and discrepancies.
-4. Report - generate a summary for review, dispute preparation, or planning.
-
-**Example output line:** Judgment rendered. Baseload exceeds expected threshold
-by 142 W. VoltHalla recommends inspection of persistent draw sources.
-
-**CTA options:**
-
-- View energy analysis concept
-- Upload sample CSV later
-
-**Alt text:** VoltHalla energy forensics dashboard showing CSV import, usage
-graphs, rate comparison, and anomaly summary panels.
+Do not publish VoltHalla content yet. Keep this product internal until it is
+successfully built or explicitly approved for public preview.
 
 ## 7. Wix page map
 
@@ -1292,7 +1307,8 @@ Recommended public site structure:
 2. Forseti
 3. MuninnShade
 4. Brokkr Forge
-5. VoltHalla
+5. Bifrost
+6. Odin's Tower
 6. About
 7. Contact
 8. Privacy Policy
@@ -1322,13 +1338,12 @@ procedure, evidence reasoning, case organization, and energy data review.
 ### Product SEO snippets
 
 - **Forseti:** Android civil procedure companion for pro se litigants with
-  rules, deadlines, guides, OCR, and local case organization.
+rules, deadlines, guides, OCR, and local case organization.
 - **MuninnShade:** Offline reasoning workstation for evidence, timelines,
-  relationship mapping, and forensic case summaries.
+relationship mapping, and forensic case summaries.
 - **Brokkr Forge:** Desktop folder organizer for structured case directories
-  and chain-of-custody file movement logs.
-- **VoltHalla:** Energy forensics engine for CSV usage analysis, utility rate
-  comparison, anomaly detection, and billing review.
+and chain-of-custody file movement logs.
+- **Bifrost / Odin's Tower:** Use only validated public copy. Do not publish unverified feature claims.
 
 ## 9. Accessibility checklist
 
@@ -1396,11 +1411,7 @@ Use 3-4 workstation visuals:
 
 ### VoltHalla
 
-Use 3 visuals:
-
-1. CSV import
-2. Rate configuration
-3. Analysis report with anomaly callouts
+Do not publish VoltHalla screenshots or concept visuals until the product is built and approved for public preview.
 
 ## 12. Publishing checklist
 
