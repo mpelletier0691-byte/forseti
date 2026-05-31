@@ -25,6 +25,89 @@ publication gates. Use that guide to keep public copy confident while avoiding
 unverified claims or confidential material.
 
 
+
+### Hybrid Michael Pelletier + Asvaettir Labs positioning
+
+The Wix site is not only an app catalog. It is a hybrid branding site for both
+Michael Pelletier and Asvaettir Labs. It should explain the creator, the studio,
+the values, the apps, and the Forseti launch in one coherent public identity.
+
+Use this framing across the homepage, About section, portfolio intro, and app
+showcase:
+
+- **Michael Pelletier:** the systems-minded builder, analytical thinker, and
+  creator behind the work.
+- **Asvaettir Labs:** the studio / forge where that identity becomes tools,
+  product systems, legal-tech workflows, and local AI infrastructure.
+- **The apps and workstation:** proof of the work, including Forseti, Brokkr
+  Forge, MuninnShade, Bifrost, and Odin's Tower.
+- **Forseti launch:** the current public launch focus and strongest app landing
+  path.
+
+The page should answer two visitor questions at once:
+
+1. Who is Michael Pelletier?
+2. What is Asvaettir Labs building?
+
+#### Hybrid-professional summary
+
+Michael Pelletier is a systems-minded builder and analytical thinker whose
+worldview, discipline, and Norse-rooted identity shape the way he interprets and
+improves the world around him. He blends modern problem-solving with a mythic
+sense of purpose, seeing patterns others overlook, thinking beyond the immediate
+moment, and designing solutions that strengthen people, systems, and
+communities.
+
+Professionally, Michael excels in pattern recognition, systems interpretation,
+ethical reasoning, and human-centered problem solving. He is a fast learner with
+a DIY engineering mindset: someone who adapts quickly to new tools, and when
+those tools fail, re-engineers or rebuilds them to work the way they should. His
+approach is grounded in clarity, discipline, fairness, and transparency.
+
+Michael's identity is also shaped by a deeper framework: a Norse worldview
+rooted in honor, balance, and purpose. He works with an oath-driven sense of
+responsibility, standing for truth, empowerment, and the belief that systems
+should serve people rather than exploit them. This gives his work a rare
+combination of technical precision, ethical depth, and personal conviction.
+
+Asvaettir Labs is the external expression of that identity: a forge where
+Michael transforms adversity into architecture, imbalance into innovation, and
+personal conviction into tools that help others navigate a world full of noise,
+confusion, and broken systems. The projects reflect a mission to create
+meaningful change, challenge systems that mislead or overwhelm people, and build
+tools that leave people stronger than they were before.
+
+Michael stands against deception, exploitation, and systems that bury people in
+confusion. He stands for honor, equality, empowerment, and the relentless
+pursuit of becoming the best version of oneself. His work is a saga of
+resilience, clarity, and purpose, and every tool built through Asvaettir Labs
+carries that same fire.
+
+#### Homepage intro option
+
+Michael Pelletier is the systems-minded builder behind Asvaettir Labs, a
+mythic-tech studio where lived experience becomes practical software. The work
+combines Norse-rooted identity, forensic clarity, privacy-first engineering, and
+human-centered design to build tools for people navigating complex systems.
+
+#### About section option
+
+Asvaettir Labs is both a studio and a personal forge. It represents Michael
+Pelletier's approach to building: study the system, find the pressure points,
+turn chaos into structure, and create tools that help people stand stronger. The
+apps, workflows, and workstation projects are not separate from the founder's
+story; they are the public form of it.
+
+#### Site navigation priority
+
+The Wix page should guide visitors through this order:
+
+1. Michael + Asvaettir Labs identity
+2. Forseti launch / Google Play path
+3. Built and validated ecosystem projects
+4. Portfolio and systems-design evidence
+5. Contact / collaboration / employment path
+
 ### Public product scope correction
 
 Use only built or validated products on the public Wix page. Do not publish
@@ -66,12 +149,11 @@ roadmap items, and placeholders.
 
 ### 2. Site purpose
 
-The Wix site must function as:
+The Wix site must function as a hybrid Michael Pelletier + Asvaettir Labs branding site:
 
 #### A. Professional portfolio
 
-Showcase UX/UI work, system design, product architecture, branding assets, and
-future case studies.
+Showcase Michael Pelletier as the creator, including UX/UI work, system design, product architecture, branding assets, and future case studies.
 
 #### B. Product suite showcase
 
