@@ -5,6 +5,238 @@ copy, visual guidance, and reusable layout rules for the public site. It is
 written for the portfolio / launch page, not as confidential technical
 documentation.
 
+## Master instruction set for Cursor
+
+This is the controlling directive for completing the Wix site, portfolio,
+product showcases, and future placeholders. Use all previously provided brand,
+product, interview, Wix layout, and future-proofing information. Do not alter
+the existing Wix design, color theme, or layout.
+
+Cursor must treat this section as the single source of truth for final content
+generation, placeholder replacement, and site-finalization tasks. Supporting
+sections below provide expanded copy and implementation detail.
+
+### 1. Brand identity
+
+Asvaettir Labs is a mythic-tech studio blending:
+
+- Norse craftsmanship
+- Forensic clarity
+- Offline-first privacy
+- Human-centric reasoning
+- Lived experience and real-world adversity
+
+**Brand tone:** Confident, structured, mythic but grounded, analytical, and
+purposeful.
+
+**Tagline:** Tools for the Determined.
+
+Apply this tone to all generated site text, product copy, portfolio entries,
+roadmap items, and placeholders.
+
+### 2. Site purpose
+
+The Wix site must function as:
+
+#### A. Professional portfolio
+
+Showcase UX/UI work, system design, product architecture, branding assets, and
+future case studies.
+
+#### B. Product suite showcase
+
+Feature these products with status, feature lists, and calls to action:
+
+- Forseti - Publishing Stage
+- Brokkr Forge - Active Development
+- MuninnShade - Version 1.0.2
+- VoltHalla - Design Phase
+
+#### C. Marketing platform
+
+Communicate the mission, founder story, differentiators, roadmap, and future
+vision.
+
+#### D. Future-proof container
+
+Include placeholders for future tools, case studies, blog posts, testimonials,
+and a media kit.
+
+Preserve the current Wix layout and theme while completing these roles.
+
+### 3. Product definitions
+
+#### Forseti - Publishing Stage
+
+**Description:** Forseti is your offline civil-procedure companion - built for
+the millions navigating court systems without representation.
+
+**Features:**
+
+- Plain-language rule explanations
+- Deadline tracking
+- Offline storage
+- Pro se-focused design
+
+**Status:** Publishing Stage
+
+**CTA:** View Forseti
+
+#### Brokkr Forge - Active Development
+
+**Description:** Brokkr Forge transforms chaos into order. Select a folder,
+choose a structure, and watch your workspace reorganize itself.
+
+**Features:**
+
+- One-click folder structuring
+- Case templates
+- Chain-of-custody logs
+
+**Status:** Active Development
+
+**CTA:** View Brokkr Forge
+
+#### MuninnShade - Version 1.0.2
+
+**Description:** MuninnShade is a forensic reasoning engine that interprets
+evidence, builds timelines, and reveals the story hidden inside your documents.
+
+**Features:**
+
+- Evidence ingestion
+- Timeline generation
+- Relationship mapping
+- Forensic summaries
+
+**Status:** Version 1.0.2
+
+**CTA:** View MuninnShade
+
+#### VoltHalla - Design Phase
+
+**Description:** VoltHalla judges your watts. Import your energy CSVs, apply
+your utility's rate structure, and uncover anomalies and billing inconsistencies.
+
+**Features:**
+
+- CSV ingestion
+- Rate comparison
+- Anomaly detection
+- Billing discrepancy analysis
+
+**Status:** Design Phase
+
+**CTA:** View VoltHalla
+
+### 4. Founder bio
+
+Use this founder bio wherever the site contains a founder, About Me, or studio
+origin placeholder:
+
+Michael Pelletier is the founder of Asvaettir Labs, a studio dedicated to
+building offline-first tools that bring clarity to complex systems. His work
+blends Norse-inspired craftsmanship with forensic precision, creating software
+that empowers individuals to stand strong in the face of legal, analytical, and
+bureaucratic challenges.
+
+### 5. Mission statement
+
+Use this mission statement wherever the site contains a mission, purpose, or
+philosophy placeholder:
+
+We forge tools that restore clarity, autonomy, and fairness - empowering people
+to navigate legal, analytical, and personal challenges with confidence.
+
+### 6. Brand differentiators
+
+Use these differentiators in value proposition, Why Choose Us, philosophy, and
+product-support sections:
+
+- Offline-first privacy
+- Forensic clarity
+- Norse craftsmanship
+- Human-centric reasoning
+- Built from lived experience
+
+### 7. Roadmap
+
+Use this roadmap in future-facing sections:
+
+| Product | Roadmap item |
+| --- | --- |
+| Forseti | Public release |
+| Brokkr Forge | Beta |
+| MuninnShade | v1.1 subsystem expansion |
+| VoltHalla | Prototype |
+| Odin's Tower | Unified suite vision |
+
+### 8. Portfolio requirements
+
+Populate the portfolio section with these groups:
+
+#### A. UX/UI work
+
+- Forseti UI mockups, with placeholder images allowed
+- Brokkr Forge UI
+- MuninnShade subsystem diagram
+- VoltHalla UI concept
+
+#### B. System design
+
+- Evidence reasoning flows
+- Folder structuring logic
+- Energy anomaly detection logic
+
+#### C. Branding assets
+
+- Runic motifs
+- Color palette
+- Typography system
+
+#### D. Case study placeholders
+
+Create cards labeled:
+
+- Forseti Case Study - Coming Soon
+- MuninnShade Case Study - Coming Soon
+- VoltHalla Case Study - Coming Soon
+
+### 9. Placeholder rules
+
+Replace these placeholders exactly as follows:
+
+| Placeholder | Replace with |
+| --- | --- |
+| `[Founder Bio]` | Founder bio above |
+| `[Mission Statement]` | Mission statement above |
+| `[Brand Story]` | Brand identity section |
+| `[Product Description]` | Product definitions above |
+| `[Product Status]` | Publishing Stage / Active Development / Version 1.0.2 / Design Phase |
+| `[Value Proposition]` | Brand differentiators |
+| `[Future Outlook]` | Odin's Tower roadmap |
+| `[Case Study Placeholder]` | Coming Soon cards |
+| `[Portfolio Item]` | UX, UI, system design, and branding artifacts |
+| `[CTA]` | Explore the Suite, View Product, or Contact |
+
+Do not alter the layout or theme while replacing placeholders.
+
+### 10. Final execution instruction
+
+Cursor must take over the remaining Wix work by doing the following:
+
+- Fill in all missing content
+- Replace all placeholders
+- Complete all product sections
+- Populate the portfolio
+- Insert marketing-ready copy
+- Add future-proof placeholders
+- Maintain the existing design and color theme
+- Use the Asvaettir Labs brand voice consistently
+
+This is the final blueprint for completing the Wix site using all prior brand,
+product, layout, and future-planning information.
+
 ## Canonical branding interview summary
 
 Use this section as the source of truth when replacing placeholders or
