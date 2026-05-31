@@ -6,6 +6,19 @@ publication. Use it with `ASVAETTIR_WIX_ECOSYSTEM.md` and
 `FORSETI_LAUNCH_FINALIZATION.md`.
 
 
+
+## Personal brand validation gate
+
+Before publishing, confirm the Wix site does not imply Asvaettir Labs is an LLC,
+formal company, agency, or client-services business unless that status is later
+verified. Present Asvaettir Labs as Michael Pelletier's personal developer brand
+and project umbrella.
+
+Contact language should invite employment, practical work, entry-level roles,
+collaboration, product support, QA, documentation, legal-tech support, and
+Forseti feedback. It should not promise custom app development services or
+formal client proposals.
+
 ## Public product scope gate
 
 Only publish products that are built or explicitly approved for public preview.

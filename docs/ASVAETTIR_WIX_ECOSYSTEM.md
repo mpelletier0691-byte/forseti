@@ -26,10 +26,37 @@ unverified claims or confidential material.
 
 
 
+
+### Personal developer brand clarification
+
+Asvaettir Labs should be presented as Michael Pelletier's personal developer
+brand, portfolio identity, and project umbrella. Do not describe it as an LLC,
+formal company, agency, or client-services business unless that legal/business
+status is later created and verified.
+
+Use this framing:
+
+- Michael Pelletier is the person, creator, developer, and job candidate.
+- Asvaettir Labs is the public developer name / brand used to organize and
+  present his apps, workstation, local AI experiments, design systems, and
+  legal-tech work.
+- The site should help employers, collaborators, and app users understand both
+  the creator and the work.
+- The Contact page should invite employment, entry-level work, practical roles,
+  product support, QA, documentation, legal-tech support, thoughtful
+  collaboration, and Forseti feedback.
+- Avoid agency language such as custom proposal, client services, design agency,
+  hired studio, or guaranteed app development.
+
+Preferred public wording:
+
+> Asvaettir Labs is the personal developer brand of Michael Pelletier: a public
+> identity for his apps, systems, local AI infrastructure, and portfolio work.
+
 ### Hybrid Michael Pelletier + Asvaettir Labs positioning
 
 The Wix site is not only an app catalog. It is a hybrid branding site for both
-Michael Pelletier and Asvaettir Labs. It should explain the creator, the studio,
+Michael Pelletier and Asvaettir Labs. It should explain the creator, the personal developer brand,
 the values, the apps, and the Forseti launch in one coherent public identity.
 
 Use this framing across the homepage, About section, portfolio intro, and app
@@ -37,7 +64,7 @@ showcase:
 
 - **Michael Pelletier:** the systems-minded builder, analytical thinker, and
   creator behind the work.
-- **Asvaettir Labs:** the studio / forge where that identity becomes tools,
+- **Asvaettir Labs:** Michael's personal developer brand / forge where that identity becomes tools,
   product systems, legal-tech workflows, and local AI infrastructure.
 - **The apps and workstation:** proof of the work, including Forseti, Brokkr
   Forge, MuninnShade, Bifrost, and Odin's Tower.
@@ -86,13 +113,13 @@ carries that same fire.
 #### Homepage intro option
 
 Michael Pelletier is the systems-minded builder behind Asvaettir Labs, a
-mythic-tech studio where lived experience becomes practical software. The work
+personal developer brand where lived experience becomes practical software. The work
 combines Norse-rooted identity, forensic clarity, privacy-first engineering, and
 human-centered design to build tools for people navigating complex systems.
 
 #### About section option
 
-Asvaettir Labs is both a studio and a personal forge. It represents Michael
+Asvaettir Labs is both a personal developer brand and a forge. It represents Michael
 Pelletier's approach to building: study the system, find the pressure points,
 turn chaos into structure, and create tools that help people stand stronger. The
 apps, workflows, and workstation projects are not separate from the founder's
@@ -1037,6 +1064,34 @@ The final voice must remain mythic but grounded, analytical, structured,
 confident, privacy-aligned, forensic, precise, and human-centered. Avoid
 corporate jargon, generic filler, and overly casual language.
 
+
+
+### Contact page positioning
+
+The Contact page should not read like a design agency accepting client projects.
+It should read as a personal + brand contact page for Michael Pelletier and
+Asvaettir Labs.
+
+Use contact language that welcomes:
+
+- Employment opportunities
+- Entry-level or practical work
+- Product support, QA, documentation, and customer-facing technical roles
+- Legal-tech support and collaboration
+- Forseti feedback or support
+- Thoughtful software/product conversations
+
+Avoid language that promises custom app development, formal proposals, agency
+services, or business consulting.
+
+Preferred Contact heading:
+
+> Connect with Michael Pelletier
+
+Preferred Contact purpose line:
+
+> Reach out about employment, practical work, collaboration, Forseti, or the
+> Asvaettir Labs project ecosystem.
 
 ### Verified contact links
 
