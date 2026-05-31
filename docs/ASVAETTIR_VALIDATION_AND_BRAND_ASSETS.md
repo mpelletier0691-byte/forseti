@@ -39,6 +39,17 @@ Every public statement should be either:
 This protects the brand while keeping the site confident, professional, and
 trustworthy.
 
+
+### Verified contact targets
+
+Use these contact targets during social-link validation:
+
+- Email: `mailto:asvaettirlabs.dev@gmail.com`
+- LinkedIn: `https://www.linkedin.com/in/michael-pelletier-33a79b376`
+- GitHub: use the real GitHub profile already linked in the Wix footer
+
+Remove, hide, or repoint any Twitter, Dribbble, Instagram, Behance, or other social icons that still use Wix demo URLs.
+
 ## 2. Wix site validation checklist
 
 Before publishing the Wix site, verify:

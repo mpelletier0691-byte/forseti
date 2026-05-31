@@ -839,9 +839,9 @@ Use this future-facing roadmap:
 
 Include:
 
-- Email
-- LinkedIn
-- GitHub
+- Email: asvaettirlabs.dev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/michael-pelletier-33a79b376
+- GitHub: use the real GitHub profile linked in the Wix footer
 - Contact form
 - Footer tagline: Asvaettir Labs - forging clarity from complexity.
 
@@ -1036,6 +1036,17 @@ When applying this directive:
 The final voice must remain mythic but grounded, analytical, structured,
 confident, privacy-aligned, forensic, precise, and human-centered. Avoid
 corporate jargon, generic filler, and overly casual language.
+
+
+### Verified contact links
+
+Use these verified public contact targets anywhere Wix asks for social or contact links:
+
+- Email: `mailto:asvaettirlabs.dev@gmail.com`
+- LinkedIn: `https://www.linkedin.com/in/michael-pelletier-33a79b376`
+- GitHub: use the real GitHub profile already linked in the Wix footer
+
+Do not leave any social icon pointed at Wix demo URLs.
 
 ## Placeholder replacement map
 
