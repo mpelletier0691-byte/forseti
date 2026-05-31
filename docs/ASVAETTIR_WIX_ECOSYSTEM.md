@@ -489,6 +489,195 @@ Include:
 - Keep calls to action specific: Explore the Suite, View Product, Request Early
   Access, Contact.
 
+## Final Wix completion directive
+
+Use this section to finish the current Wix site without replacing the existing
+visual direction. This directive assumes the site already has a working dark,
+gold-accented, Norse-inspired portfolio layout. The task is completion and
+polish, not redesign.
+
+### Keep as-is
+
+Preserve the current Wix site's:
+
+- Dark theme
+- Gold accents
+- Norse-inspired typography
+- Section spacing and layout
+- Hero header design
+- Project blocks
+- Portfolio grid layout
+- Contact and footer section
+
+Do not rebuild the site from scratch. Fill missing content, replace
+placeholders, add portfolio-ready entries, and polish the copy inside the
+existing design language.
+
+### Final areas to complete
+
+#### A. Product sections
+
+Complete the Forseti, Brokkr Forge, MuninnShade, and VoltHalla sections with:
+
+- Marketing-ready descriptions
+- Feature lists
+- Status badges
+- Short taglines
+- Calls to action
+- Screenshot or mockup placeholders where final images are not available
+
+#### B. Portfolio grid
+
+Populate the portfolio grid with real entries or clearly labeled placeholders:
+
+- Forseti UI mockups
+- Brokkr Forge UI placeholder
+- MuninnShade subsystem diagram placeholder
+- VoltHalla UI concept placeholder
+- Branding assets: runes, color palette, typography
+- System design diagrams placeholder
+
+#### C. About Me section
+
+Replace any About Me or Founder Bio placeholder with the approved marketing bio:
+
+Michael Pelletier is the founder of Asvaettir Labs, a studio dedicated to
+building offline-first tools that bring clarity to complex systems. His work
+blends Norse-inspired craftsmanship with forensic precision, creating software
+that empowers individuals to stand strong in the face of legal, analytical, and
+bureaucratic challenges.
+
+#### D. Mission / philosophy section
+
+Insert the approved mission statement:
+
+We forge tools that restore clarity, autonomy, and fairness - empowering people
+to navigate legal, analytical, and personal challenges with confidence.
+
+Include these differentiators:
+
+- Offline-first privacy
+- Forensic clarity
+- Norse craftsmanship
+- Human-centric reasoning
+- Built from lived experience
+
+#### E. Roadmap / future section
+
+Use this roadmap:
+
+| Product | Next step |
+| --- | --- |
+| Forseti | Public release |
+| Brokkr Forge | Beta |
+| MuninnShade | v1.1 subsystem expansion |
+| VoltHalla | Prototype |
+| Odin's Tower | Unified suite vision |
+
+#### F. Future-proof placeholders
+
+Add placeholder cards for:
+
+- Case studies
+- Blog posts
+- Testimonials
+- Media kit
+- Future tools
+
+Each placeholder should be intentionally labeled Coming Soon and styled to match
+the existing portfolio cards.
+
+### Product marketing content for final insertion
+
+#### Forseti - Publishing Stage
+
+**Tagline:** Built for the millions navigating civil courts alone.
+
+**Description:** Forseti is your offline civil-procedure companion - built for
+the millions navigating court systems without representation.
+
+**Features:**
+
+- Plain-language rule explanations
+- Deadline tracking
+- Offline storage
+- Pro se-focused design
+
+**Status badge:** Publishing Stage
+
+**CTA:** View Forseti
+
+#### Brokkr Forge - Desktop Organizer
+
+**Tagline:** The forge that shapes chaos into order.
+
+**Description:** Brokkr Forge transforms chaos into order. Select a folder,
+choose a structure, and watch your workspace reorganize itself.
+
+**Features:**
+
+- One-click folder structuring
+- Case templates
+- Chain-of-custody logs
+
+**Status badge:** Active Development
+
+**CTA:** View Brokkr Forge
+
+#### MuninnShade - Reasoning Engine
+
+**Tagline:** A reasoning workstation for evidence and truth.
+
+**Description:** MuninnShade is a forensic reasoning engine that interprets
+evidence, builds timelines, and reveals the story hidden inside your documents.
+
+**Features:**
+
+- Evidence ingestion
+- Timeline generation
+- Relationship mapping
+- Forensic summaries
+
+**Status badge:** Version 1.0.2
+
+**CTA:** View MuninnShade
+
+#### VoltHalla - Energy Forensics
+
+**Tagline:** Where your watts meet their judgment.
+
+**Description:** VoltHalla judges your watts. Import your energy CSVs, apply
+your utility's rate structure, and uncover anomalies and billing
+inconsistencies.
+
+**Features:**
+
+- CSV ingestion
+- Rate comparison
+- Anomaly detection
+- Billing discrepancy analysis
+
+**Status badge:** Design Phase
+
+**CTA:** View VoltHalla
+
+### Final completion rules
+
+When applying this directive:
+
+- Keep the existing Wix design and color theme.
+- Fill in all missing content.
+- Replace all placeholders.
+- Add portfolio items.
+- Insert marketing-ready product descriptions.
+- Add future-proof placeholders.
+- Maintain the Asvaettir Labs brand voice.
+- Complete the site without altering the layout.
+
+The final voice must remain mythic but grounded, analytical, structured,
+confident, privacy-aligned, forensic, precise, and human-centered. Avoid
+corporate jargon, generic filler, and overly casual language.
+
 ## Placeholder replacement map
 
 When a Wix template, app screen, project card, or generated content block
@@ -520,6 +709,11 @@ source.
 | `[Portfolio Item]` | Portfolio section requirements | Use UX/UI work, system design, branding artifacts, subsystem diagrams, and logic-flow examples. |
 | `[CTA]` | Required Wix sections | Use Explore the Suite, View Product, Request Early Access, Portfolio, or Contact based on section intent. |
 | `[Required Site Section]` | Wix portfolio and marketing directive | Generate Hero, Founder Bio, Product Suite, Portfolio, Skills, Brand Philosophy, Roadmap, and Contact sections. |
+| `[Final Completion Directive]` | Final Wix completion directive | Preserve the current design, fill missing content, add portfolio items, insert final copy, and leave future-proof placeholders. |
+| `[About Me]` | Final Wix completion directive + founder bio | Use the approved marketing bio without changing the surrounding layout. |
+| `[Mission / Philosophy]` | Final Wix completion directive | Insert the approved mission plus offline-first privacy, forensic clarity, Norse craftsmanship, human-centric reasoning, and lived experience. |
+| `[Roadmap / Future]` | Final Wix completion directive | Use Forseti public release, Brokkr Forge beta, MuninnShade v1.1, VoltHalla prototype, and Odin's Tower unified suite vision. |
+| `[Future-Proof Placeholder]` | Final Wix completion directive | Add Coming Soon cards for case studies, blog posts, testimonials, media kit, and future tools. |
 
 ## 1. Suite position
 
