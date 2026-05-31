@@ -5,6 +5,162 @@ copy, visual guidance, and reusable layout rules for the public site. It is
 written for the portfolio / launch page, not as confidential technical
 documentation.
 
+## Canonical branding interview summary
+
+Use this section as the source of truth when replacing placeholders or
+generating Wix content, app UI text, product descriptions, project summaries,
+founder copy, and brand-level messaging.
+
+### Identity core
+
+Michael Pelletier is a systems-minded builder who turns chaos into structured
+clarity. He is a father, a fighter, and a self-taught engineer shaped by
+real-world adversity. His work comes from direct experience navigating legal
+injustice, bureaucratic failure, billing disputes, evidence problems, and
+technical complexity.
+
+He thinks in frameworks, flows, dependencies, timelines, and cause-and-effect
+chains. His products blend Norse worldview, destiny-driven purpose, and modern
+analytical design.
+
+Use this identity for:
+
+- About Me
+- Founder Bio
+- Brand Story
+- Studio introduction
+- Personal project descriptions
+
+### Personal mission
+
+The mission of Asvaettir Labs is to restore clarity, autonomy, and fairness for
+people navigating complex systems. The tools are built to empower individuals,
+not institutions, through offline-first privacy, source-aware reasoning, and
+practical workflows.
+
+Michael builds the tools he wishes he had during his own legal battles,
+evidence struggles, and technical disputes: software that thinks like an
+investigator instead of a black-box algorithm.
+
+Use this mission for:
+
+- Mission Statement
+- Purpose
+- Why I Build
+- About the Studio
+- Homepage hero copy
+
+### Brand differentiators
+
+Asvaettir Labs is not positioned as a generic software studio. Its
+differentiators are:
+
+- **Lived experience:** Products are shaped by real pressure, not theory.
+- **Norse-inspired craftsmanship:** Each tool has meaning, symbolism, and a
+  forged identity.
+- **Ethical engineering:** Favor local control, reduced cloud dependence, and
+  no unnecessary data harvesting.
+- **Forensic precision:** Systems are structured to withstand scrutiny.
+- **Human-centered reasoning:** Workflows follow how people investigate,
+  compare, document, and decide.
+- **Unified ecosystem:** Forseti, Brokkr Forge, MuninnShade, and VoltHalla all
+  share one philosophy of clarity, privacy, and disciplined analysis.
+
+Use these differentiators for:
+
+- Why Choose Me
+- What Sets Me Apart
+- Brand Values
+- Product comparison blocks
+- Investor / partner summaries
+
+### Asvaettir Labs identity
+
+Asvaettir Labs is a mythic-tech studio blending Norse symbolism with modern
+analytical design. It is a home for tools built for the determined, the
+self-represented, the overlooked, and the relentless.
+
+The suite shares:
+
+- Dark storm-gray themes
+- Rune-gold accents
+- Runic motifs
+- Forensic clarity
+- Offline-first architecture
+- Traceable reasoning
+- Human-centered workflows
+
+Use this identity for product pages, section headers, project cards, and
+brand-level descriptions.
+
+### Brand voice
+
+The voice is direct, analytical, mythic but grounded, confident without
+arrogance, forensic, structured, and purposeful.
+
+Approved phrases:
+
+- Tools for the Determined.
+- Forging clarity from complexity.
+- Where human reasoning meets digital precision.
+- Truth deserves structure.
+- Built for the self-represented, the overlooked, and the relentless.
+
+Use this voice for headings, taglines, UI micro-copy, project descriptions, and
+Wix content blocks.
+
+### Product positioning
+
+| Product | Position | Tone |
+| --- | --- | --- |
+| Forseti | The guide for the self-represented; built for the millions navigating civil courts alone. | Supportive, clear, procedural. |
+| Brokkr Forge | The organizer and structure-maker; turns chaos into order. | Strong, methodical, crafted. |
+| MuninnShade | The reasoning engine; interprets evidence, builds timelines, and reveals truth. | Forensic, wise, analytical. |
+| VoltHalla | The energy-forensics engine; judges watts and exposes billing inconsistencies. | Storm-seer, precise, authoritative. |
+
+### Future vision
+
+The long-term vision is to build Odin's Tower: a unified suite of tools for
+reasoning, evidence, structure, and truth. The larger brand blends Norse mythic
+identity, modern digital craftsmanship, ethical AI, and forensic clarity.
+
+Asvaettir Labs should be positioned as a trusted name in:
+
+- Legal technology
+- Personal analytics
+- Privacy-aligned software
+- Structured reasoning systems
+
+Use this vision for:
+
+- Future Plans
+- Roadmap
+- About the Studio
+- Long-form founder story
+- Product ecosystem pages
+
+## Placeholder replacement map
+
+When a Wix template, app screen, project card, or generated content block
+contains one of the placeholders below, replace it with the corresponding brand
+source.
+
+| Placeholder | Replacement source | Ready-to-use direction |
+| --- | --- | --- |
+| `[Founder Bio]` | Identity core | Present Michael as a father, fighter, self-taught engineer, and systems builder who turns chaos into clarity. |
+| `[About Me]` | Identity core + mission | Emphasize lived experience, structured thinking, and tools built from real adversity. |
+| `[Brand Story]` | Identity core + Asvaettir Labs identity | Tell the story of a mythic-tech studio forged from legal, technical, and bureaucratic complexity. |
+| `[Mission Statement]` | Personal mission | Restore clarity, autonomy, and fairness through offline-first tools for complex systems. |
+| `[Purpose]` | Personal mission | Build tools that empower individuals and support source-aware reasoning. |
+| `[Why I Build]` | Personal mission + lived experience | Explain that these are the tools Michael wishes he had during legal battles and evidence struggles. |
+| `[What Makes Me Different]` | Brand differentiators | Lead with lived experience, ethical engineering, forensic precision, and unified ecosystem thinking. |
+| `[Brand Values]` | Brand differentiators + core values | Use offline privacy, traceability, craftsmanship, human-centered judgment, and fairness. |
+| `[Project Description]` | Product positioning | Select the relevant product row and expand it into a concise product summary. |
+| `[Tagline]` | Brand voice + product positioning | Use the approved phrases or the product-specific tagline. |
+| `[Voice/Tone]` | Brand voice | Direct, analytical, mythic but grounded, confident without arrogance. |
+| `[Future Plans]` | Future vision | Describe Odin's Tower and the suite's direction without overpromising release dates. |
+| `[Roadmap]` | Future vision | Frame future work as continued integration of reasoning, evidence, structure, and truth. |
+
 ## 1. Suite position
 
 ### Header
