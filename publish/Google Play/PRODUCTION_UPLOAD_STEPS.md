@@ -1,6 +1,6 @@
-# Play Console — upload Forseti 0.1.3 (vc6) step by step
+# Play Console — upload Forseti 0.1.4 (vc7) step by step
 
-Use this if bundle **6** is not on Production yet, or you need to replace a draft.
+Use this for the **Production** upload after version code **6** was consumed on Play.
 
 ## Files on your PC
 
@@ -14,10 +14,10 @@ Use this if bundle **6** is not on Production yet, or you need to replace a draf
 
 1. Open https://play.google.com/console → select **Forseti**
 2. Left menu: **Test and release** → **Production**
-3. **Create new release** (or open existing draft with version 6)
+3. **Create new release** (or open existing draft)
 4. Under **App bundles**, click **Upload**
 5. Choose **`Forseti-0.1.4-vc7.aab`** (never reuse vc6 — Play already registered it)
-6. Wait until you see **6 (0.1.3)** with a green check (no errors)
+6. Wait until you see **7 (0.1.4)** with a green check (no errors)
 
 ## B. Release notes
 
@@ -26,9 +26,9 @@ Paste text from **`RELEASE_NOTES_PLAY.txt`** into **English (United States)** �
 ## C. Upload mapping (recommended)
 
 1. **Test and release** → **App bundle explorer**
-2. Click version **6**
+2. Click version **7** (0.1.4)
 3. **Downloads** tab or **Deobfuscation files** → **Upload**
-4. Select **`mapping-vc6.txt`**
+4. Select **`mapping-vc7.txt`**
 
 ## D. Privacy policy (one time / verify)
 

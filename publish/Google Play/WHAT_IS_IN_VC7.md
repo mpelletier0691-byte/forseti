@@ -1,36 +1,33 @@
-# Forseti 0.1.3 — versionCode 6 (superseded)
-
-> **Do not upload vc6 again.** Play already consumed version code 6. Use **`WHAT_IS_IN_VC7.md`** and **`Forseti-0.1.4-vc7.aab`** for the next Production release.
-
-# Forseti 0.1.3 — versionCode 6 (historical)
+# Forseti 0.1.4 — versionCode 7 (what you upload)
 
 **Upload this file only for production:**
 
 ```text
-/home/user/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.3-vc6.aab
+~/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.4-vc7.aab
 ```
 
 | Field | Value |
 |-------|--------|
 | Package | `com.forseti` |
-| versionName | **0.1.3** |
-| versionCode | **6** |
-| Size | 35,257,074 bytes (~33.6 MB) |
-| SHA256 | `8109bdd8df4a12f660c3786a3c7b259ac8e29340d54e284735777ced36aabe4c` |
-| Git commit (app source) | `4fbd715` + legal `8a6c1af` + features `7fa39f0` |
-| Staged | See `Publish_Projects/Forseti/VERSION.txt` |
+| versionName | **0.1.4** |
+| versionCode | **7** |
+| Size | 35,257,070 bytes (~33.6 MB) |
+| SHA256 | `a43917d206e77436b5858224475c01975251739553e8b0773e6850cee58002b3` |
+| Staged | 2026-06-06 (see `Publish_Projects/Forseti/VERSION.txt` after re-staging) |
 
-**Also upload to Play (same release, version 6):**
+**Also upload to Play (same release, version 7):**
 
 ```text
-/home/user/Desktop/Publish_Projects/Forseti/Google Play/mapping/mapping-vc6.txt
+~/Desktop/Publish_Projects/Forseti/Google Play/mapping/mapping-vc7.txt
 ```
 
-(App bundle explorer → version **6** → Deobfuscation / mapping file)
+(App bundle explorer → version **7** → Deobfuscation / mapping file)
 
 ---
 
 ## Inside this AAB (user-visible)
+
+Same feature set as 0.1.3 (vc6) — this is a **new version code** after Play consumed vc6:
 
 - First launch: 2 pre-language notices → permanent language (EN / ES / zh-CN) → legal disclaimer → tutorial
 - Translation + liability language in disclaimer and settings
@@ -50,7 +47,8 @@
 
 | File | Why |
 |------|-----|
+| `Forseti-0.1.3-vc6.aab` | Version code 6 already registered on Play |
+| `Forseti-0.1.3-vc5.aab` | Superseded |
 | `Forseti-0.1.2-vc4.aab` | Old |
-| `Forseti-0.1.3-vc5.aab` | Superseded by vc6 |
 | `app-debug.apk` | Debug package |
 | Anything from `archive/` unless you know you need it |

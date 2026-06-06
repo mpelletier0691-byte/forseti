@@ -22,7 +22,7 @@
 
 ## Smoke test (after live)
 
-- [ ] Play install shows **0.1.3**
+- [ ] Play install shows **0.1.4**
 - [ ] Pre-language gates → language → disclaimer (translation text)
 - [ ] References → FJC section
 - [ ] Settings → locked language
