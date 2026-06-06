@@ -5,6 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PUBLISH_ROOT="${PUBLISH_ROOT:-$HOME/Desktop/Publish_Projects}"
 PLAY_DIR="$PUBLISH_ROOT/Forseti/Google Play"
+REPO_PLAY_DOCS="$ROOT/publish/Google Play"
 
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/Android/Sdk}"
 
@@ -52,6 +53,13 @@ EOF
 
 if command -v sha256sum >/dev/null 2>&1; then
   (cd "$PLAY_DIR" && sha256sum "$AAB_NAME" > SHA256SUMS.txt)
+fi
+
+# Keep in-repo publish docs in sync for cloud agents (text only; AAB stays on Desktop).
+if [[ -d "$REPO_PLAY_DOCS" ]]; then
+  for f in RELEASE_NOTES_PLAY.txt PLAY_UPLOAD_CHECKLIST.md START_HERE.md; do
+    [[ -f "$REPO_PLAY_DOCS/$f" ]] && cp -f "$REPO_PLAY_DOCS/$f" "$PLAY_DIR/" 2>/dev/null || true
+  done
 fi
 
 BYTES=$(stat -c%s "$DEST_AAB" 2>/dev/null || stat -f%z "$DEST_AAB")

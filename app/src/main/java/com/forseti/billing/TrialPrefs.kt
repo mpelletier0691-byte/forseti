@@ -2,6 +2,7 @@ package com.forseti.billing
 
 import android.content.Context
 import android.provider.Settings
+import com.forseti.BuildConfig
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.security.MessageDigest
 import javax.inject.Inject
@@ -98,7 +99,11 @@ class TrialPrefs @Inject constructor(
     }
 
     companion object {
-        const val TRIAL_DURATION_MS: Long = 3L * 24L * 60L * 60L * 1000L
+        /** Production closed/Play builds: 3-day trial. Debug APK: 30 days for dev QA. */
+        val TRIAL_DURATION_MS: Long =
+            if (BuildConfig.DEBUG) 30L * 24L * 60L * 60L * 1000L
+            else 3L * 24L * 60L * 60L * 1000L
+
         const val SOFT_REMINDER_THRESHOLD_MS: Long = 24L * 60L * 60L * 1000L
 
         private const val KEY_START_MS = "trial_start_ms"

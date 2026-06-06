@@ -1,0 +1,5 @@
+# Release binaries stay on your PC (or CI artifacts) — never commit AABs.
+*.aab
+archive/
+SHA256SUMS.txt
+VERSION.txt

@@ -1,0 +1,9 @@
+What's new in 0.1.3
+
+• Stronger legal notices: English court rules control; UI translations are not certified and may be inaccurate.
+• Terms of Use and updated Privacy Policy on our website.
+• First launch: two required notices before permanent language choice (English, Spanish, or Chinese UI).
+• References: Federal Judicial Center (FJC) links.
+• Dashboard and sidebar layout fixes.
+
+You are solely responsible for filings and outcomes. Not legal advice.
