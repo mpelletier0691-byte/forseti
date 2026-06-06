@@ -1,17 +1,15 @@
-# Forseti — Play upload checklist (v0.1.3 / versionCode 6)
+# Forseti — Play upload checklist (v0.1.4 / versionCode 7)
 
 ## Build & staging
 
-- [x] `keystore.properties` on dev PC (never commit)
-- [x] Ran `./scripts/stage_play_publish.sh`
-- [x] **`Forseti-0.1.3-vc6.aab`** on Desktop
-- [x] **`mapping-vc6.txt`** in same Desktop folder
-- [x] Git **`4fbd715`** — versionCode 6 on GitHub
+- [ ] Ran `./scripts/stage_play_publish.sh` after version bump
+- [ ] **`Forseti-0.1.4-vc7.aab`** on Desktop (NOT vc6 — already used on Play)
+- [ ] **`mapping-vc7.txt`**
 
 ## Upload to Play (Production)
 
-- [ ] Upload **`Forseti-0.1.3-vc6.aab`** only (see `PRODUCTION_UPLOAD_STEPS.md`)
-- [ ] Upload **`mapping-vc6.txt`** to bundle explorer → version 6
+- [ ] Upload **`Forseti-0.1.4-vc7.aab`** only (see `PRODUCTION_UPLOAD_STEPS.md`)
+- [ ] Upload **`mapping-vc7.txt`** to bundle explorer → version 7
 - [ ] Release notes from **`RELEASE_NOTES_PLAY.txt`**
 - [ ] **Send for review** / **Start rollout to Production**
 

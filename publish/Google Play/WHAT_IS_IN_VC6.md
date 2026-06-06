@@ -6,15 +6,17 @@
 /home/user/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.3-vc6.aab
 ```
 
-| Field | Value |
-|-------|--------|
-| Package | `com.forseti` |
-| versionName | **0.1.3** |
-| versionCode | **6** |
-| Size | 35,257,074 bytes (~33.6 MB) |
-| SHA256 | `8109bdd8df4a12f660c3786a3c7b259ac8e29340d54e284735777ced36aabe4c` |
-| Git commit (app source) | `4fbd715` + legal `8a6c1af` + features `7fa39f0` |
-| Staged | See `Publish_Projects/Forseti/VERSION.txt` |
+
+| Field                   | Value                                                              |
+| ----------------------- | ------------------------------------------------------------------ |
+| Package                 | `com.forseti`                                                      |
+| versionName             | **0.1.3**                                                          |
+| versionCode             | **6**                                                              |
+| Size                    | 35,257,074 bytes (~33.6 MB)                                        |
+| SHA256                  | `8109bdd8df4a12f660c3786a3c7b259ac8e29340d54e284735777ced36aabe4c` |
+| Git commit (app source) | `4fbd715` + legal `8a6c1af` + features `7fa39f0`                   |
+| Staged                  | See `Publish_Projects/Forseti/VERSION.txt`                         |
+
 
 **Also upload to Play (same release, version 6):**
 
@@ -44,9 +46,12 @@
 
 ## Do NOT upload
 
-| File | Why |
-|------|-----|
-| `Forseti-0.1.2-vc4.aab` | Old |
-| `Forseti-0.1.3-vc5.aab` | Superseded by vc6 |
-| `app-debug.apk` | Debug package |
-| Anything from `archive/` unless you know you need it |
+
+| File                                                 | Why               |
+| ---------------------------------------------------- | ----------------- |
+| `Forseti-0.1.2-vc4.aab`                              | Old               |
+| `Forseti-0.1.3-vc5.aab`                              | Superseded by vc6 |
+| `app-debug.apk`                                      | Debug package     |
+| Anything from `archive/` unless you know you need it |                   |
+
+

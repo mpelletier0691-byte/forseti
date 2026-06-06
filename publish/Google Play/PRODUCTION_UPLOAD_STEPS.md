@@ -4,8 +4,8 @@ Use this if bundle **6** is not on Production yet, or you need to replace a draf
 
 ## Files on your PC
 
-1. **AAB:** `~/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.3-vc6.aab`
-2. **Mapping:** `~/Desktop/Publish_Projects/Forseti/Google Play/mapping/mapping-vc6.txt`
+1. **AAB:** `~/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.4-vc7.aab`
+2. **Mapping:** `~/Desktop/Publish_Projects/Forseti/Google Play/mapping/mapping-vc7.txt`
 3. **Release notes:** copy from `RELEASE_NOTES_PLAY.txt` in this folder
 
 ---
@@ -16,7 +16,7 @@ Use this if bundle **6** is not on Production yet, or you need to replace a draf
 2. Left menu: **Test and release** → **Production**
 3. **Create new release** (or open existing draft with version 6)
 4. Under **App bundles**, click **Upload**
-5. Choose **`Forseti-0.1.3-vc6.aab`**
+5. Choose **`Forseti-0.1.4-vc7.aab`** (never reuse vc6 — Play already registered it)
 6. Wait until you see **6 (0.1.3)** with a green check (no errors)
 
 ## B. Release notes

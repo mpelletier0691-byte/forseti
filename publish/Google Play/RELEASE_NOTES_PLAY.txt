@@ -1,4 +1,6 @@
-What's new in 0.1.3
+What's new in 0.1.4
+
+(Same release as 0.1.3 — new upload for Google Play version code 7.)
 
 • Stronger legal notices: English court rules control; UI translations are not certified and may be inaccurate.
 • Terms of Use and updated Privacy Policy on our website.
