@@ -271,3 +271,51 @@ section h2 {
   font-size: 0.95rem;
   color: var(--ash-grey);
 }
+
+.link-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.link-grid li {
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid rgba(200, 162, 75, 0.15);
+}
+
+.link-grid a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.footer-nav a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.policy a {
+  color: var(--gold);
+}

@@ -1,35 +1,58 @@
 # Forseti landing page (GitHub Pages)
 
-Static site for **Forseti** by Asvaettir Labs. Contact: **asvaettirlabs.dev@gmail.com**.
+Static site for **Forseti** by Asvaettir Labs (Michael David Pelletier).  
+Contact: **asvaettirlabs.dev@gmail.com**
 
 ## Files
 
 | File | Role |
 |------|------|
-| `index.html` | Home page (v0.1.3) |
-| `terms-of-use.html` | **Terms of Use** — user agreement, translation & liability |
-| `privacy-policy.html` | **Privacy policy** — Play Console URL |
-| `terms-of-use.md` / `privacy-policy.md` | Markdown copies for gist sync |
-| `styles.css` | Forseti-themed layout |
+| `index.html` | Home — product overview + **Official links** hub |
+| `privacy-policy.html` | **Privacy Policy** (Play Console policy URL) |
+| `terms-of-use.html` | **Terms of Use** (user agreement & liability) |
+| `privacy-policy.md` / `terms-of-use.md` | Markdown source copies |
+| `styles.css` | Shared Forseti theme (charcoal, rune gold, ash white) |
 
-## GitHub Pages (this repo)
+## Deploy
 
-The live site is deployed from the **`docs/`** folder at repo root (not `landing/`):
+From the Forseti repo root:
 
-1. Copy updates: `cp landing/* docs/` (HTML, MD, CSS)
-2. Push `main`
-3. **Settings → Pages** → branch **main**, folder **`/docs`**
+```bash
+./scripts/sync_landing_site.sh
+```
 
-**Live URLs:**
+This copies `landing/*` → `docs/` (main repo Pages) and, if present, `../forseti_landing/` (dedicated landing repo).
 
-| Page | URL |
-|------|-----|
-| Home | `https://mpelletier0691-byte.github.io/forseti/` |
-| Privacy (Play Console) | `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html` |
-| Terms of Use | `https://mpelletier0691-byte.github.io/forseti/terms-of-use.html` |
+Then push both repos:
 
-Paste the **privacy URL** in Play Console → **App content** → **Privacy policy**. Optionally link **Terms** in your store listing or support text.
+```bash
+# Main site (Play-approved policy URLs)
+cd ~/Desktop/Projects/Forseti
+git add landing/ docs/ scripts/sync_landing_site.sh
+git commit -m "Update Forseti landing links and sync site."
+git push origin main
 
-## Closed testing
+# Dedicated landing URL (mirror same files at repo root)
+cd ~/Desktop/Projects/forseti_landing
+git add index.html privacy-policy.html terms-of-use.html styles.css
+git commit -m "Sync Forseti landing site from main repo."
+git push origin main
+```
 
-Replace the Play button `href` in `index.html` with your **closed-test opt-in link** until the app is public on Production.
+## Live URLs (keep in sync)
+
+| Page | Primary (Play Console) | Mirror |
+|------|------------------------|--------|
+| Home | `https://mpelletier0691-byte.github.io/forseti/` | `https://mpelletier0691-byte.github.io/forseti_landing/` |
+| Privacy Policy | `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html` | `https://mpelletier0691-byte.github.io/forseti_landing/privacy-policy.html` |
+| Terms of Use | `https://mpelletier0691-byte.github.io/forseti/terms-of-use.html` | `https://mpelletier0691-byte.github.io/forseti_landing/terms-of-use.html` |
+| Google Play | `https://play.google.com/store/apps/details?id=com.forseti` | (same) |
+
+**Play Console → App content → Privacy policy** must use the **`/forseti/privacy-policy.html`** URL unless you change it in Console after verifying the mirror matches.
+
+## GitHub Pages settings
+
+| Repo | Branch | Folder |
+|------|--------|--------|
+| `forseti` | `main` | `/docs` |
+| `forseti_landing` | `main` | `/` (root) |

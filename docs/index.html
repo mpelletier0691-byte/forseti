@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forseti — Pro-Se Civil Procedure Companion | Asvaettir Labs</title>
-  <meta name="description" content="Forseti 0.1.3 — Android toolkit for self-represented litigants: FRCP, motion drafts, Rule 6 deadlines, guides in English/Spanish/Chinese, and on-device OCR. No accounts. No ads. From Asvaettir Labs." />
+  <meta name="description" content="Forseti — Android toolkit for self-represented litigants: FRCP, motion drafts, Rule 6 deadlines, guides in English/Spanish/Chinese, and on-device OCR. No accounts. No ads. From Asvaettir Labs." />
   <meta property="og:title" content="Forseti — Pro-Se Civil Procedure Companion" />
-  <meta property="og:description" content="Structure, clarity, and tools for federal civil procedure — on your device. Version 0.1.3. Asvaettir Labs." />
+  <meta property="og:description" content="Structure, clarity, and tools for federal civil procedure — on your device. Asvaettir Labs." />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
     <p class="eyebrow">Asvaettir Labs</p>
-    <p class="version-badge">Version 0.1.3</p>
+    <p class="version-badge">Version 0.1.4</p>
     <h1>Forseti</h1>
     <p class="tagline">Pro-Se Civil Procedure Companion</p>
     <p class="subtitle">Lawgiver of the Aesir</p>
@@ -22,12 +22,24 @@
     </blockquote>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.forseti">Get it on Google Play</a>
-      <a class="btn btn-secondary" href="mailto:asvaettirlabs.dev@gmail.com?subject=Forseti%20%E2%80%94%20question%20or%20testing%20access">Email us</a>
+      <a class="btn btn-secondary" href="mailto:asvaettirlabs.dev@gmail.com?subject=Forseti%20%E2%80%94%20question%20or%20support">Email us</a>
     </div>
-    <p class="cta-note">On <strong>closed testing</strong>? Use your Play Console opt-in link instead of the public store URL until production goes live. Need access? Email us.</p>
+    <p class="cta-note">Individual developer listing on Google Play. Forseti is free with a time-limited trial and optional one-time unlock.</p>
   </header>
 
   <main>
+    <section class="official-links" aria-labelledby="links-heading">
+      <h2 id="links-heading">Official links</h2>
+      <p class="lead">Pages approved for distribution on Google Play and linked from the store listing.</p>
+      <ul class="link-grid">
+        <li><a href="https://play.google.com/store/apps/details?id=com.forseti">Google Play — Forseti</a> — download, free trial, and in-app purchase (<code>com.forseti</code>)</li>
+        <li><a href="privacy-policy.html">Privacy Policy</a> — data handling, Play Billing, camera/OCR, and on-device storage (Play Console policy URL)</li>
+        <li><a href="terms-of-use.html">Terms of Use</a> — not legal advice, translation disclaimers, liability limits, and user responsibilities</li>
+        <li><a href="index.html">Forseti home</a> — product overview (this page)</li>
+        <li><a href="mailto:asvaettirlabs.dev@gmail.com">Contact — asvaettirlabs.dev@gmail.com</a> — support and policy questions</li>
+      </ul>
+    </section>
+
     <section class="brand" aria-labelledby="brand-heading">
       <h2 id="brand-heading">Built for fighters</h2>
       <p class="lead">Forseti is built for fighters.</p>
@@ -61,9 +73,9 @@
       <h2 id="trust-heading">Privacy &amp; trust</h2>
       <p>No accounts. No ads. No telemetry. Your case files, notes, and deadlines stay on your device — we don’t run servers that receive your data.</p>
       <p>
-        <a href="terms-of-use.html">Terms of Use</a> (user agreement &amp; liability)
-        · <a href="privacy-policy.html">Privacy policy</a>
-        · <a href="privacy-policy.md">Privacy (Markdown)</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        · <a href="privacy-policy.html">Privacy Policy</a>
+        · <a href="https://play.google.com/store/apps/details?id=com.forseti">Google Play</a>
       </p>
     </section>
 
@@ -74,8 +86,15 @@
   </main>
 
   <footer class="site-footer">
-    <p><strong>Asvaettir Labs</strong> · <a href="mailto:asvaettirlabs.dev@gmail.com">asvaettirlabs.dev@gmail.com</a></p>
-    <p class="fine">© <span id="year"></span> Asvaettir Labs. Forseti and related marks are used for identification.</p>
+    <nav class="footer-nav" aria-label="Forseti official links">
+      <a href="index.html">Home</a>
+      <a href="https://play.google.com/store/apps/details?id=com.forseti">Google Play</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="mailto:asvaettirlabs.dev@gmail.com">Contact</a>
+    </nav>
+    <p><strong>Asvaettir Labs</strong> · Michael David Pelletier · Individual developer on Google Play</p>
+    <p class="fine">© <span id="year"></span> Asvaettir Labs. Forseti and related marks are used for identification. Not legal advice.</p>
   </footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
