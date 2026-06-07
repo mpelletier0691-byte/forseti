@@ -137,6 +137,22 @@ body {
   color: var(--gold);
 }
 
+.hero-legal {
+  margin: 1rem auto 0;
+  max-width: 32rem;
+  font-size: 0.9rem;
+}
+
+.hero-legal a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-legal a:hover {
+  text-decoration: underline;
+}
+
 main {
   max-width: var(--max);
   margin: 0 auto;
