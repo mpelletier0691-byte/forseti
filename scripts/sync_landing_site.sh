@@ -8,20 +8,28 @@ SRC="$ROOT/landing"
 DOCS="$ROOT/docs"
 ALT="${FORSETI_LANDING_REPO:-$ROOT/../forseti_landing}"
 
-FILES=(index.html privacy-policy.html terms-of-use.html privacy-policy.md terms-of-use.md styles.css)
+FILES=(index.html privacy-policy.html terms-of-use.html privacy-policy.md terms-of-use.md styles.css fgs-demo.html)
+
+sync_tree() {
+  local dest="$1"
+  mkdir -p "$dest"
+  for f in "${FILES[@]}"; do
+    cp -f "$SRC/$f" "$dest/$f"
+    echo "  $f"
+  done
+  if [[ -d "$SRC/media" ]]; then
+    mkdir -p "$dest/media"
+    cp -f "$SRC/media/"* "$dest/media/"
+    echo "  media/*"
+  fi
+}
 
 echo "==> Syncing landing → docs/"
-for f in "${FILES[@]}"; do
-  cp -f "$SRC/$f" "$DOCS/$f"
-  echo "  $f"
-done
+sync_tree "$DOCS"
 
 if [[ -d "$ALT" ]]; then
   echo "==> Syncing landing → $ALT/"
-  for f in "${FILES[@]}"; do
-    cp -f "$SRC/$f" "$ALT/$f"
-    echo "  $f"
-  done
+  sync_tree "$ALT"
   echo "Done. Push forseti_landing repo to update https://mpelletier0691-byte.github.io/forseti_landing/"
 else
   echo "==> Skip forseti_landing (clone to $ALT or set FORSETI_LANDING_REPO)"

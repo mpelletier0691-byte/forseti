@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forseti — Brokkr Forge background import demo</title>
+  <meta name="description" content="Demo video: Forseti Brokkr Forge Process uses a foreground service to sort case documents with a visible progress notification." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .demo-page {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .demo-page h1 {
+      font-size: 1.75rem;
+      color: var(--gold);
+      margin-top: 0;
+    }
+    .demo-page video {
+      width: 100%;
+      max-height: 80vh;
+      background: #000;
+      border: 1px solid rgba(200, 162, 75, 0.35);
+      border-radius: 0.5rem;
+    }
+    .demo-steps {
+      margin: 1.5rem 0;
+      padding-left: 1.25rem;
+    }
+    .demo-steps li {
+      margin-bottom: 0.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <main class="demo-page">
+    <p class="eyebrow" style="text-align:center;margin-top:1.5rem;">Asvaettir Labs · Forseti</p>
+    <h1>Brokkr Forge — background case import</h1>
+    <p>This demo shows how Forseti uses a <strong>user-initiated</strong> foreground service during <strong>Brokkr Forge Process</strong>: the user selects a case folder to import; a persistent notification shows sorting progress; a completion notification appears when finished.</p>
+
+    <video controls playsinline preload="metadata" poster="">
+      <source src="media/brokkr-forge-demo.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video. <a href="media/brokkr-forge-demo.mp4">Download the demo MP4</a>.
+    </video>
+
+    <h2>What the video shows</h2>
+    <ol class="demo-steps">
+      <li>User starts <strong>Brokkr Forge Process</strong> from Case Profile.</li>
+      <li>Android notification: <strong>Brokkr Forge sorting…</strong> with file progress.</li>
+      <li>User may leave the app while import continues on-device.</li>
+      <li>Completion notification when sorting finishes.</li>
+    </ol>
+
+    <p><strong>Data sync only.</strong> Documents stay on the device; nothing is uploaded to a server.</p>
+
+    <a class="back-link" href="index.html">← Back to Forseti home</a>
+    · <a class="back-link" href="privacy-policy.html">Privacy Policy</a>
+  </main>
+</body>
+</html>

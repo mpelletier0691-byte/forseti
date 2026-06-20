@@ -12,6 +12,8 @@ Contact: **asvaettirlabs.dev@gmail.com**
 | `terms-of-use.html` | **Terms of Use** (user agreement & liability) |
 | `privacy-policy.md` / `terms-of-use.md` | Markdown source copies |
 | `styles.css` | Shared Forseti theme (charcoal, rune gold, ash white) |
+| `fgs-demo.html` | Brokkr Forge foreground-service demo (Play Console video link) |
+| `media/brokkr-forge-demo.mp4` | Screen recording for FGS declaration |
 
 ## Deploy
 
@@ -46,6 +48,7 @@ git push origin main
 | Home | `https://mpelletier0691-byte.github.io/forseti/` | `https://mpelletier0691-byte.github.io/forseti_landing/` |
 | Privacy Policy | `https://mpelletier0691-byte.github.io/forseti/privacy-policy.html` | `https://mpelletier0691-byte.github.io/forseti_landing/privacy-policy.html` |
 | Terms of Use | `https://mpelletier0691-byte.github.io/forseti/terms-of-use.html` | `https://mpelletier0691-byte.github.io/forseti_landing/terms-of-use.html` |
+| FGS demo video | `https://mpelletier0691-byte.github.io/forseti/fgs-demo.html` | `https://mpelletier0691-byte.github.io/forseti_landing/fgs-demo.html` |
 | Google Play | `https://play.google.com/store/apps/details?id=com.forseti` | (same) |
 
 **Play Console → App content → Privacy policy** must use the **`/forseti/privacy-policy.html`** URL unless you change it in Console after verifying the mirror matches.
