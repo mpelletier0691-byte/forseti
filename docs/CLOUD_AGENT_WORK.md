@@ -13,6 +13,7 @@ Use this when you want **Cursor Cloud Agents** (phone, tablet, browser) to work 
 | `publish/Google Play/` | Play checklists & release notes |
 | `scripts/` | `stage_play_publish.sh`, `install_debug.sh` |
 | `docs/DEBUG_TESTING.md` | Debug APK clean slate |
+| `docs/GUIDES_PREMIUM_GATING.md` | **Free vs purchase-locked guides** (trial Model B, new-guide defaults, implementation checklist) |
 
 **Not in git (stay on your PC):**
 
@@ -26,10 +27,23 @@ Use this when you want **Cursor Cloud Agents** (phone, tablet, browser) to work 
 
 1. **Cursor** → **Agents** (or Cloud Agents on mobile / web).
 2. Choose **GitHub** → repository **`mpelletier0691-byte/forseti`**.
-3. Branch: **`main`**.
+3. Branch: **`main`** (or a feature branch after this doc is pushed).
 4. Give a task, e.g. “Update Spanish strings for References tab” or “Fix issue in ForsetiShell first-run flow.”
 
+For **guide lock/unlock or new premium guides**, point the agent at:
+
+> Read `docs/GUIDES_PREMIUM_GATING.md` and follow it. Free = Forseti how-to guides only; all procedure guides and new guides are purchase-only (Model B).
+
 The agent clones the repo on a Cursor VM, edits, and can open a **PR** for you to merge.
+
+**Important:** This briefing is only available to cloud agents **after** it is committed and pushed to GitHub. On your PC:
+
+```bash
+cd ~/Desktop/Projects/Forseti
+git add docs/GUIDES_PREMIUM_GATING.md docs/CLOUD_AGENT_WORK.md
+git commit -m "docs: free vs purchase-gated guides briefing for cloud agents"
+git push origin main
+```
 
 ---
 
