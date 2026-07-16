@@ -96,7 +96,18 @@
     <string name="case_ingest_section_title">Bulk file ingestion (this case)</string>
     <string name="case_ingest_folder">Brokkr Forge Process</string>
     <string name="case_ingest_images">Image Ingestion</string>
-    <string name="case_ingest_tip">Brokkr Forge Process imports a whole folder and auto-routes every file into the Brokkr-Forge layout for this case. Image Ingestion lets you pick photos, PDFs, audio, or video to drop straight in. Rename files first (e.g. \"2024\u201103\u201112_motion_to_dismiss.pdf\" or \"exhibit_A_invoice.jpg\") so Forseti can classify them automatically — anything unclassified lands in 99_Inbox/ for you to move from Case Profile \u2192 Open case.</string>
+    <string name="case_ingest_tip" formatted="false">Brokkr Forge Process imports a whole folder in the background — you can leave the app and you\u2019ll get a notification when sorting finishes. Forseti routes each file by confidence: 85%+ auto-files; 70\u201384% lands in 99_Inbox with a File Here chip; below 70% stays in Inbox for manual sorting. Rename files first when you can (e.g. 2024-03-12_motion_to_dismiss.pdf) so Forseti scores them higher. Open Case Profile \u2192 your case to review Inbox items after the notification.</string>
+
+    <!-- Brokkr Forge background ingest notifications -->
+    <string name="brokkr_forge_started">Brokkr Forge started \u2014 you\u2019ll get a notification when sorting finishes.</string>
+    <string name="brokkr_forge_foreground_title">Brokkr Forge sorting\u2026</string>
+    <string name="brokkr_forge_foreground_body">Forseti is classifying and filing your documents.</string>
+    <string name="brokkr_forge_foreground_progress">File %1$d of %2$d</string>
+    <string name="brokkr_forge_case_banner">Brokkr Forge sorting\u2026 file %1$d of %2$d</string>
+    <string name="brokkr_forge_complete_title">Brokkr Forge complete</string>
+    <string name="brokkr_forge_complete">Brokkr Forge complete, head back to forseti to finalize your case.</string>
+    <string name="brokkr_forge_failed_title">Brokkr Forge failed</string>
+    <string name="brokkr_forge_failed">Sorting could not finish: %1$s</string>
 
     <!-- Language -->
     <string name="language_picker_title">Choose your language</string>
@@ -116,6 +127,9 @@
     <string name="settings_force_dark_subtitle_on">Currently pinned on. Toggle off to follow the system theme.</string>
     <string name="settings_force_dark_subtitle_off">Following the system theme.</string>
     <string name="settings_section_content">Content</string>
+    <string name="settings_section_help">Help</string>
+    <string name="settings_whats_new_title">What\'s New in This Version</string>
+    <string name="settings_whats_new_subtitle">Full changelog since Play 0.1.4: background Brokkr Forge, OCR sorting, inbox tools, audit log, and Android 15 compatibility.</string>
     <string name="settings_bundled_rules_title">Bundled rules</string>
     <string name="settings_bundled_rules_subtitle">FRCP 2024 (restyled). State directory links open the official source.</string>
     <string name="settings_bookmarks_title">Bookmarks &amp; notes</string>
@@ -141,4 +155,24 @@
     <string name="tutorial_step5_body">Track dates that matter. Missing a deadline is one of the most common problems in litigation.</string>
     <string name="tutorial_step6_title">You\u2019re ready</string>
     <string name="tutorial_step6_body">Open Guides from the sidebar when you\u2019re ready. Your app language was set during first launch and stays fixed.</string>
+
+    <!-- What\'s New (per-version) -->
+    <string name="whats_new_title">What\u2019s new</string>
+    <string name="whats_new_step_fmt">Tip %1$d of %2$d</string>
+    <string name="whats_new_next">Next</string>
+    <string name="whats_new_done">Got it</string>
+    <string name="whats_new_skip">Dismiss</string>
+    <string name="whats_new_read_guide">Read full guide</string>
+    <string name="whats_new_step1_title">Background Brokkr Forge</string>
+    <string name="whats_new_step1_body">Folder ingest now runs in the background. Start **Brokkr Forge Process**, then leave the app \u2014 Forseti keeps sorting on your device. When it finishes you get a notification: *Brokkr Forge complete, head back to forseti to finalize your case.* Open Case Profile and review **99_Inbox** items.</string>
+    <string name="whats_new_step2_title">Smarter sorting (path + OCR)</string>
+    <string name="whats_new_step2_body" formatted="false">Forseti reads folder paths and filenames, samples multiple PDF pages with on-device OCR, and runs late-binding classification. **DOCX** files are text-extracted too.\n\n\u2022 **85%\u2013100%** \u2014 auto-filed\n\u2022 **70%\u201384%** \u2014 **99_Inbox** + **File Here**\n\u2022 **Below 70%** \u2014 manual sort in Inbox</string>
+    <string name="whats_new_step3_title">Audit log = your safety net</string>
+    <string name="whats_new_step3_body">Every bulk ingest writes **INGEST_AUDIT_latest.txt** at the case root. It lists confidence, routing, and alternate guesses. You can always move a file manually or use **File Here** to correct a suggestion. Nothing is sent to the cloud.</string>
+    <string name="whats_new_step4_title">Inbox tools &amp; audit log</string>
+    <string name="whats_new_step4_body">**Duplicate detection** skips files already in your workspace or picked twice in one batch. **Delete all** clears **99_Inbox** for a fresh triage. Every bulk ingest writes **INGEST_AUDIT_latest.txt** at the case root with confidence, routing, and alternate folder guesses — move or rename anything afterward.</string>
+    <string name="whats_new_step5_title">Timing for large folders</string>
+    <string name="whats_new_step5_body" formatted="false">Ingest is slow because Forseti samples multiple PDF pages with on-device OCR and runs late-binding classification. Expect roughly **15\u201330 minutes** for ~300 well-named files; **1,300+** files can take hours \u2014 batch by subfolder. Use **Brokkr Forge Process** via SAF, not adb push.</string>
+    <string name="whats_new_step6_title">Android 15 &amp; Play compatibility</string>
+    <string name="whats_new_step6_body">Target **SDK 35** (Google Play requirement), min SDK 26. Notifications are requested when you use deadlines or Brokkr Forge. Sorting uses a short **data-sync** foreground task while running. No advertising ID. Case files stay on your device until you tap Share. Same trial and unlock as production.</string>
 </resources>

@@ -2,120 +2,89 @@
 
 Use this when you want **Cursor Cloud Agents** (phone, tablet, browser) to work on Forseti without your Precision Tower.
 
-## What is already in the cloud
+## Read first
 
-**GitHub repo:** https://github.com/mpelletier0691-byte/forseti
+| Doc | Purpose |
+|-----|---------|
+| **`docs/CURRENT_STATUS.md`** | **Full handoff** — version, Play status, guide gating, next tasks, starter prompt |
+| **`docs/GUIDES_PREMIUM_GATING.md`** | Free vs purchase-locked guides (Model B) |
+| `docs/FORSETI_PROJECT_BRIEF.md` | Product overview |
+| `docs/Forseti_Implementation_Notes.md` | Feature inventory |
+
+---
+
+## Secrets policy (hard rule)
+
+**Do not** paste into chat, commit, or give cloud agents:
+
+- Play Console / Google account passwords or 2FA  
+- `keystore.properties`, `*.jks`, signing passwords  
+- Bank, billing merchant, or other account credentials  
+
+Cloud agents access **only the GitHub repo** the owner connects in Cursor.  
+“Allow any access to accounts” is **not supported** and must be refused.
+
+`keystore.properties` is gitignored. Signing and Play uploads stay on the owner’s PC.
+
+---
+
+## What is in the cloud (GitHub)
+
+**Repo:** https://github.com/mpelletier0691-byte/forseti
 
 | Path | Use |
 |------|-----|
-| `app/` | Android / Kotlin source |
-| `landing/` + `docs/` | Website (GitHub Pages from `/docs`) |
-| `publish/Google Play/` | Play checklists & release notes |
-| `scripts/` | `stage_play_publish.sh`, `install_debug.sh` |
-| `docs/DEBUG_TESTING.md` | Debug APK clean slate |
-| `docs/GUIDES_PREMIUM_GATING.md` | **Free vs purchase-locked guides** (trial Model B, new-guide defaults, implementation checklist) |
+| `app/` | Android / Kotlin source (incl. Brokkr Forge, edge-to-edge, guides) |
+| `landing/` + `docs/` | Website + agent briefings (GitHub Pages from `/docs`) |
+| `publish/Google Play/` | Play checklists & release notes (text only) |
+| `scripts/` | Build/install/stage helpers |
 
-**Not in git (stay on your PC):**
+**Not in git (stay on PC):**
 
-- `keystore.properties` / upload `.jks` — signing secrets
-- `~/Desktop/Publish_Projects/.../*.aab` — release bundles (~35 MB)
-- Android SDK + emulator (unless cloud VM has them)
+- `keystore.properties` / upload `.jks`  
+- `~/Desktop/Publish_Projects/.../*.aab`  
+- Android SDK + emulator (unless cloud VM has them)  
+- Any Google / Play login cookies or passwords  
 
 ---
 
 ## Start a cloud agent on Forseti
 
-1. **Cursor** → **Agents** (or Cloud Agents on mobile / web).
-2. Choose **GitHub** → repository **`mpelletier0691-byte/forseti`**.
-3. Branch: **`main`** (or a feature branch after this doc is pushed).
-4. Give a task, e.g. “Update Spanish strings for References tab” or “Fix issue in ForsetiShell first-run flow.”
+1. **Cursor** → **Agents** (Cloud Agents on mobile / web).  
+2. GitHub → **`mpelletier0691-byte/forseti`**.  
+3. Branch: **`main`**.  
+4. Paste the starter prompt from **`docs/CURRENT_STATUS.md`**.
 
-For **guide lock/unlock or new premium guides**, point the agent at:
+For guides only:
 
-> Read `docs/GUIDES_PREMIUM_GATING.md` and follow it. Free = Forseti how-to guides only; all procedure guides and new guides are purchase-only (Model B).
-
-The agent clones the repo on a Cursor VM, edits, and can open a **PR** for you to merge.
-
-**Important:** This briefing is only available to cloud agents **after** it is committed and pushed to GitHub. On your PC:
-
-```bash
-cd ~/Desktop/Projects/Forseti
-git add docs/GUIDES_PREMIUM_GATING.md docs/CLOUD_AGENT_WORK.md
-git commit -m "docs: free vs purchase-gated guides briefing for cloud agents"
-git push origin main
-```
+> Read `docs/GUIDES_PREMIUM_GATING.md` and `docs/CURRENT_STATUS.md`. Implement Model B premium guides. Never ask for passwords or keystores.
 
 ---
 
 ## What works well on a cloud agent
 
-- Kotlin / Compose / strings / `landing` / `docs` / `publish` docs  
-- Reading Play checklists and drafting release notes  
-- Git commits on a branch → PR  
+- Kotlin / Compose / strings / guides markdown / `landing` / `docs` / `publish` docs  
+- Guide premium gating UI  
+- Git branch → PR  
 
-## What still needs your dev PC (or CI later)
+## What still needs the owner’s PC
 
-- **`./scripts/stage_play_publish.sh`** — needs upload keystore + Android SDK  
-- **`./scripts/install_debug.sh`** — needs emulator or USB device  
-- **Play Console clicks** — browser only  
-- **Uploading `.aab`** — file is on Desktop after staging  
+- `./scripts/stage_play_publish.sh` (keystore + SDK)  
+- Emulator / device install  
+- Play Console clicks and AAB upload  
 
-Workflow: **edit in cloud → merge PR → pull on PC → build AAB → upload to Play.**
-
----
-
-## Keep Publish_Projects in sync
-
-Your Desktop folder is for **binaries**:
-
-```text
-~/Desktop/Publish_Projects/Forseti/Google Play/*.aab
-```
-
-The repo folder `publish/Google Play/` is for **text** (checklists, release notes). After you change release notes in git, pull on PC before the next Play upload.
-
-Optional: set the same root when staging:
-
-```bash
-export PUBLISH_ROOT="$HOME/Desktop/Publish_Projects"
-./scripts/stage_play_publish.sh
-```
+Workflow: **edit in cloud → merge PR → pull on PC → build AAB → Play Console.**
 
 ---
 
-## Secrets for cloud CI (optional, later)
-
-Never commit `keystore.properties`. For a future GitHub Action you could use repo **Secrets**:
-
-- `FORSETI_KEYSTORE_FILE` (base64 keystore)  
-- `FORSETI_KEYSTORE_PASSWORD`  
-- `FORSETI_KEY_ALIAS`  
-- `FORSETI_KEY_PASSWORD`  
-
-`app/build.gradle.kts` already reads those env vars. Cloud agent sessions should **not** be given production keystore passwords in chat.
-
----
-
-## Pull latest on Precision Tower after cloud work
+## After cloud work (on Precision Tower)
 
 ```bash
 cd ~/Desktop/Projects/Forseti
 git pull origin main
-./scripts/install_debug.sh    # test on emulator
+./scripts/install_debug.sh
 # when ready for Play:
 ./scripts/stage_play_publish.sh
-```
-
----
-
-## Two-machine mental model
-
-```text
-Cloud agent  →  edits code/docs in GitHub PR
-       ↓
-Your PC        →  pull, emulator/debug, sign AAB, Play Console
-       ↓
-Testers        →  Play closed testing (same opt-in link)
 ```
 
 ---
@@ -123,5 +92,6 @@ Testers        →  Play closed testing (same opt-in link)
 ## Quick links
 
 - Repo: https://github.com/mpelletier0691-byte/forseti  
-- Pages site: https://mpelletier0691-byte.github.io/forseti/  
-- Play Console: https://play.google.com/console  
+- Pages: https://mpelletier0691-byte.github.io/forseti/  
+- FGS demo: https://mpelletier0691-byte.github.io/forseti/fgs-demo.html  
+- Play Console: https://play.google.com/console (owner login only)  

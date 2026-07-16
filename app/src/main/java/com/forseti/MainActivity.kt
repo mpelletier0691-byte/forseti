@@ -1,9 +1,7 @@
 package com.forseti
 
 import android.os.Bundle
-import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -30,6 +28,7 @@ import com.forseti.ui.shell.SplashOverlay
 import com.forseti.ui.shell.LocalForceDark
 import com.forseti.ui.theme.ForsetiColors
 import com.forseti.ui.theme.ForsetiTheme
+import com.forseti.ui.theme.setupForsetiEdgeToEdge
 import com.forseti.util.AppLanguageController
 import com.forseti.util.AppLocale
 import com.forseti.util.DisclaimerPrefs
@@ -75,11 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         entitlement.start()
 
-        val barColor = ForsetiColors.Background.value.toInt()
-        enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.dark(barColor),
-            navigationBarStyle = SystemBarStyle.dark(barColor)
-        )
+        setupForsetiEdgeToEdge()
 
         val prefs = DisclaimerPrefs(applicationContext)
         val appLanguage = AppLanguageController { tag ->

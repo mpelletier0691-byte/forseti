@@ -51,8 +51,8 @@ class CaseFolderService @Inject constructor(
     }
 
     /** Creates the whole tree if needed and returns the case root. */
-    fun ensureCaseRoot(case: CaseEntity): File? {
-        val root = caseRootOrCreate(case) ?: return null
+    fun ensureCaseRoot(case: CaseEntity): File? = runCatching {
+        val root = caseRootOrCreate(case) ?: return@runCatching null
         SCHEMA.forEach { (phase, subs) ->
             val pdir = File(root, phase).apply { mkdirs() }
             subs.forEach { File(pdir, it).mkdirs() }
@@ -62,8 +62,8 @@ class CaseFolderService @Inject constructor(
         File(root, "00_INDEX.txt").apply {
             if (!exists()) writeText(indexHeader(case))
         }
-        return root
-    }
+        root
+    }.getOrNull()
 
     /** Where the document scanner drops captures when no keyword matches. */
     fun scannerFolder(case: CaseEntity): File? {
@@ -79,7 +79,7 @@ class CaseFolderService @Inject constructor(
      */
     fun classifyForCase(case: CaseEntity, hint: String?): File? {
         val root = ensureCaseRoot(case) ?: return null
-        val text = hint?.lowercase(Locale.US).orEmpty()
+        val text = normalizeHint(hint.orEmpty())
         val rel = routeKeyword(text) ?: return File(root, INBOX).apply { mkdirs() }
         return File(root, rel).apply { mkdirs() }
     }
@@ -93,6 +93,46 @@ class CaseFolderService @Inject constructor(
      *   2. Mime / extension family (image → Evidence/Photos, audio → Evidence/Audio, …).
      *   3. 99_Inbox/ as a safe landing pad.
      */
+    /**
+     * Explains how a file was routed during ingest (for audit logs).
+     */
+    data class RouteDecision(
+        val relativePath: String,
+        val method: String,
+        val matchedKeyword: String? = null
+    )
+
+    fun decideIngestRoute(
+        hint: String?,
+        mimeType: String?,
+        extension: String?
+    ): RouteDecision {
+        val text = normalizeHint(hint.orEmpty())
+        val keywordHit = matchKeyword(text)
+        if (keywordHit != null) {
+            return RouteDecision(
+                relativePath = keywordHit.second,
+                method = "keyword",
+                matchedKeyword = keywordHit.first
+            )
+        }
+
+        val mime = mimeType?.lowercase(Locale.US).orEmpty()
+        val ext = extension?.lowercase(Locale.US).orEmpty().removePrefix(".")
+        val isScreenshot = text.contains("screenshot") || text.contains("screen_shot")
+        val byType = when {
+            mime.startsWith("image/") || ext in IMAGE_EXTS ->
+                if (isScreenshot) "$EVIDENCE/Screenshots" to "mime:image-screenshot"
+                else "$EVIDENCE/Photos" to "mime:image-photo"
+            mime.startsWith("audio/") || ext in AUDIO_EXTS -> "$EVIDENCE/Audio" to "mime:audio"
+            mime.startsWith("video/") || ext in VIDEO_EXTS -> "$EVIDENCE/Video" to "mime:video"
+            mime == "application/pdf" || ext == "pdf" -> INBOX to "mime:pdf-unclassified"
+            mime.startsWith("text/") || ext in TEXT_EXTS -> "00_Case_Overview/Notes" to "mime:text"
+            else -> INBOX to "mime:unknown"
+        }
+        return RouteDecision(relativePath = byType.first, method = byType.second)
+    }
+
     fun routeIngestedFile(
         case: CaseEntity,
         hint: String?,
@@ -100,23 +140,26 @@ class CaseFolderService @Inject constructor(
         extension: String?
     ): File? {
         val root = ensureCaseRoot(case) ?: return null
-        val text = hint?.lowercase(Locale.US).orEmpty()
-        val byKeyword = routeKeyword(text)
-        if (byKeyword != null) return File(root, byKeyword).apply { mkdirs() }
+        val decision = decideIngestRoute(hint, mimeType, extension)
+        return File(root, decision.relativePath).apply { mkdirs() }
+    }
 
-        val mime = mimeType?.lowercase(Locale.US).orEmpty()
-        val ext = extension?.lowercase(Locale.US).orEmpty().removePrefix(".")
-        val isScreenshot = text.contains("screenshot") || text.contains("screen_shot")
-        val byType = when {
-            mime.startsWith("image/") || ext in IMAGE_EXTS ->
-                if (isScreenshot) "$EVIDENCE/Screenshots" else "$EVIDENCE/Photos"
-            mime.startsWith("audio/") || ext in AUDIO_EXTS -> "$EVIDENCE/Audio"
-            mime.startsWith("video/") || ext in VIDEO_EXTS -> "$EVIDENCE/Video"
-            mime == "application/pdf" || ext == "pdf" -> "$EVIDENCE/PDFs"
-            mime.startsWith("text/") || ext in TEXT_EXTS -> "00_Case_Overview/Notes"
-            else -> INBOX
-        }
-        return File(root, byType).apply { mkdirs() }
+    /**
+     * When e-filing names are generic ("COVER PAGE 10 — MA-007…"), derive a clearer
+     * import name from OCR text on page 1 when possible.
+     */
+    fun suggestImportName(original: String, hint: String, ocrSnippet: String?): String {
+        val lower = original.lowercase(Locale.US)
+        val looksGeneric = lower.contains("cover page") ||
+            lower.contains("document (") ||
+            lower.startsWith("scan_") ||
+            lower.matches(Regex(".*\\b(ma|cf|nc|cv)-\\d{3,}.*")) && routeKeyword(normalizeHint(hint)) == null
+        if (!looksGeneric) return original
+
+        val titleLine = extractTitleFromOcr(ocrSnippet) ?: return original
+        val ext = original.substringAfterLast('.', "").ifBlank { "pdf" }
+        val date = java.time.LocalDate.now().toString()
+        return sanitize("${date}_${titleLine}.$ext")
     }
 
     /** Top-level folder containing every case workspace; safe target for ZIP backup. */
@@ -155,14 +198,23 @@ class CaseFolderService @Inject constructor(
         phase.listFiles { f -> f.isDirectory }?.sortedBy { it.name } ?: emptyList()
 
     fun listFiles(folder: File): List<File> =
-        folder.listFiles { f -> f.isFile }?.sortedBy { it.name } ?: emptyList()
+        folder.listFiles { f ->
+            f.isFile &&
+                !f.name.endsWith(".ingest.json") &&
+                !f.name.endsWith(".partial")
+        }?.sortedBy { it.name } ?: emptyList()
 
     fun renameFile(file: File, newDisplayName: String): File? {
         val safeName = sanitize(newDisplayName)
         if (safeName.isBlank()) return null
         val target = File(file.parentFile, safeName)
         if (target.exists()) return null
-        return if (file.renameTo(target)) target else null
+        return if (file.renameTo(target)) {
+            com.forseti.idp.IngestMetaStore.moveWith(file, target)
+            target
+        } else {
+            null
+        }
     }
 
     fun moveFile(file: File, destFolder: File): File? {
@@ -172,10 +224,66 @@ class CaseFolderService @Inject constructor(
         if (file.parentFile == destFolder) return file
         val target = File(destFolder, file.name)
         if (target.exists()) return null
-        return if (file.renameTo(target)) target else null
+        val moved = if (file.renameTo(target)) target else null
+        if (moved != null) {
+            com.forseti.idp.IngestMetaStore.moveWith(file, moved)
+        }
+        return moved
     }
 
-    fun deleteFile(file: File): Boolean = file.delete()
+    fun deleteFile(file: File): Boolean {
+        com.forseti.idp.IngestMetaStore.sidecarFor(file).takeIf { it.exists() }?.delete()
+        return file.delete()
+    }
+
+    /** Deletes every file in [folder] (not subfolders). Returns count removed. */
+    fun deleteAllFilesIn(folder: File): Int {
+        if (!folder.isDirectory) return 0
+        var removed = 0
+        listFiles(folder).forEach { file ->
+            if (deleteFile(file)) removed++
+        }
+        return removed
+    }
+
+    /**
+     * Match [hint] against the same keyword table used for scanner / ingest routing.
+     * Returns the matched needle and Brokkr-Forge relative folder path.
+     */
+    fun findKeywordRoute(hint: String): KeywordRouteHit? {
+        val hit = matchKeyword(normalizeHint(hint)) ?: return null
+        return KeywordRouteHit(needle = hit.first, folder = hit.second)
+    }
+
+    /** Locate an existing workspace file with the same display name and byte size. */
+    fun findFileByNameAndSize(root: File, name: String, size: Long): File? =
+        root.walkTopDown()
+            .filter { file ->
+                file.isFile &&
+                    !file.name.endsWith(".ingest.json") &&
+                    !file.name.endsWith(".partial")
+            }
+            .firstOrNull { it.name == name && it.length() == size }
+
+    /** Same logical document as [name] (ignoring `_1`, `_2` suffixes) and [size]. */
+    fun findFileByNormalizedNameAndSize(root: File, name: String, size: Long): File? =
+        runCatching {
+            val normalized = normalizeImportBaseName(name)
+            root.walkTopDown()
+                .filter { file ->
+                    file.isFile &&
+                        !file.name.endsWith(".ingest.json") &&
+                        !file.name.endsWith(".partial")
+                }
+                .firstOrNull {
+                    normalizeImportBaseName(it.name) == normalized && it.length() == size
+                }
+        }.getOrNull()
+
+    data class KeywordRouteHit(
+        val needle: String,
+        val folder: String
+    )
 
     /** Copy a content URI into the given folder, generating a unique filename. */
     fun importContent(uri: Uri, intoFolder: File, suggestedName: String): File? {
@@ -234,12 +342,47 @@ class CaseFolderService @Inject constructor(
         }
 
     /** Return relative path inside the case root, or null if no keyword matched. */
-    private fun routeKeyword(text: String): String? {
-        if (text.isBlank()) return null
+    private fun routeKeyword(text: String): String? = matchKeyword(text)?.second
+
+    /** Matched needle and destination path, or null. */
+    private fun matchKeyword(text: String): Pair<String, String>? {
+        val normalized = normalizeHint(text)
+        if (normalized.isBlank()) return null
+        val filed = normalized.contains("filed") ||
+            normalized.contains("stamped") ||
+            normalized.contains("entered") ||
+            normalized.contains("e-filed")
         for ((needle, target) in KEYWORD_ROUTES) {
-            if (text.contains(needle)) return target
+            if (normalized.contains(needle)) return needle to adjustForFiled(target, filed)
         }
         return null
+    }
+
+    private fun adjustForFiled(target: String, filed: Boolean): String {
+        if (!filed) return target
+        return when {
+            target.startsWith("05_Motions/") -> "05_Motions/Filed"
+            else -> target
+        }
+    }
+
+    private fun extractTitleFromOcr(ocr: String?): String? {
+        if (ocr.isNullOrBlank()) return null
+        return ocr.lineSequence()
+            .map { it.trim() }
+            .firstOrNull { line ->
+                line.length in 4..72 && routeKeyword(line) != null
+            }
+            ?.let { sanitize(it).take(56) }
+    }
+
+    private fun normalizeHint(raw: String): String {
+        var t = raw.lowercase(Locale.US)
+        t = t.replace('—', '-').replace('–', '-')
+        t = t.replace(Regex("cover\\s*page\\s*\\d*"), " ")
+        t = t.replace(Regex("document\\s*\\(\\d+\\)"), " ")
+        t = t.replace(Regex("\\b(ma|cf|nc|cv|sc)-\\d{3,}\\b"), " ")
+        return t.replace(Regex("\\s+"), " ").trim()
     }
 
     companion object {
@@ -291,6 +434,11 @@ class CaseFolderService @Inject constructor(
             "calendar" to "07_Deadlines",
             "deadline" to "07_Deadlines",
             // 06_Correspondence
+            "communications" to "06_Correspondence/Misc",
+            "communication" to "06_Correspondence/Misc",
+            "text message" to "06_Correspondence/Misc",
+            "messenger" to "06_Correspondence/Misc",
+            "facebook" to "06_Correspondence/Misc",
             "opposing counsel" to "06_Correspondence/Opposing_Party",
             "opposing party" to "06_Correspondence/Opposing_Party",
             "court letter" to "06_Correspondence/Court",
@@ -299,21 +447,38 @@ class CaseFolderService @Inject constructor(
             // 05_Motions  (Drafts default; "filed" sub-route handled below by suffix)
             "motion to dismiss" to "05_Motions/Drafts",
             "motion in limine" to "05_Motions/Drafts",
+            "notice of motion" to "05_Motions/Drafts",
+            "memorandum in support" to "05_Motions/Drafts",
+            "memorandum of law" to "05_Motions/Drafts",
+            "memorandum" to "05_Motions/Drafts",
+            "brief in support" to "05_Motions/Drafts",
             "motion" to "05_Motions/Drafts",
+            "opposition" to "05_Motions/Drafts",
+            "reply" to "05_Motions/Drafts",
             "court response" to "05_Motions/Court_Responses",
             // 04_Evidence — keyword overrides for known evidence kinds
             "screenshot" to "04_Evidence/Screenshots",
+            "photos for" to "04_Evidence/Photos",
+            "videos for" to "04_Evidence/Video",
+            "evidence for" to "04_Evidence/PDFs",
+            "evidence" to "04_Evidence/PDFs",
+            "gmail" to "06_Correspondence/Misc",
+            "declaration" to "03_Discovery",
+            "affidavit" to "03_Discovery",
             // 03_Discovery
+            "interrogatories" to "03_Discovery/Interrogatories",
             "interrog" to "03_Discovery/Interrogatories",
             "request for production" to "03_Discovery/Requests_for_Production",
+            "requests for production" to "03_Discovery/Requests_for_Production",
             "rfp" to "03_Discovery/Requests_for_Production",
             "request for admission" to "03_Discovery/Admissions",
+            "requests for admission" to "03_Discovery/Admissions",
             "rfa" to "03_Discovery/Admissions",
-            "admission" to "03_Discovery/Admissions",
             "deposition" to "03_Discovery/Depositions",
             "depo" to "03_Discovery/Depositions",
             "discovery response" to "03_Discovery/Discovery_Responses",
             "discovery" to "03_Discovery",
+            "subpoena duces tecum" to "03_Discovery",
             "subpoena" to "03_Discovery",
             // 02_Service_of_Process
             "proof of service" to "02_Service_of_Process/Proof_of_Service",
@@ -321,6 +486,9 @@ class CaseFolderService @Inject constructor(
             "summons" to "02_Service_of_Process/Summons",
             "service" to "02_Service_of_Process/Proof_of_Service",
             // 01_Pleadings
+            "counterclaim" to "01_Pleadings",
+            "cross-claim" to "01_Pleadings",
+            "crossclaim" to "01_Pleadings",
             "complaint" to "01_Pleadings/Complaint",
             "answer" to "01_Pleadings/Answer",
             "order" to "01_Pleadings/Orders",
@@ -340,6 +508,14 @@ class CaseFolderService @Inject constructor(
         fun sanitize(raw: String): String {
             val stripped = raw.replace(Regex("[\\\\/:*?\"<>|]"), "_").trim()
             return stripped.ifBlank { "case" }.take(96)
+        }
+
+        /** Strip numeric collision suffixes added during import (`file_1.pdf` → `file.pdf`). */
+        fun normalizeImportBaseName(name: String): String {
+            val ext = name.substringAfterLast('.', "")
+            val base = name.substringBeforeLast('.', name)
+            val stripped = base.replace(Regex("_\\d+$"), "")
+            return if (ext.isNotBlank()) "$stripped.$ext" else stripped
         }
     }
 }

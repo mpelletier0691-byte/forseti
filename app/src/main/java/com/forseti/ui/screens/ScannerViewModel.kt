@@ -1,14 +1,19 @@
 package com.forseti.ui.screens
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.forseti.R
+import com.forseti.casefiles.CaseIngestCoordinator
 import com.forseti.casefiles.CaseIngestService
 import com.forseti.casefiles.ScannerService
 import com.forseti.data.entities.CaseEntity
 import com.forseti.deadlines.DeadlineRepository
+import com.forseti.util.IngestUriPermissions
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -22,8 +27,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ScannerViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val scanner: ScannerService,
     private val ingest: CaseIngestService,
+    private val ingestCoordinator: CaseIngestCoordinator,
     repository: DeadlineRepository
 ) : ViewModel() {
 
@@ -51,16 +58,40 @@ class ScannerViewModel @Inject constructor(
 
     fun ingestFilesInto(case: CaseEntity, uris: List<Uri>) {
         if (uris.isEmpty()) return
+        if (case.id == 0L) {
+            _ingestMessage.value = "Select a case first, then ingest."
+            return
+        }
+        if (uris.size > 1) {
+            runCatching {
+                IngestUriPermissions.persistUris(context, uris)
+                ingestCoordinator.enqueueUrisIngest(case.id, uris)
+            }.onSuccess {
+                _ingestMessage.value = context.getString(R.string.brokkr_forge_started)
+            }.onFailure {
+                _ingestMessage.value = "Could not start Brokkr Forge: ${it.message ?: "unknown error"}"
+            }
+            return
+        }
         viewModelScope.launch(Dispatchers.IO) {
-            val report = ingest.ingestUris(case, uris)
-            _ingestMessage.value = report.summary()
+            runCatching { ingest.ingestUris(case, uris) }
+                .onSuccess { _ingestMessage.value = it.summary() }
+                .onFailure { _ingestMessage.value = "Ingest failed: ${it.message ?: "unknown error"}" }
         }
     }
 
     fun ingestFolderInto(case: CaseEntity, treeUri: Uri) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val report = ingest.ingestTree(case, treeUri)
-            _ingestMessage.value = report.summary()
+        if (case.id == 0L) {
+            _ingestMessage.value = "Select a case first, then ingest."
+            return
+        }
+        runCatching {
+            IngestUriPermissions.persistTree(context, treeUri)
+            ingestCoordinator.enqueueTreeIngest(case.id, treeUri)
+        }.onSuccess {
+            _ingestMessage.value = context.getString(R.string.brokkr_forge_started)
+        }.onFailure {
+            _ingestMessage.value = "Could not start Brokkr Forge: ${it.message ?: "unknown error"}"
         }
     }
 

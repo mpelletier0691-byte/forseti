@@ -1,6 +1,8 @@
 package com.forseti.ui.screens
 
 import android.content.Intent
+import com.forseti.casefiles.CaseFileViewer
+import com.forseti.casefiles.CaseFolderService
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
@@ -36,6 +38,8 @@ import androidx.compose.material.icons.outlined.Folder
 import androidx.compose.material.icons.outlined.FolderOpen
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.AssistChip
+import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
@@ -43,6 +47,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -61,12 +67,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.forseti.casefiles.CaseFileViewer
-import com.forseti.casefiles.CaseFolderService
+import com.forseti.R
+import com.forseti.idp.IngestMeta
+import com.forseti.idp.IngestMetaStore
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiStandaloneContentInsets
 import java.io.File
 import java.text.DateFormat
 import java.util.Date
@@ -98,6 +107,7 @@ fun CaseDetailScreen(
     var renameTarget by remember { mutableStateOf<File?>(null) }
     var viewing by remember { mutableStateOf<File?>(null) }
     var moveAfterRename by remember { mutableStateOf<File?>(null) }
+    var deleteAllTarget by remember { mutableStateOf<File?>(null) }
 
     // Folder viewer takes over the whole pane while the user is reading a file.
     viewing?.let { f ->
@@ -128,7 +138,10 @@ fun CaseDetailScreen(
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+    Scaffold(
+        contentWindowInsets = ForsetiStandaloneContentInsets,
+        snackbarHost = { SnackbarHost(snackbar) }
+    ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -144,6 +157,37 @@ fun CaseDetailScreen(
                 case = state.case,
                 workspaceRoot = state.workspaceRoot
             )
+
+            state.forgeProgress?.takeIf { it.isActive }?.let { progress ->
+                LinearProgressIndicator(
+                    progress = {
+                        if (progress.total > 0) {
+                            progress.processed.toFloat() / progress.total.toFloat()
+                        } else {
+                            0f
+                        }
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                    color = ForsetiColors.RuneGold,
+                    trackColor = ForsetiColors.Stone
+                )
+                Text(
+                    text = if (progress.total > 0) {
+                        stringResource(
+                            R.string.brokkr_forge_case_banner,
+                            progress.processed,
+                            progress.total
+                        )
+                    } else {
+                        stringResource(R.string.brokkr_forge_foreground_title)
+                    },
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = ForsetiColors.MeadAmber
+                )
+            }
 
             HorizontalDivider(color = ForsetiColors.Stone)
 
@@ -186,7 +230,13 @@ fun CaseDetailScreen(
                                 importInto = dst
                                 openDoc.launch(arrayOf("*/*"))
                             },
-                            onOpenFile = { viewing = it }
+                            onOpenFile = { viewing = it },
+                            onQuickFile = { file, meta ->
+                                viewModel.moveToSuggestedFolder(file, meta.suggestedFolder)
+                            },
+                            onDeleteAllInPhase = { folder ->
+                                deleteAllTarget = folder
+                            }
                         )
                         Spacer(Modifier.height(8.dp))
                     }
@@ -210,13 +260,45 @@ fun CaseDetailScreen(
     }
 
     moveAfterRename?.let { file ->
+        val suggested = state.case?.let { viewModel.folderService.classifyForCase(it, file.name) }
         MoveAfterRenameDialog(
             file = file,
             folders = state.folders,
+            suggestedFolder = suggested,
             onKeep = { moveAfterRename = null },
             onMove = { dest ->
                 viewModel.move(file, dest)
                 moveAfterRename = null
+            }
+        )
+    }
+
+    deleteAllTarget?.let { folder ->
+        val fileCount = countFilesInFolder(folder)
+        AlertDialog(
+            onDismissRequest = { deleteAllTarget = null },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        viewModel.deleteAllInFolder(folder)
+                        deleteAllTarget = null
+                    }
+                ) {
+                    Text("Delete all", color = ForsetiColors.MeadAmber)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { deleteAllTarget = null }) {
+                    Text("Cancel", color = ForsetiColors.AshGrey)
+                }
+            },
+            title = { Text("Delete all Inbox files?", color = ForsetiColors.RuneGold) },
+            containerColor = ForsetiColors.Surface,
+            text = {
+                Text(
+                    "This permanently removes $fileCount file${if (fileCount == 1) "" else "s"} from ${folder.name}/. This cannot be undone.",
+                    color = ForsetiColors.AshGrey
+                )
             }
         )
     }
@@ -230,6 +312,7 @@ private fun DetailTopBar(
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .statusBarsPadding()
             .background(ForsetiColors.Sidebar)
             .padding(horizontal = 8.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -289,8 +372,18 @@ private fun PhaseSection(
     onRenameFile: (File) -> Unit,
     onDeleteFile: (File) -> Unit,
     onImportInto: (File) -> Unit,
-    onOpenFile: (File) -> Unit
+    onOpenFile: (File) -> Unit,
+    onQuickFile: (File, IngestMeta) -> Unit,
+    onDeleteAllInPhase: (File) -> Unit
 ) {
+    val isInbox = phase.phase.name == "99_Inbox"
+    val inboxFiles = if (isInbox) phase.subfolders.flatMap { it.files } else emptyList()
+    val duplicateKeys = remember(inboxFiles) {
+        inboxFiles
+            .groupBy { "${CaseFolderService.normalizeImportBaseName(it.name)}|${it.length()}" }
+            .filterValues { it.size > 1 }
+            .keys
+    }
     Card(
         colors = CardDefaults.cardColors(containerColor = ForsetiColors.Surface),
         shape = RoundedCornerShape(10.dp),
@@ -320,15 +413,29 @@ private fun PhaseSection(
             }
             AnimatedVisibility(visible = isExpanded) {
                 Column(modifier = Modifier.padding(top = 8.dp)) {
+                    if (isInbox && inboxFiles.isNotEmpty()) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 8.dp),
+                            horizontalArrangement = Arrangement.End
+                        ) {
+                            TextButton(onClick = { onDeleteAllInPhase(phase.phase) }) {
+                                Text("Delete all", color = ForsetiColors.MeadAmber)
+                            }
+                        }
+                    }
                     phase.subfolders.forEach { sub ->
                         SubfolderBlock(
                             sub = sub,
                             isPhaseRoot = sub.folder == phase.phase,
+                            duplicateKeys = if (isInbox) duplicateKeys else emptySet(),
                             onShareFile = onShareFile,
                             onRenameFile = onRenameFile,
                             onDeleteFile = onDeleteFile,
                             onImportInto = onImportInto,
-                            onOpenFile = onOpenFile
+                            onOpenFile = onOpenFile,
+                            onQuickFile = onQuickFile
                         )
                         Spacer(Modifier.height(8.dp))
                     }
@@ -342,11 +449,13 @@ private fun PhaseSection(
 private fun SubfolderBlock(
     sub: CaseDetailViewModel.SubfolderNode,
     isPhaseRoot: Boolean,
+    duplicateKeys: Set<String> = emptySet(),
     onShareFile: (File) -> Unit,
     onRenameFile: (File) -> Unit,
     onDeleteFile: (File) -> Unit,
     onImportInto: (File) -> Unit,
-    onOpenFile: (File) -> Unit
+    onOpenFile: (File) -> Unit,
+    onQuickFile: (File, IngestMeta) -> Unit
 ) {
     Surface(
         color = ForsetiColors.SurfaceVariant,
@@ -381,12 +490,15 @@ private fun SubfolderBlock(
                 )
             } else {
                 sub.files.forEach { file ->
+                    val dupKey = "${CaseFolderService.normalizeImportBaseName(file.name)}|${file.length()}"
                     FileRow(
                         file = file,
+                        isDuplicate = dupKey in duplicateKeys,
                         onOpen = { onOpenFile(file) },
                         onShare = { onShareFile(file) },
                         onRename = { onRenameFile(file) },
-                        onDelete = { onDeleteFile(file) }
+                        onDelete = { onDeleteFile(file) },
+                        onQuickFile = { meta -> onQuickFile(file, meta) }
                     )
                 }
             }
@@ -397,11 +509,19 @@ private fun SubfolderBlock(
 @Composable
 private fun FileRow(
     file: File,
+    isDuplicate: Boolean = false,
     onOpen: () -> Unit,
     onShare: () -> Unit,
     onRename: () -> Unit,
-    onDelete: () -> Unit
+    onDelete: () -> Unit,
+    onQuickFile: (IngestMeta) -> Unit
 ) {
+    val meta = remember(file.absolutePath) { IngestMetaStore.load(file) }
+    val inInbox = file.absolutePath.contains("/99_Inbox/")
+    val showFileHere = meta != null && inInbox && meta.routing == "inbox-suggested"
+    val showAutoFiled = meta != null && meta.routing == "auto-filed"
+    val showInboxOnly = meta != null && inInbox && meta.routing == "inbox-only"
+
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
@@ -429,6 +549,69 @@ private fun FileRow(
                 style = MaterialTheme.typography.labelSmall,
                 color = ForsetiColors.AshGrey
             )
+            if (isDuplicate) {
+                Text(
+                    "Possible duplicate \u2014 same name/size as another Inbox file",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = ForsetiColors.MeadAmber
+                )
+            }
+            meta?.let { m ->
+                val pct = (m.confidence * 100).toInt()
+                val type = m.documentType ?: "Unassigned"
+                val confLabel = when {
+                    showAutoFiled -> "Auto-filed \u00B7 ${"%.2f".format(m.confidence)}"
+                    showFileHere -> "$type \u00B7 $pct% \u2014 review suggested folder"
+                    showInboxOnly -> "$type \u00B7 $pct% \u2014 classify manually"
+                    else -> "$type \u00B7 $pct% confidence"
+                }
+                Text(
+                    confLabel,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = when {
+                        showAutoFiled -> ForsetiColors.RuneGold
+                        showFileHere -> ForsetiColors.MeadAmber
+                        else -> ForsetiColors.AshGrey
+                    }
+                )
+            }
+            meta?.takeIf { showAutoFiled }?.let { m ->
+                AssistChip(
+                    onClick = { },
+                    enabled = false,
+                    label = {
+                        Text(
+                            "Auto-filed \u00B7 ${"%.2f".format(m.confidence)}",
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    },
+                    colors = AssistChipDefaults.assistChipColors(
+                        containerColor = ForsetiColors.SidebarSelected,
+                        labelColor = ForsetiColors.RuneGold,
+                        disabledContainerColor = ForsetiColors.SidebarSelected,
+                        disabledLabelColor = ForsetiColors.RuneGold
+                    ),
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
+            meta?.takeIf { showFileHere }?.let { m ->
+                AssistChip(
+                    onClick = { onQuickFile(m) },
+                    label = {
+                        Text(
+                            "File Here \u2192 ${m.suggestedFolder.substringAfterLast('/')}",
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    },
+                    colors = AssistChipDefaults.assistChipColors(
+                        containerColor = ForsetiColors.SidebarSelected,
+                        labelColor = ForsetiColors.RuneGold
+                    ),
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
         }
         IconButton(onClick = onShare) {
             Icon(Icons.Outlined.Share, "Share", tint = ForsetiColors.RavenBlue)
@@ -451,10 +634,17 @@ private fun FileRow(
 private fun MoveAfterRenameDialog(
     file: File,
     folders: List<CaseDetailViewModel.FolderNode>,
+    suggestedFolder: File?,
     onKeep: () -> Unit,
     onMove: (File) -> Unit
 ) {
     val scroll = rememberScrollState()
+    val suggestedPath = suggestedFolder?.absolutePath
+    val currentParent = file.parentFile?.absolutePath
+    val showSuggested = suggestedFolder != null &&
+        suggestedPath != null &&
+        suggestedPath != currentParent
+
     AlertDialog(
         onDismissRequest = onKeep,
         confirmButton = {
@@ -469,11 +659,35 @@ private fun MoveAfterRenameDialog(
                     .heightIn(max = 360.dp)
             ) {
                 Text(
-                    "Now that the file has a clearer name, would you like to drop it into a different folder?",
+                    if (showSuggested) {
+                        "Based on the new name, Forseti suggests a folder (highlighted). Tap to move, or keep the file here."
+                    } else {
+                        "Now that the file has a clearer name, would you like to drop it into a different folder?"
+                    },
                     color = ForsetiColors.AshGrey,
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Spacer(Modifier.height(8.dp))
+                if (showSuggested) {
+                    val label = suggestedFolder!!.absolutePath.substringAfterLast('/')
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onMove(suggestedFolder) }
+                            .padding(vertical = 8.dp)
+                            .background(ForsetiColors.SidebarSelected, RoundedCornerShape(8.dp))
+                            .padding(horizontal = 8.dp, vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Outlined.FolderOpen, null, tint = ForsetiColors.RuneGold)
+                        Spacer(Modifier.width(10.dp))
+                        Column(Modifier.weight(1f)) {
+                            Text("Suggested", color = ForsetiColors.RuneGold, style = MaterialTheme.typography.labelSmall)
+                            Text(label, color = ForsetiColors.AshWhite)
+                        }
+                    }
+                    Spacer(Modifier.height(8.dp))
+                }
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -481,6 +695,7 @@ private fun MoveAfterRenameDialog(
                 ) {
                     folders.forEach { phase ->
                         phase.subfolders.forEach { sub ->
+                            if (showSuggested && sub.folder.absolutePath == suggestedPath) return@forEach
                             val label = if (sub.folder == phase.phase) {
                                 prettyName(phase.phase.name)
                             } else {
@@ -545,6 +760,10 @@ private fun RenameDialog(
 
 private fun countFiles(node: CaseDetailViewModel.FolderNode): Int =
     node.subfolders.sumOf { it.files.size }
+
+private fun countFilesInFolder(folder: File): Int =
+    folder.listFiles { f -> f.isFile && !f.name.endsWith(".ingest.json") && !f.name.endsWith(".partial") }
+        ?.size ?: 0
 
 private fun prettyName(folderName: String): String {
     // "01_Pleadings" → "Pleadings"; "98_Scans" → "Scans"

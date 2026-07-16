@@ -49,6 +49,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.forseti.R
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -81,18 +82,22 @@ fun BackupScreen(
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+    ForsetiDestinationScaffold(
+        snackbarHost = { SnackbarHost(snackbar) },
+        topBar = {
+            ForsetiTopBar(
+                title = stringResource(R.string.nav_backup),
+                sidebarExpanded = sidebarExpanded,
+                onToggleSidebar = onToggleSidebar
+            )
+        }
+    ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .background(ForsetiColors.Background)
         ) {
-            ForsetiTopBar(
-                title = stringResource(R.string.nav_backup),
-                sidebarExpanded = sidebarExpanded,
-                onToggleSidebar = onToggleSidebar
-            )
             BackupHeader(
                 workspacePath = viewModel.workspacePath,
                 busy = busy,

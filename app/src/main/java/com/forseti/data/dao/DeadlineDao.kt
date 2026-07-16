@@ -16,6 +16,9 @@ interface DeadlineDao {
     @Query("SELECT * FROM deadlines WHERE completed = 0 ORDER BY dueAt ASC")
     fun observeUpcoming(): Flow<List<DeadlineEntity>>
 
+    @Query("SELECT * FROM deadlines WHERE id = :id LIMIT 1")
+    suspend fun byId(id: Long): DeadlineEntity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(deadline: DeadlineEntity): Long
 

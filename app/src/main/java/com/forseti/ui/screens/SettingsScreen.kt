@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Bookmark
 import androidx.compose.material.icons.outlined.Brightness2
 import androidx.compose.material.icons.outlined.Description
+import androidx.compose.material.icons.outlined.HelpOutline
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Public
 import androidx.compose.material.icons.outlined.Shield
@@ -89,8 +90,13 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
     val bookmarksTitle = stringResource(R.string.settings_bookmarks_title)
     val bookmarksSubtitle = stringResource(R.string.settings_bookmarks_subtitle)
     val aboutSectionTitle = stringResource(R.string.settings_section_about)
+    val helpSectionTitle = stringResource(R.string.settings_section_help)
+    val whatsNewTitle = stringResource(R.string.settings_whats_new_title)
+    val whatsNewSubtitle = stringResource(R.string.settings_whats_new_subtitle)
     val versionLine = stringResource(R.string.settings_version_fmt, BuildConfig.VERSION_NAME)
     val buildLine = stringResource(R.string.settings_build_fmt, BuildConfig.VERSION_CODE)
+
+    var showWhatsNewGuide by remember { mutableStateOf(false) }
 
     /**
      * The full Settings narration. Concatenated lazily inside [ReadAloudControls]
@@ -180,6 +186,16 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
             item { InfoRow(Icons.Outlined.Description, bundledRulesTitle, bundledRulesSubtitle) }
             item { InfoRow(Icons.Outlined.Bookmark, bookmarksTitle, bookmarksSubtitle) }
 
+            sectionHeader(helpSectionTitle)
+            item {
+                InfoRow(
+                    icon = Icons.Outlined.HelpOutline,
+                    title = whatsNewTitle,
+                    subtitle = whatsNewSubtitle,
+                    onClick = { showWhatsNewGuide = true }
+                )
+            }
+
             sectionHeader(aboutSectionTitle)
             item { InfoRow(Icons.Outlined.Info, versionLine, buildLine) }
             item {
@@ -199,6 +215,9 @@ fun SettingsScreen(sidebarExpanded: Boolean, onToggleSidebar: () -> Unit) {
         }
     }
 
+    if (showWhatsNewGuide) {
+        WhatsNewGuideDialog(onDismiss = { showWhatsNewGuide = false })
+    }
 }
 
 private fun androidx.compose.foundation.lazy.LazyListScope.sectionHeader(title: String) {

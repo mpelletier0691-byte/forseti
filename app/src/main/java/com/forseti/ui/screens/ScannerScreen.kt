@@ -1,5 +1,6 @@
 package com.forseti.ui.screens
 
+import android.content.Intent
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -82,6 +83,9 @@ import com.forseti.R
 import com.forseti.data.entities.CaseEntity
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
+import com.forseti.util.IngestUriPermissions
+import com.forseti.util.RequestNotificationsPermissionOnce
 
 /**
  * Multi-page document scanner. Capture pages with the rear camera, review the
@@ -93,6 +97,8 @@ fun ScannerScreen(
     onToggleSidebar: () -> Unit,
     viewModel: ScannerViewModel = hiltViewModel()
 ) {
+    RequestNotificationsPermissionOnce()
+
     val cases by viewModel.cases.collectAsState()
     val pages by viewModel.pages.collectAsState()
     val saved by viewModel.saved.collectAsState()
@@ -135,19 +141,22 @@ fun ScannerScreen(
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+    ForsetiDestinationScaffold(
+        snackbarHost = { SnackbarHost(snackbar) },
+        topBar = {
+            ForsetiTopBar(
+                title = stringResource(R.string.nav_scanner),
+                sidebarExpanded = sidebarExpanded,
+                onToggleSidebar = onToggleSidebar
+            )
+        }
+    ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .background(ForsetiColors.Background)
         ) {
-            ForsetiTopBar(
-                title = stringResource(R.string.nav_scanner),
-                sidebarExpanded = sidebarExpanded,
-                onToggleSidebar = onToggleSidebar
-            )
-
             if (cases.isEmpty()) {
                 ScannerEmpty()
             } else {
@@ -276,11 +285,26 @@ private fun CameraPane(
     )
     val pickTree = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocumentTree()
-    ) { uri -> uri?.let { onIngestFolder(it) } }
+    ) { uri ->
+        uri?.let {
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(
+                    it,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+            }
+            onIngestFolder(it)
+        }
+    }
 
     val pickFiles = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenMultipleDocuments()
-    ) { uris -> if (uris.isNotEmpty()) onIngestFiles(uris) }
+    ) { uris ->
+        if (uris.isNotEmpty()) {
+            uris.forEach { u -> IngestUriPermissions.persistUri(context, u) }
+            onIngestFiles(uris)
+        }
+    }
 
     LaunchedEffect(Unit) {
         if (!hasPermission) permLauncher.launch(Manifest.permission.CAMERA)

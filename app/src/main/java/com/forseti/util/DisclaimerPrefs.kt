@@ -63,6 +63,13 @@ class DisclaimerPrefs(context: Context) {
             prefs.edit().putBoolean(KEY_TUTORIAL_COMPLETED, value).apply()
         }
 
+    /** Last app version for which the user dismissed the What's New overlay. */
+    var whatsNewSeenVersion: String
+        get() = prefs.getString(KEY_WHATS_NEW_SEEN, "") ?: ""
+        set(value) {
+            prefs.edit().putString(KEY_WHATS_NEW_SEEN, value).apply()
+        }
+
     companion object {
         private const val NAME = "forseti_prefs"
         private const val KEY_PRE_INSTALL_1 = "pre_install_disclaimer_1_accepted"
@@ -72,5 +79,6 @@ class DisclaimerPrefs(context: Context) {
         private const val KEY_LANGUAGE_CHOSEN = "language_chosen"
         private const val KEY_LANGUAGE_TAG = "app_language_tag"
         private const val KEY_TUTORIAL_COMPLETED = "tutorial_completed"
+        private const val KEY_WHATS_NEW_SEEN = "whats_new_seen_version"
     }
 }

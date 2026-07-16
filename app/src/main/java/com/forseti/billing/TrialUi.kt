@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -63,7 +64,10 @@ fun TrialExpiredScreen(
 
     LaunchedEffect(purchased) { if (purchased) onPurchased() }
 
-    Surface(color = ForsetiColors.Background, modifier = Modifier.fillMaxSize()) {
+    Surface(
+        color = ForsetiColors.Background,
+        modifier = Modifier.fillMaxSize().safeDrawingPadding()
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()

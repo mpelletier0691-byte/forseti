@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -56,6 +55,7 @@ import com.forseti.deadlines.DeadlineRepository
 import com.forseti.imports.UploadedRulesService
 import com.forseti.ui.theme.ForsetiColors
 import com.forseti.ui.theme.ForsetiTheme
+import com.forseti.ui.theme.setupForsetiEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -90,7 +90,7 @@ class ShareReceiverActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        setupForsetiEdgeToEdge()
 
         val incoming = extractUri(intent)
         if (incoming == null) {

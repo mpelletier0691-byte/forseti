@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.forseti.R
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiTopBarWindowInsets
 
 /**
  * Compact top bar with a leading back arrow that returns the user to the
@@ -47,6 +48,7 @@ fun ForsetiTopBar(
 ) {
     Column {
         TopAppBar(
+            windowInsets = ForsetiTopBarWindowInsets,
             title = {
                 Text(
                     text = title,

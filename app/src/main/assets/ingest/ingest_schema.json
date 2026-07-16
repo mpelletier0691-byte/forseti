@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "confidenceHigh": 0.85,
+  "confidenceMedium": 0.70,
+  "renameTemplate": "{date}_{docType}_{caseId}_v1",
+  "schemas": [
+    {
+      "id": "evidence_video",
+      "documentType": "VideoEvidence",
+      "folder": "04_Evidence/Video",
+      "keywords": ["videos for", "video evidence"],
+      "anchors": [],
+      "weight": 0.95
+    },
+    {
+      "id": "evidence_photo",
+      "documentType": "PhotoEvidence",
+      "folder": "04_Evidence/Photos",
+      "keywords": ["photos for", "photo evidence", "injury from", "domestic violence", "evidence for"],
+      "anchors": [],
+      "weight": 0.95
+    },
+    {
+      "id": "screenshot_evidence",
+      "documentType": "Screenshot",
+      "folder": "04_Evidence/Screenshots",
+      "keywords": ["screenshot_", "screenshot-"],
+      "anchors": ["SCREENSHOT"],
+      "weight": 0.95
+    },
+    {
+      "id": "advocacy_letter",
+      "documentType": "Correspondence",
+      "folder": "06_Correspondence/Misc",
+      "keywords": ["gmail -", "letter to", "legislative advocacy", "cover letter", "distribution list", "advocacy", "outreach"],
+      "anchors": ["DEAR", "REGARDS"],
+      "weight": 0.9
+    },
+    {
+      "id": "court_order",
+      "documentType": "CourtOrder",
+      "folder": "01_Pleadings/Orders",
+      "keywords": ["it is hereby ordered", "ordered that", "order of the court", "so ordered", "order"],
+      "anchors": ["ORDER", "HEREBY ORDERED"],
+      "weight": 1.15
+    },
+    {
+      "id": "motion",
+      "documentType": "Motion",
+      "folder": "05_Motions/Drafts",
+      "keywords": ["motion to dismiss", "motion in limine", "notice of motion", "motion to compel", "motion for summary judgment", "motion"],
+      "anchors": ["MOTION TO", "COMES NOW", "MOTION FOR"],
+      "weight": 1.1
+    },
+    {
+      "id": "answer",
+      "documentType": "Answer",
+      "folder": "01_Pleadings/Answer",
+      "keywords": ["answer to complaint", "defendant's answer", "defendants answer", "counterclaim"],
+      "anchors": ["ANSWER", "RESPONSE TO COMPLAINT"],
+      "weight": 1.1
+    },
+    {
+      "id": "complaint",
+      "documentType": "Complaint",
+      "folder": "01_Pleadings/Complaint",
+      "keywords": ["complaint for", "civil action", "plaintiff complains", "complaint"],
+      "anchors": ["COMPLAINT"],
+      "weight": 1.05
+    },
+    {
+      "id": "interrogatories",
+      "documentType": "Interrogatories",
+      "folder": "03_Discovery/Interrogatories",
+      "keywords": ["interrogatories", "interrogatory no", "set of interrogatories"],
+      "anchors": ["INTERROGATOR"],
+      "weight": 1.1
+    },
+    {
+      "id": "rfp",
+      "documentType": "RequestForProduction",
+      "folder": "03_Discovery/Requests_for_Production",
+      "keywords": ["request for production", "requests for production", "rfp"],
+      "anchors": ["REQUEST FOR PRODUCTION"],
+      "weight": 1.05
+    },
+    {
+      "id": "rfa",
+      "documentType": "RequestForAdmission",
+      "folder": "03_Discovery/Admissions",
+      "keywords": ["request for admission", "requests for admission"],
+      "anchors": ["REQUEST FOR ADMISSION"],
+      "weight": 1.05
+    },
+    {
+      "id": "deposition",
+      "documentType": "Deposition",
+      "folder": "03_Discovery/Depositions",
+      "keywords": ["deposition of", "deposition transcript", "depo of"],
+      "anchors": ["DEPOSITION"],
+      "weight": 1.0
+    },
+    {
+      "id": "subpoena",
+      "documentType": "Subpoena",
+      "folder": "03_Discovery",
+      "keywords": ["subpoena duces tecum", "subpoena to testify"],
+      "anchors": ["SUBPOENA"],
+      "weight": 1.0
+    },
+    {
+      "id": "service",
+      "documentType": "ProofOfService",
+      "folder": "02_Service_of_Process/Proof_of_Service",
+      "keywords": ["proof of service", "certificate of service", "service of process"],
+      "anchors": ["PROOF OF SERVICE", "I HEREBY CERTIFY"],
+      "weight": 1.0
+    },
+    {
+      "id": "summons",
+      "documentType": "Summons",
+      "folder": "02_Service_of_Process/Summons",
+      "keywords": ["summons and complaint", "summons in a civil"],
+      "anchors": ["SUMMONS"],
+      "weight": 1.0
+    },
+    {
+      "id": "hearing",
+      "documentType": "HearingNotice",
+      "folder": "09_Hearings/Notices",
+      "keywords": ["notice of hearing", "hearing notice", "hearing will be held"],
+      "anchors": ["HEARING"],
+      "weight": 1.0
+    },
+    {
+      "id": "exhibit",
+      "documentType": "Exhibit",
+      "folder": "08_Exhibits/Labels",
+      "keywords": ["exhibit list", "exhibit a", "exhibit 1"],
+      "anchors": ["EXHIBIT"],
+      "weight": 0.95
+    },
+    {
+      "id": "correspondence",
+      "documentType": "Correspondence",
+      "folder": "06_Correspondence/Misc",
+      "keywords": ["communications", "text message", "messenger", "facebook", "email thread"],
+      "anchors": ["DEAR", "REGARDS"],
+      "weight": 0.85
+    },
+    {
+      "id": "declaration",
+      "documentType": "Declaration",
+      "folder": "03_Discovery",
+      "keywords": ["declaration of", "affidavit of", "under penalty of perjury", "affidavit"],
+      "anchors": ["DECLARATION", "AFFIDAVIT"],
+      "weight": 1.0
+    }
+  ],
+  "regex": {
+    "caseNumber": "(?i)(?:case|docket|file|nc-|cv-|sc-)\\s*(?:no\\.?|number|#)?\\s*[:#]?\\s*([A-Z0-9][A-Z0-9\\-/]{2,})",
+    "dateIso": "\\b(20\\d{2})-(\\d{2})-(\\d{2})\\b",
+    "dateUs": "\\b(\\d{1,2})/(\\d{1,2})/(20\\d{2})\\b"
+  }
+}

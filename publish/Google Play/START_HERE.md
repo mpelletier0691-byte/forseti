@@ -23,9 +23,9 @@ Produces `Forseti-<version>-vc<N>.aab` on your PC (not committed to git).
 See **`PRODUCTION_UPLOAD_STEPS.md`** for click-by-click instructions.
 
 Quick path: **Test and release → Production → Upload**  
-`~/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.4-vc7.aab`
+`~/Desktop/Publish_Projects/Forseti/Google Play/Forseti-0.1.17-vc20.aab`
 
-What's inside the bundle: **`WHAT_IS_IN_VC7.md`** (vc6 is superseded — do not re-upload)
+What's inside the bundle: **`WHAT_IS_IN_VC20.md`**
 
 ## 3. Policy URLs (GitHub Pages: main + `/docs`)
 

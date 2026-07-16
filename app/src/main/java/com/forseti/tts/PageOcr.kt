@@ -1,7 +1,10 @@
 package com.forseti.tts
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
+import android.net.Uri
+import android.os.ParcelFileDescriptor
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
@@ -44,6 +47,27 @@ object PageOcr {
         renderMutex: Mutex,
         targetWidthPx: Int = 2200
     ): String = extractDisplayTextInternal(renderer, pageIndex, renderMutex, targetWidthPx)
+
+    /**
+     * OCR page 1 of a PDF from a content [Uri] — used during case-file ingest
+     * when the filename is ambiguous (e.g. court e-filing "COVER PAGE" titles).
+     */
+    suspend fun extractTextFromPdfUri(
+        context: Context,
+        uri: Uri,
+        renderMutex: Mutex = Mutex(),
+        targetWidthPx: Int = 1600
+    ): String = withContext(Dispatchers.IO) {
+        val pfd = context.contentResolver.openFileDescriptor(uri, "r") ?: return@withContext ""
+        pfd.use { fd ->
+            runCatching {
+                PdfRenderer(fd).use { renderer ->
+                    if (renderer.pageCount == 0) return@runCatching ""
+                    extractText(renderer, 0, renderMutex, targetWidthPx)
+                }
+            }.getOrDefault("")
+        }
+    }
 
     private suspend fun extractTextInternal(
         renderer: PdfRenderer,

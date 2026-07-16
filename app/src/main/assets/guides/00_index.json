@@ -1,7 +1,9 @@
 {
   "guides": [
+    { "id": "whats_new", "title": "What's New in This Version", "file": "whats_new.md", "minutes": 6 },
     { "id": "forseti_shortcuts", "title": "Forseti Shortcuts and Safe Workflow", "file": "forseti_shortcuts.md", "minutes": 6 },
     { "id": "using_forseti_as_pro_se", "title": "Using Forseti as a Pro Se Litigant — and Knowing When to Call a Lawyer", "file": "using_forseti_as_pro_se.md", "minutes": 12 },
+    { "id": "family_court_organization", "title": "Staying Organized in Family Court", "file": "family_court_organization.md", "minutes": 10 },
     { "id": "drafts_federal_vs_local", "title": "Drafts Tab: Federal Rules vs. State and Local Rules", "file": "drafts_federal_vs_local.md", "minutes": 3 },
     { "id": "case_ingestion", "title": "Ingesting an Existing Case Into Forseti", "file": "case_ingestion.md", "minutes": 7 },
     { "id": "filing_complaint", "title": "Filing a Civil Complaint", "file": "filing_complaint.md", "minutes": 12 },

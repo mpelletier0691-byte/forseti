@@ -62,6 +62,7 @@ import com.forseti.states.StateRule
 import com.forseti.states.StateRulesCatalog
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
 
 @Composable
 fun StatesScreen(
@@ -92,13 +93,17 @@ fun StatesScreen(
         }
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+    ForsetiDestinationScaffold(
+        snackbarHost = { SnackbarHost(snackbar) },
+        topBar = {
+            ForsetiTopBar(
+                title = stringResource(R.string.nav_states),
+                sidebarExpanded = sidebarExpanded,
+                onToggleSidebar = onToggleSidebar
+            )
+        }
+    ) { padding ->
     Column(modifier = Modifier.fillMaxSize().padding(padding).background(ForsetiColors.Background)) {
-        ForsetiTopBar(
-            title = stringResource(R.string.nav_states),
-            sidebarExpanded = sidebarExpanded,
-            onToggleSidebar = onToggleSidebar
-        )
         SourcingBanner(
             cachedCount = cached.size,
             refreshing = refreshing,

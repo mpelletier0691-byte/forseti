@@ -62,6 +62,7 @@ import com.forseti.imports.UploadedRulesService
 import com.forseti.pdf.LocalPdfReader
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
 import java.io.File
 import java.text.DateFormat
 import java.util.Date
@@ -121,16 +122,9 @@ fun UploadedRulesScreen(
         }
     }
 
-    Scaffold(
+    ForsetiDestinationScaffold(
         snackbarHost = { SnackbarHost(snackbar) },
-        containerColor = ForsetiColors.Background
-    ) { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .background(ForsetiColors.Background)
-        ) {
+        topBar = {
             ForsetiTopBar(
                 title = stringResource(R.string.nav_imports),
                 sidebarExpanded = sidebarExpanded,
@@ -145,7 +139,14 @@ fun UploadedRulesScreen(
                     }
                 }
             )
-
+        }
+    ) { padding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .background(ForsetiColors.Background)
+        ) {
             ImportsBanner(count = items.size, onPick = { pickPdf.launch(arrayOf("application/pdf")) })
 
             if (items.isEmpty()) {

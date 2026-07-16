@@ -1,5 +1,6 @@
 package com.forseti.ui.screens
 
+import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -18,7 +19,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Collections
@@ -52,13 +55,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.forseti.R
 import com.forseti.data.entities.CaseEntity
-import com.forseti.ui.shell.ForsetiTopBar
+import com.forseti.ui.shell.ForsetiScreenScaffold
+import com.forseti.util.IngestUriPermissions
+import com.forseti.util.RequestNotificationsPermissionOnce
 import com.forseti.ui.theme.ForsetiColors
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
@@ -79,6 +85,8 @@ fun CasesScreen(
     onToggleSidebar: () -> Unit,
     viewModel: CasesViewModel = hiltViewModel()
 ) {
+    RequestNotificationsPermissionOnce()
+
     val cases by viewModel.cases.collectAsState()
     val snackbar = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
@@ -118,8 +126,11 @@ fun CasesScreen(
         return
     }
 
-    Scaffold(
-        snackbarHost = { SnackbarHost(snackbar) },
+    ForsetiScreenScaffold(
+        title = stringResource(R.string.nav_cases),
+        sidebarExpanded = sidebarExpanded,
+        onBackToDashboard = onToggleSidebar,
+        snackbarHostState = snackbar,
         floatingActionButton = {
             ExtendedFloatingActionButton(
                 onClick = { creating = true },
@@ -138,11 +149,6 @@ fun CasesScreen(
                 .padding(padding)
                 .background(ForsetiColors.Background)
         ) {
-            ForsetiTopBar(
-                title = stringResource(R.string.nav_cases),
-                sidebarExpanded = sidebarExpanded,
-                onToggleSidebar = onToggleSidebar
-            )
 
             if (cases.isEmpty()) {
                 EmptyCases()
@@ -154,10 +160,7 @@ fun CasesScreen(
                             completeness = viewModel.completeness(case),
                             onOpen = { openCaseId = case.id },
                             onEdit = { editing = case },
-                            onShowFolder = {
-                                val path = viewModel.folderPath(case) ?: "Unavailable"
-                                scope.launch { snackbar.showSnackbar(path) }
-                            },
+                            onShowFolder = { viewModel.showFolderPath(case) },
                             onDelete = { pendingDelete = case }
                         )
                         Spacer(Modifier.height(8.dp))
@@ -187,15 +190,27 @@ fun CasesScreen(
             },
             onIngestFolder = { snapshot, uri ->
                 val target = if (creatingDraftId != 0L) snapshot.copy(id = creatingDraftId) else snapshot
-                viewModel.saveAndIngestFolder(target, uri) { savedId ->
-                    if (creatingDraftId == 0L) creatingDraftId = savedId
-                }
+                viewModel.saveAndIngestFolder(
+                    case = target,
+                    treeUri = uri,
+                    onSaved = { savedId -> creatingDraftId = savedId },
+                    onIngestStarted = {
+                        creating = false
+                        creatingDraftId = 0L
+                    }
+                )
             },
             onIngestImages = { snapshot, uris ->
                 val target = if (creatingDraftId != 0L) snapshot.copy(id = creatingDraftId) else snapshot
-                viewModel.saveAndIngestFiles(target, uris) { savedId ->
-                    if (creatingDraftId == 0L) creatingDraftId = savedId
-                }
+                viewModel.saveAndIngestFiles(
+                    case = target,
+                    uris = uris,
+                    onSaved = { savedId -> creatingDraftId = savedId },
+                    onIngestStarted = {
+                        creating = false
+                        creatingDraftId = 0L
+                    }
+                )
             }
         )
     }
@@ -417,13 +432,31 @@ private fun EditCaseDialog(
         )
     }
 
+    val context = LocalContext.current
+    val scroll = rememberScrollState()
+
     val pickTree = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocumentTree()
-    ) { uri -> uri?.let { onIngestFolder?.invoke(snapshot(), it) } }
+    ) { uri ->
+        uri?.let {
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(
+                    it,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+            }
+            onIngestFolder?.invoke(snapshot(), it)
+        }
+    }
 
     val pickImages = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenMultipleDocuments()
-    ) { uris -> if (uris.isNotEmpty()) onIngestImages?.invoke(snapshot(), uris) }
+    ) { uris ->
+        if (uris.isNotEmpty()) {
+            uris.forEach { IngestUriPermissions.persistUri(context, it) }
+            onIngestImages?.invoke(snapshot(), uris)
+        }
+    }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -460,7 +493,7 @@ private fun EditCaseDialog(
         title = { Text(title, color = ForsetiColors.RuneGold) },
         containerColor = ForsetiColors.Surface,
         text = {
-            Column {
+            Column(Modifier.verticalScroll(scroll)) {
                 Field("Case title", titleText) { titleText = it }
                 Field("Court", court) { court = it }
                 Field("Case number", num) { num = it }

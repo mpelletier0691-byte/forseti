@@ -28,8 +28,17 @@ class DeadlineRepository @Inject constructor(
     /** One-shot snapshot used by share-receiver to populate the case picker. */
     suspend fun allCasesSnapshot(): List<CaseEntity> = caseDao.allSnapshot()
 
-    suspend fun upsertCase(case: CaseEntity): Long =
-        if (case.id == 0L) caseDao.insert(case) else { caseDao.update(case); case.id }
+    suspend fun upsertCase(case: CaseEntity): Long {
+        val stamped = if (case.createdAt == 0L) {
+            case.copy(createdAt = System.currentTimeMillis())
+        } else {
+            case
+        }
+        return if (stamped.id == 0L) caseDao.insert(stamped) else {
+            caseDao.update(stamped)
+            stamped.id
+        }
+    }
 
     suspend fun upsertDeadline(deadline: DeadlineEntity): Long {
         val id = deadlineDao.upsert(deadline)

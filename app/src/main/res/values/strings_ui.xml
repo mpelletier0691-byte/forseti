@@ -38,6 +38,8 @@
     <string name="deadlines_field_case_name">Case name</string>
     <string name="deadlines_field_court">Court</string>
     <string name="deadlines_field_case_number">Case number</string>
+    <string name="deadlines_add_calendar">Add to calendar</string>
+    <string name="deadlines_reminder_toggle">Device reminder (1 day before)</string>
 
     <string name="glossary_search_hint">Search terms…</string>
     <string name="glossary_tts_hint">Tap a term, then Read to hear the definition.</string>

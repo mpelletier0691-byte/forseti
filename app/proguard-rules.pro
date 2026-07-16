@@ -6,6 +6,7 @@
 
 # Hilt
 -keep class dagger.hilt.** { *; }
+-keep @androidx.hilt.work.HiltWorker class * { *; }
 -keep class * extends androidx.work.Worker
 -keep class * extends androidx.work.CoroutineWorker
 
@@ -15,6 +16,7 @@
 # kotlinx.serialization
 -keepattributes RuntimeVisibleAnnotations,AnnotationDefault
 -keep,includedescriptorclasses class com.forseti.**$$serializer { *; }
+-keep,includedescriptorclasses class com.forseti.idp.**$$serializer { *; }
 -keepclassmembers class com.forseti.** {
     *** Companion;
 }

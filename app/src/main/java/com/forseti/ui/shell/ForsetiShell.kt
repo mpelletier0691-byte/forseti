@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
@@ -18,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import com.forseti.BuildConfig
 import com.forseti.R
 import com.forseti.ForceDarkController
 import com.forseti.util.LocalAppLanguage
@@ -38,6 +39,8 @@ import com.forseti.ui.screens.ScannerScreen
 import com.forseti.ui.screens.SettingsScreen
 import com.forseti.ui.screens.StatesScreen
 import com.forseti.ui.screens.TutorialOverlay
+import com.forseti.ui.screens.WhatsNewGuideDialog
+import com.forseti.ui.screens.WhatsNewOverlay
 import com.forseti.ui.screens.UploadedRulesScreen
 import com.forseti.ui.sidebar.Sidebar
 import com.forseti.util.AppLocale
@@ -77,6 +80,10 @@ fun ForsetiShell() {
 
     var disclaimerAccepted by remember { mutableStateOf(prefs.isAccepted) }
     var tutorialCompleted by remember { mutableStateOf(prefs.tutorialCompleted) }
+    var showWhatsNewGuide by remember { mutableStateOf(false) }
+    val needsWhatsNew = disclaimerAccepted && tutorialCompleted &&
+        prefs.whatsNewSeenVersion != BuildConfig.VERSION_NAME
+    var showWhatsNew by remember(needsWhatsNew) { mutableStateOf(needsWhatsNew) }
 
     LaunchedEffect(Unit) {
         if (prefs.isAccepted && !prefs.languageChosen) {
@@ -127,10 +134,14 @@ fun ForsetiShell() {
         return
     }
 
-    Scaffold(modifier = Modifier.fillMaxSize()) { padding ->
-        Box(modifier = Modifier.padding(padding).fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize()) {
             if (selected == null) {
-                Row(modifier = Modifier.fillMaxSize()) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .statusBarsPadding()
+                        .navigationBarsPadding()
+                ) {
                     Sidebar(
                         current = null,
                         onSelect = { selectedRoute = it.route }
@@ -158,8 +169,23 @@ fun ForsetiShell() {
                     prefs.tutorialCompleted = true
                     tutorialCompleted = true
                 })
+            } else if (showWhatsNew) {
+                WhatsNewOverlay(
+                    onDismiss = {
+                        prefs.whatsNewSeenVersion = BuildConfig.VERSION_NAME
+                        showWhatsNew = false
+                    },
+                    onOpenFullGuide = {
+                        prefs.whatsNewSeenVersion = BuildConfig.VERSION_NAME
+                        showWhatsNew = false
+                        showWhatsNewGuide = true
+                    }
+                )
             }
-        }
+
+            if (showWhatsNewGuide) {
+                WhatsNewGuideDialog(onDismiss = { showWhatsNewGuide = false })
+            }
     }
 }
 

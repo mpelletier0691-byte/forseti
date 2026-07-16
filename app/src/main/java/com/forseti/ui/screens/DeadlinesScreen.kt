@@ -13,8 +13,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.outlined.Event
+import androidx.compose.material3.Switch
+import com.forseti.deadlines.CalendarEventHelper
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
@@ -64,6 +72,7 @@ import com.forseti.deadlines.TimingRule
 import com.forseti.deadlines.TimingRules
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
 import com.forseti.util.RequestNotificationsPermissionOnce
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
@@ -93,7 +102,7 @@ fun DeadlinesScreen(
     val snackbar = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    Scaffold(
+    ForsetiDestinationScaffold(
         snackbarHost = { SnackbarHost(snackbar) },
         floatingActionButton = {
             ExtendedFloatingActionButton(
@@ -111,9 +120,8 @@ fun DeadlinesScreen(
                     )
                 )
             }
-        }
-    ) { padding ->
-        Column(modifier = Modifier.fillMaxSize().padding(padding).background(ForsetiColors.Background)) {
+        },
+        topBar = {
             ForsetiTopBar(
                 title = stringResource(R.string.nav_deadlines),
                 sidebarExpanded = sidebarExpanded,
@@ -124,6 +132,9 @@ fun DeadlinesScreen(
                     }
                 }
             )
+        }
+    ) { padding ->
+        Column(modifier = Modifier.fillMaxSize().padding(padding).background(ForsetiColors.Background)) {
             if (cases.isEmpty()) {
                 EmptyState(modifier = Modifier.fillMaxSize())
             } else {
@@ -137,6 +148,7 @@ fun DeadlinesScreen(
                 HorizontalDivider(color = ForsetiColors.Stone)
                 if (activeCase != null) {
                     DeadlineList(
+                        modifier = Modifier.weight(1f),
                         viewModel = viewModel,
                         case = activeCase,
                         onShowFolder = {
@@ -156,10 +168,25 @@ fun DeadlinesScreen(
         })
     }
     if (showDeadlineDialog && activeCase != null) {
-        AddDeadlineDialog(case = activeCase, onDismiss = { showDeadlineDialog = false }, onSave = { d ->
-            viewModel.addDeadline(activeCase, d)
-            showDeadlineDialog = false
-        })
+        val context = LocalContext.current
+        val caseForDialog = activeCase
+        AddDeadlineDialog(
+            case = caseForDialog,
+            onDismiss = { showDeadlineDialog = false },
+            onSave = { d, addToCalendar ->
+                viewModel.addDeadline(caseForDialog, d)
+                if (addToCalendar) {
+                    CalendarEventHelper.launch(context, caseForDialog, d)
+                }
+                showDeadlineDialog = false
+                scope.launch {
+                    snackbar.showSnackbar(
+                        if (d.notifyAt != null) "Deadline saved · reminder scheduled"
+                        else "Deadline saved"
+                    )
+                }
+            }
+        )
     }
 }
 
@@ -184,7 +211,10 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 
 @Composable
 private fun CaseSelector(cases: List<CaseEntity>, selectedId: Long?, onSelect: (CaseEntity) -> Unit) {
-    LazyColumn(contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)) {
+    LazyRow(
+        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         items(cases, key = { it.id }) { c ->
             val selected = c.id == selectedId
             Card(
@@ -193,19 +223,24 @@ private fun CaseSelector(cases: List<CaseEntity>, selectedId: Long?, onSelect: (
                 ),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 4.dp)
+                    .width(220.dp)
                     .clickable { onSelect(c) }
             ) {
                 Column(modifier = Modifier.fillMaxWidth().padding(12.dp)) {
-                    Text(c.title, style = MaterialTheme.typography.titleMedium, color = if (selected) ForsetiColors.RuneGold else ForsetiColors.AshWhite, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(
+                        c.title,
+                        style = MaterialTheme.typography.titleMedium,
+                        color = if (selected) ForsetiColors.RuneGold else ForsetiColors.AshWhite,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
                     val subtitle = listOfNotNull(
                         c.court.takeIf { it.isNotBlank() },
                         c.caseNumber.takeIf { it.isNotBlank() },
                         c.role.takeIf { it.isNotBlank() }
                     ).joinToString(" \u00B7 ")
                     if (subtitle.isNotBlank()) {
-                        Text(subtitle, style = MaterialTheme.typography.bodySmall, color = ForsetiColors.AshGrey)
+                        Text(subtitle, style = MaterialTheme.typography.bodySmall, color = ForsetiColors.AshGrey, maxLines = 2, overflow = TextOverflow.Ellipsis)
                     }
                 }
             }
@@ -245,6 +280,7 @@ private fun ProfileNudge(percent: Int) {
 
 @Composable
 private fun DeadlineList(
+    modifier: Modifier = Modifier,
     viewModel: DeadlinesViewModel,
     case: CaseEntity,
     onShowFolder: () -> Unit
@@ -254,7 +290,7 @@ private fun DeadlineList(
     val deadlines by viewModel.deadlinesFor(case.id).collectAsState(initial = emptyList())
     var detail by remember { mutableStateOf<DeadlineEntity?>(null) }
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxWidth()) {
         Row(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
@@ -286,7 +322,10 @@ private fun DeadlineList(
                 Text(stringResource(R.string.deadlines_export_ics), color = ForsetiColors.RavenBlue)
             }
         }
-        LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp)) {
+        LazyColumn(
+            modifier = Modifier.weight(1f),
+            contentPadding = PaddingValues(horizontal = 16.dp)
+        ) {
             items(deadlines, key = { it.id }) { d ->
                 DeadlineRow(
                     deadline = d,
@@ -303,6 +342,7 @@ private fun DeadlineList(
     detail?.let { d ->
         DeadlineDetailDialog(
             deadline = d,
+            case = case,
             onDismiss = { detail = null },
             onToggleComplete = {
                 viewModel.toggle(d)
@@ -376,11 +416,13 @@ private fun DeadlineRow(
 @Composable
 private fun DeadlineDetailDialog(
     deadline: DeadlineEntity,
+    case: CaseEntity,
     onDismiss: () -> Unit,
     onToggleComplete: () -> Unit,
     onShowFolder: () -> Unit,
     onDelete: () -> Unit
 ) {
+    val context = LocalContext.current
     val ruleHint = remember(deadline.ruleCitation) {
         TimingRules.all.firstOrNull { it.rule.equals(deadline.ruleCitation, ignoreCase = true) }
     }
@@ -411,6 +453,13 @@ private fun DeadlineDetailDialog(
         },
         dismissButton = {
             Row {
+                TextButton(onClick = {
+                    CalendarEventHelper.launch(context, case, deadline)
+                }) {
+                    Icon(Icons.Outlined.Event, null, tint = ForsetiColors.RuneGold)
+                    Spacer(Modifier.width(4.dp))
+                    Text(stringResource(R.string.deadlines_add_calendar), color = ForsetiColors.RuneGold)
+                }
                 TextButton(onClick = onShowFolder) {
                     Icon(Icons.Outlined.Folder, null, tint = ForsetiColors.RavenBlue)
                     Spacer(Modifier.width(4.dp))
@@ -495,7 +544,7 @@ private fun AddCaseDialog(onDismiss: () -> Unit, onSave: (CaseEntity) -> Unit) {
         title = { Text("Add case", color = ForsetiColors.RuneGold) },
         containerColor = ForsetiColors.Surface,
         text = {
-            Column {
+            Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState())) {
                 LabeledField(label = "Case title", value = title, onChange = { title = it })
                 LabeledField(label = "Court", value = court, onChange = { court = it })
                 LabeledField(label = "Case number", value = num, onChange = { num = it })
@@ -509,84 +558,161 @@ private fun AddCaseDialog(onDismiss: () -> Unit, onSave: (CaseEntity) -> Unit) {
 private fun AddDeadlineDialog(
     case: CaseEntity,
     onDismiss: () -> Unit,
-    onSave: (DeadlineEntity) -> Unit
+    onSave: (DeadlineEntity, addToCalendar: Boolean) -> Unit
 ) {
     var title by remember { mutableStateOf("") }
     var citation by remember { mutableStateOf("") }
-    var triggerIso by remember { mutableStateOf(LocalDate.fromIso(today())) }
+    var useDirectDue by remember { mutableStateOf(false) }
+    var triggerText by remember { mutableStateOf(today()) }
+    var dueDateText by remember { mutableStateOf("") }
     var days by remember { mutableStateOf("21") }
     var serviceMode by remember { mutableStateOf(Rule6.ServiceMode.Personal) }
+    var scheduleReminder by remember { mutableStateOf(true) }
+    var addToCalendar by remember { mutableStateOf(true) }
+    val scroll = rememberScrollState()
+    val chipScroll = rememberScrollState()
 
-    val computed = remember(triggerIso, days, serviceMode) {
-        runCatching {
-            Rule6.computeDeadline(triggerIso, days.toInt(), serviceMode)
+    val triggerIso = remember(triggerText) { LocalDate.fromIsoOrNull(triggerText.trim()) }
+    val dayCount = remember(days) { days.toIntOrNull()?.coerceIn(0, 999) }
+    val computed = remember(triggerIso, dayCount, serviceMode) {
+        if (triggerIso == null || dayCount == null) null
+        else runCatching {
+            Rule6.computeDeadline(triggerIso, dayCount, serviceMode)
         }.getOrNull()
     }
+    val directDueIso = remember(dueDateText) { LocalDate.fromIsoOrNull(dueDateText.trim()) }
+    val canSave = if (useDirectDue) directDueIso != null else computed != null
 
     AlertDialog(
         onDismissRequest = onDismiss,
         confirmButton = {
-            TextButton(onClick = {
-                val due = computed ?: return@TextButton
-                val dueMs = due.atStartOfDayIn(TimeZone.currentSystemDefault()).toEpochMilliseconds()
-                onSave(
-                    DeadlineEntity(
-                        caseId = case.id,
-                        title = title.trim().ifBlank { "Deadline" },
-                        ruleCitation = citation.trim().ifBlank { null },
-                        dueAt = dueMs,
-                        notifyAt = dueMs - 24 * 60 * 60 * 1000L,
-                        createdAt = System.currentTimeMillis()
+            TextButton(
+                onClick = {
+                    val due = if (useDirectDue) directDueIso else computed
+                    if (due == null) return@TextButton
+                    val dueMs = due.atStartOfDayIn(TimeZone.currentSystemDefault()).toEpochMilliseconds()
+                    val notifyMs = if (scheduleReminder) {
+                        (dueMs - 24 * 60 * 60 * 1000L).takeIf { it > System.currentTimeMillis() }
+                    } else null
+                    onSave(
+                        DeadlineEntity(
+                            caseId = case.id,
+                            title = title.trim().ifBlank { "Deadline" },
+                            ruleCitation = citation.trim().ifBlank { null },
+                            dueAt = dueMs,
+                            notifyAt = notifyMs,
+                            createdAt = System.currentTimeMillis()
+                        ),
+                        addToCalendar
                     )
-                )
-            }) { Text(stringResource(R.string.action_save), color = ForsetiColors.RuneGold) }
+                },
+                enabled = canSave
+            ) { Text(stringResource(R.string.action_save), color = if (canSave) ForsetiColors.RuneGold else ForsetiColors.AshGrey) }
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel), color = ForsetiColors.AshGrey) } },
-        title = { Text("Add deadline", color = ForsetiColors.RuneGold) },
+        title = { Text(stringResource(R.string.deadlines_dialog_deadline_title), color = ForsetiColors.RuneGold) },
         containerColor = ForsetiColors.Surface,
         text = {
-            Column {
-                LabeledField(label = "Title", value = title, onChange = { title = it })
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(max = 480.dp)
+                    .verticalScroll(scroll)
+            ) {
+                LabeledField(label = stringResource(R.string.deadlines_field_title), value = title, onChange = { title = it })
                 LabeledField(label = "Rule citation (optional)", value = citation, onChange = { citation = it })
                 Spacer(Modifier.height(8.dp))
-                Text("Quick add from FRCP timing rules", color = ForsetiColors.AshGrey, style = MaterialTheme.typography.labelLarge)
+                Text(stringResource(R.string.deadlines_quick_frcp), color = ForsetiColors.AshGrey, style = MaterialTheme.typography.labelLarge)
                 Spacer(Modifier.height(4.dp))
-                Row(Modifier.fillMaxWidth()) {
-                    Column {
-                        TimingRules.all.take(6).forEach { tr ->
-                            QuickAddChip(tr) {
-                                title = tr.title
-                                citation = tr.rule
-                                days = tr.days.toString()
-                                serviceMode = tr.defaultServiceMode
-                            }
+                Column {
+                    TimingRules.all.forEach { tr ->
+                        QuickAddChip(tr) {
+                            title = tr.title
+                            citation = tr.rule
+                            days = tr.days.toString()
+                            serviceMode = tr.defaultServiceMode
+                            useDirectDue = false
                         }
                     }
                 }
                 Spacer(Modifier.height(8.dp))
-                LabeledField(label = "Trigger date (YYYY-MM-DD)", value = triggerIso.toIso(), onChange = { v ->
-                    LocalDate.fromIsoOrNull(v)?.let { triggerIso = it }
-                })
-                LabeledField(label = "Days", value = days, onChange = { days = it.filter { c -> c.isDigit() } })
-                Row {
-                    Rule6.ServiceMode.values().forEach { m ->
-                        AssistChip(
-                            onClick = { serviceMode = m },
-                            label = { Text(m.label()) },
-                            colors = AssistChipDefaults.assistChipColors(
-                                containerColor = if (m == serviceMode) ForsetiColors.SidebarSelected else ForsetiColors.SurfaceVariant,
-                                labelColor = if (m == serviceMode) ForsetiColors.RuneGold else ForsetiColors.AshWhite
-                            ),
-                            modifier = Modifier.padding(end = 6.dp)
+                Row(Modifier.horizontalScroll(chipScroll)) {
+                    AssistChip(
+                        onClick = { useDirectDue = false },
+                        label = { Text("Rule 6 (trigger + days)") },
+                        colors = AssistChipDefaults.assistChipColors(
+                            containerColor = if (!useDirectDue) ForsetiColors.SidebarSelected else ForsetiColors.SurfaceVariant,
+                            labelColor = if (!useDirectDue) ForsetiColors.RuneGold else ForsetiColors.AshWhite
+                        ),
+                        modifier = Modifier.padding(end = 6.dp)
+                    )
+                    AssistChip(
+                        onClick = { useDirectDue = true },
+                        label = { Text("Direct date (hearing, etc.)") },
+                        colors = AssistChipDefaults.assistChipColors(
+                            containerColor = if (useDirectDue) ForsetiColors.SidebarSelected else ForsetiColors.SurfaceVariant,
+                            labelColor = if (useDirectDue) ForsetiColors.RuneGold else ForsetiColors.AshWhite
                         )
+                    )
+                }
+                Spacer(Modifier.height(8.dp))
+                if (useDirectDue) {
+                    LabeledField(
+                        label = stringResource(R.string.deadlines_field_date),
+                        value = dueDateText,
+                        onChange = { dueDateText = it }
+                    )
+                    Text(
+                        text = "Use for hearings, court-ordered dates, or any fixed calendar deadline.",
+                        color = ForsetiColors.AshGrey,
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                } else {
+                    LabeledField(
+                        label = "Trigger date (YYYY-MM-DD)",
+                        value = triggerText,
+                        onChange = { triggerText = it }
+                    )
+                    LabeledField(label = "Days", value = days, onChange = { days = it.filter { c -> c.isDigit() }.take(3) })
+                    Row(Modifier.horizontalScroll(rememberScrollState())) {
+                        Rule6.ServiceMode.values().forEach { m ->
+                            AssistChip(
+                                onClick = { serviceMode = m },
+                                label = { Text(m.label()) },
+                                colors = AssistChipDefaults.assistChipColors(
+                                    containerColor = if (m == serviceMode) ForsetiColors.SidebarSelected else ForsetiColors.SurfaceVariant,
+                                    labelColor = if (m == serviceMode) ForsetiColors.RuneGold else ForsetiColors.AshWhite
+                                ),
+                                modifier = Modifier.padding(end = 6.dp)
+                            )
+                        }
                     }
                 }
                 Spacer(Modifier.height(12.dp))
                 Text(
-                    text = "Deadline: " + (computed?.toIso() ?: "—"),
+                    text = "Deadline: " + when {
+                        useDirectDue -> directDueIso?.toIso() ?: "— (enter YYYY-MM-DD)"
+                        else -> computed?.toIso() ?: "— (check trigger date and days)"
+                    },
                     color = ForsetiColors.RuneGold,
                     style = MaterialTheme.typography.titleMedium
                 )
+                Spacer(Modifier.height(12.dp))
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text("Device reminder (1 day before)", color = ForsetiColors.AshWhite, style = MaterialTheme.typography.bodyMedium)
+                        Text("Uses local notification · no exact alarm permission", color = ForsetiColors.AshGrey, style = MaterialTheme.typography.labelSmall)
+                    }
+                    Switch(checked = scheduleReminder, onCheckedChange = { scheduleReminder = it })
+                }
+                Spacer(Modifier.height(8.dp))
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(stringResource(R.string.deadlines_add_calendar), color = ForsetiColors.AshWhite, style = MaterialTheme.typography.bodyMedium)
+                        Text("Opens Google Calendar or your default calendar app", color = ForsetiColors.AshGrey, style = MaterialTheme.typography.labelSmall)
+                    }
+                    Switch(checked = addToCalendar, onCheckedChange = { addToCalendar = it })
+                }
             }
         }
     )

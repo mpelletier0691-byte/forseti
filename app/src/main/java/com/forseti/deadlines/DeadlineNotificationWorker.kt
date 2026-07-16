@@ -15,7 +15,6 @@ import com.forseti.data.dao.CaseDao
 import com.forseti.data.dao.DeadlineDao
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.first
 
 /**
  * Fires when a deadline's notify time is reached.
@@ -32,8 +31,8 @@ class DeadlineNotificationWorker @AssistedInject constructor(
     override suspend fun doWork(): Result {
         val id = inputData.getLong(KEY_ID, -1L)
         if (id <= 0) return Result.failure()
-        val deadlines = deadlineDao.observeUpcoming().first()
-        val deadline = deadlines.firstOrNull { it.id == id } ?: return Result.success()
+        val deadline = deadlineDao.byId(id) ?: return Result.success()
+        if (deadline.completed) return Result.success()
         val case = caseDao.byId(deadline.caseId) ?: return Result.success()
 
         val nm = applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

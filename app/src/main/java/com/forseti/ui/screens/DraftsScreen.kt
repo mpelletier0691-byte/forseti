@@ -59,6 +59,7 @@ import com.forseti.ocr.OcrFieldMapper
 import com.forseti.ocr.RecognizedBlock
 import com.forseti.ui.shell.ForsetiTopBar
 import com.forseti.ui.theme.ForsetiColors
+import com.forseti.ui.theme.ForsetiDestinationScaffold
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -113,18 +114,22 @@ fun DraftsScreen(
         pendingPrint = null
     }
 
-    Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+    ForsetiDestinationScaffold(
+        snackbarHost = { SnackbarHost(snackbar) },
+        topBar = {
+            ForsetiTopBar(
+                title = stringResource(R.string.nav_drafts),
+                sidebarExpanded = sidebarExpanded,
+                onToggleSidebar = onToggleSidebar
+            )
+        }
+    ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .background(ForsetiColors.Background)
         ) {
-            ForsetiTopBar(
-                title = stringResource(R.string.nav_drafts),
-                sidebarExpanded = sidebarExpanded,
-                onToggleSidebar = onToggleSidebar
-            )
             LazyColumn(contentPadding = PaddingValues(16.dp)) {
                 byCategory.forEach { (category, docs) ->
                     item(key = "cat_${category.title}") {

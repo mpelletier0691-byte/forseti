@@ -1,11 +1,18 @@
-What's new in 0.1.4
+What's new in 0.1.17
 
-(Same release as 0.1.3 — new upload for Google Play version code 7.)
+Since 0.1.4 (production):
 
-• Stronger legal notices: English court rules control; UI translations are not certified and may be inaccurate.
-• Terms of Use and updated Privacy Policy on our website.
-• First launch: two required notices before permanent language choice (English, Spanish, or Chinese UI).
-• References: Federal Judicial Center (FJC) links.
-• Dashboard and sidebar layout fixes.
+• Guides — new **Staying Organized in Family Court** guide (English; open from Guides).
+• Brokkr Forge — import a whole case folder in the background; get a notification when sorting finishes (review 99_Inbox after).
+• Smarter filing — path/filename hints, multi-page PDF OCR, and confidence chips (Auto-filed / File Here).
+• Inbox tools — duplicate detection, Delete all in Inbox, and INGEST_AUDIT_latest.txt at your case root.
+• Edge-to-edge display on Android 13–15 with proper status and navigation bar insets.
+• Large folders: expect ~15–30 minutes for ~300 well-named files; batch very large collections.
+
+Unchanged from 0.1.4:
+
+• English court rules control; UI translations are not certified.
+• First launch language choice is permanent (English, Spanish, or Chinese UI).
+• 3-day trial, then $4.99 unlock. All case data stays on your device.
 
 You are solely responsible for filings and outcomes. Not legal advice.

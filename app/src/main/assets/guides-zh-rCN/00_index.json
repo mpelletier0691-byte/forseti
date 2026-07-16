@@ -1,7 +1,9 @@
 {
   "guides": [
+    { "id": "whats_new", "title": "本版本新功能", "file": "whats_new.md", "minutes": 4 },
     { "id": "forseti_shortcuts", "title": "Forseti 快捷方式与安全工作流程", "file": "forseti_shortcuts.md", "minutes": 6 },
     { "id": "using_forseti_as_pro_se", "title": "作为自诉当事人使用 Forseti——以及何时应咨询律师", "file": "using_forseti_as_pro_se.md", "minutes": 12 },
+    { "id": "family_court_organization", "title": "在家庭法院案件中保持材料有序", "file": "family_court_organization.md", "minutes": 10 },
     { "id": "drafts_federal_vs_local", "title": "草稿标签页：联邦规则与州及地方法规", "file": "drafts_federal_vs_local.md", "minutes": 3 },
     { "id": "case_ingestion", "title": "将既有案件导入 Forseti", "file": "case_ingestion.md", "minutes": 7 },
     { "id": "filing_complaint", "title": "提交民事起诉状", "file": "filing_complaint.md", "minutes": 12 },
