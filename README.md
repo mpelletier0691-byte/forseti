@@ -52,6 +52,13 @@ Plus:
    `app/src/main/assets/`.
 3. Open in Android Studio (Iguana or newer) and build / run.
 
+### Cloud agent + laptop
+
+Use a **Cursor Cloud Agent** session to edit the repo and push branches; on your
+laptop, run `bash scripts/laptop_sync.sh` to pull the latest work, refresh assets,
+and continue with the emulator or a physical device. Full workflow (offline USB
+pack, portable emulator demos): **[docs/CLOUD_WORKSPACE.md](docs/CLOUD_WORKSPACE.md)**.
+
 The app degrades gracefully when assets are missing: it falls back to a
 hard-coded TOC outline so Quick Jump still works during development.
 
